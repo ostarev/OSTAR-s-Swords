@@ -1,0 +1,26 @@
+# Visual Studio
+.vs/
+.vscode/
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Thumbnails
+._*
+Thumbs.db
+
+# Other
+*.log
+*.bak
+*.suo
+*.tmp
+*.temp

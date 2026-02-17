@@ -1,0 +1,21 @@
+﻿using Terraria;
+using Terraria.ModLoader;
+
+namespace OSTARsSWORDS.Content.Items;
+
+public class MartianSaucerCore : ModItem
+{
+	public override void SetStaticDefaults()
+	{
+	}
+
+	public override void SetDefaults()
+	{
+		Item.width = 38;
+		Item.height = 40;
+		Item.maxStack = 999;
+		Item.value = 400000;
+		Item.rare = 8;
+		Item.ResearchUnlockCount = 25;
+	}
+}

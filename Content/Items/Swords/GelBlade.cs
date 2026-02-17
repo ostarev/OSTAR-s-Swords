@@ -1,0 +1,44 @@
+﻿using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace OSTARsSWORDS.Content.Items.Swords;
+
+public class GelBlade : ModItem
+{
+	public override void SetStaticDefaults()
+	{
+	}
+
+	public override void SetDefaults()
+	{
+		Item.width = 35;
+		Item.height = 35;
+		Item.scale = 0.9f;
+		Item.rare = 0;
+		Item.useStyle = ItemUseStyleID.Swing;
+		Item.useTime = 30;
+		Item.useAnimation = 30;
+		Item.damage = 9;
+		Item.knockBack = 4.5f;
+		Item.UseSound = SoundID.Item1;
+		Item.value = 1500;
+		Item.autoReuse = false;
+		Item.DamageType = DamageClass.Melee;
+		Item.ResearchUnlockCount = 1;
+	}
+
+	public override void AddRecipes()
+	{
+		Recipe recipe = CreateRecipe();
+		recipe.AddIngredient(23, 20);
+		recipe.AddTile(TileID.WorkBenches);
+		recipe.Register();
+	}
+
+	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
+	{
+		target.AddBuff(137, 360, false);
+	}
+}

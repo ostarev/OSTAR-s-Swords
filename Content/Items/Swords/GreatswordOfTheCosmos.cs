@@ -1,0 +1,87 @@
+﻿using System;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.DataStructures;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace OSTARsSWORDS.Content.Items.Swords;
+
+public class GreatswordOfTheCosmos : ModItem
+{
+	public override void SetStaticDefaults()
+	{
+	}
+
+	public override void SetDefaults()
+	{
+		Item.width = 100;
+		Item.height = 100;
+		Item.scale = 1.3f;
+		Item.rare = 11;
+		Item.crit = 6;
+		Item.useStyle = ItemUseStyleID.Swing;
+		Item.useTime = 10;
+		Item.useAnimation = 10;
+		Item.damage = 440;
+		Item.knockBack = 9f;
+		Item.UseSound = SoundID.Item46;
+		Item.shoot = 424;
+		Item.shootSpeed = 10f;
+		Item.value = Item.sellPrice(0, 50, 0, 0);
+		Item.autoReuse = true;
+		Item.DamageType = DamageClass.Melee;
+		Item.ResearchUnlockCount = 1;
+	}
+
+	public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+	{
+		int numberProjectiles = 30 + Main.rand.Next(30);
+		Vector2 vector2_1 = default(Vector2);
+		for (int index = 0; index < numberProjectiles; index++)
+		{
+			vector2_1.X = (float)((double)player.position.X + (double)player.width * 1.0 + (double)(Main.rand.Next(100) * -player.direction) + (double)((float)Main.mouseX + Main.screenPosition.X - player.position.X));
+			vector2_1.Y = (float)((double)player.position.Y + (double)player.height * 0.5 - 600.0);
+			vector2_1.X = (float)(((double)vector2_1.X + (double)player.Center.X) / 2.0) + (float)Main.rand.Next(-100, 100);
+			vector2_1.Y -= 500 * index;
+			float num12 = (float)Main.mouseX + Main.screenPosition.X - vector2_1.X;
+			float num13 = (float)Main.mouseY + Main.screenPosition.Y - vector2_1.Y;
+			if ((double)num13 < 0.0)
+			{
+				num13 *= -1f;
+			}
+			if ((double)num13 < 20.0)
+			{
+				num13 = 20f;
+			}
+			float num14 = (float)Math.Sqrt((double)num12 * (double)num12 + (double)num13 * (double)num13);
+			float num15 = Item.shootSpeed / num14;
+			float num16 = num12 * num15;
+			float num17 = num13 * num15;
+			float SpeedX = num16 + (float)Main.rand.Next(-12, 10) * 0.2f;
+			float SpeedY = num17 + (float)Main.rand.Next(-12, 10) * 0.2f;
+			Projectile.NewProjectile(source, vector2_1.X, vector2_1.Y, SpeedX, SpeedY, type, damage, knockback, Main.myPlayer, 0f, (float)Main.rand.Next(5), 0f);
+		}
+		return false;
+	}
+
+	public override void AddRecipes()
+	{
+		Recipe recipe = CreateRecipe();
+		recipe.AddIngredient(3065, 1);
+		recipe.AddIngredient(Mod, "Saphira", 1);
+		recipe.AddIngredient(3458, 30);
+		recipe.AddIngredient(3456, 30);
+		recipe.AddIngredient(3457, 30);
+		recipe.AddIngredient(3459, 30);
+		recipe.AddIngredient(Mod, "PowerOfTheGalactic", 1);
+		recipe.AddIngredient(2750, 1);
+		recipe.AddIngredient(117, 100);
+		recipe.AddIngredient(175, 100);
+		recipe.AddIngredient(Mod, "Orichalcon", 10);
+		recipe.AddIngredient(ItemID.LuminiteBar, 50);
+		recipe.AddIngredient(Mod, "SwordMatter", 2000);
+		recipe.AddTile(TileID.AncientManipulator);
+		recipe.Register();
+	}
+}

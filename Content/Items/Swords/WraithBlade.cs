@@ -1,0 +1,27 @@
+﻿using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace OSTARsSWORDS.Content.Items.Swords;
+
+public class WraithBlade : ModItem
+{
+	public override void SetDefaults()
+	{
+		Item.width = 32;
+		Item.height = 32;
+		Item.scale = 1f;
+		Item.rare = 6;
+		Item.useStyle = ItemUseStyleID.Swing;
+		Item.useTime = 16;
+		Item.useAnimation = 16;
+		Item.damage = 54;
+		Item.knockBack = 8f;
+		Item.UseSound = SoundID.Item1;
+		Item.value = 62800;
+		Item.autoReuse = true;
+		Item.DamageType = DamageClass.Melee;
+		Item.ResearchUnlockCount = 1;
+	}
+}

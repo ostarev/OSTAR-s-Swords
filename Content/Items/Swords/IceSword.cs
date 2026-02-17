@@ -1,0 +1,44 @@
+﻿using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace OSTARsSWORDS.Content.Items.Swords;
+
+public class IceSword : ModItem
+{
+	public override void SetDefaults()
+	{
+		Item.width = 44;
+		Item.height = 50;
+		Item.scale = 1f;
+		Item.rare = 1;
+		Item.useStyle = ItemUseStyleID.Swing;
+		Item.useTime = 30;
+		Item.useAnimation = 30;
+		Item.damage = 9;
+		Item.knockBack = 1f;
+		Item.UseSound = SoundID.Item1;
+		Item.value = 128;
+		Item.autoReuse = false;
+		Item.DamageType = DamageClass.Melee;
+		Item.ResearchUnlockCount = 1;
+	}
+
+	public override void MeleeEffects(Player player, Rectangle hitbox)
+	{
+		if (Main.rand.Next(2) == 0)
+		{
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 180, 0f, 0f, 100, default(Color), 2f);
+			Main.dust[dust].noGravity = true;
+		}
+	}
+
+	public override void AddRecipes()
+	{
+		Recipe recipe = CreateRecipe();
+		recipe.AddIngredient(664, 25);
+		recipe.AddTile(TileID.WorkBenches);
+		recipe.Register();
+	}
+}

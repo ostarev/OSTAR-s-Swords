@@ -1,0 +1,29 @@
+﻿using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace OSTARsSWORDS.Content.Items.Swords;
+
+public class RottenSword : ModItem
+{
+	public override void SetDefaults()
+	{
+		Item.width = 35;
+		Item.height = 35;
+		Item.scale = 2f;
+		Item.rare = 6;
+		Item.useStyle = ItemUseStyleID.Swing;
+		Item.useTime = 20;
+		Item.useAnimation = 20;
+		Item.damage = 62;
+		Item.knockBack = 5f;
+		Item.UseSound = SoundID.Item8;
+		Item.shoot = 150;
+		Item.shootSpeed = 20f;
+		Item.value = 304200;
+		Item.autoReuse = true;
+		Item.DamageType = DamageClass.Melee;
+		Item.ResearchUnlockCount = 1;
+	}
+}

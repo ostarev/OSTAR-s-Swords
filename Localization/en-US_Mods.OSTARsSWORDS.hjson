@@ -1,0 +1,203 @@
+# This file will automatically update with entries for new content after a build and reload.
+
+Items: {
+	AllWoodSword: {
+		DisplayName: All Wood Sword
+		Tooltip: Made from the finest wood. Does 1% of the target's max health as damage
+	}
+
+	LesserMeleePowerPotion: {
+		DisplayName: Melee Power Potion
+		Tooltip: Melee damage increased by 10%, melee speed increased by 10%, and melee critical strike chance increased by 5%
+	}
+
+	NordMeadPotion: {
+		DisplayName: Nord Mead
+		Tooltip:
+			'''
+			Crit chance increased by 5%, Melee damage increased by 15%, Melee speed increased by 20%, Endurance increased by 25%
+			Defence decreased by 8
+			'''
+	}
+
+	SwordMatter: {
+		Tooltip: Matter for all swords
+		DisplayName: Sword Matter
+	}
+
+	OldMansBlade: {
+		Tooltip:
+			'''
+			Every 10 subsequent hits you deal extra 1% max health damage
+
+			"Quet a rusty blade"
+			'''
+		DisplayName: Old Mans Blade
+	}
+
+	Orichalcon: {
+		Tooltip: Fine compound.
+		DisplayName: Orichalcon
+	}
+
+	GelBlade: {
+		Tooltip: ""
+		DisplayName: Gel Blade
+	}
+
+	SlimeKiller: {
+		Tooltip: ""
+		DisplayName: Slime Killer
+	}
+
+	NordMead: {
+		Tooltip: Endurance increase, lower armour. Increased melee capabilities even further.
+		DisplayName: Nord Mead
+	}
+
+	UpgradeMatter: {
+		DisplayName: Upgrade Matter
+		Tooltip: ""
+	}
+
+	BatSlayer: {
+		DisplayName: Bat Slayer
+		Tooltip: ""
+	}
+
+	BarbarianSword: {
+		DisplayName: Barbarian Sword
+		Tooltip: ""
+	}
+
+	DamascusOre: {
+		Tooltip: ""
+		DisplayName: Damascus Ore
+	}
+
+	DamascusBar: {
+		Tooltip: ""
+		DisplayName: Damascus Bar
+	}
+
+	DamascusLeggings: {
+		Tooltip: 6% increased movement speed
+		DisplayName: Damascus Leggings
+	}
+
+	DamascusHelmet: {
+		Tooltip: 3% increased melee speed
+		DisplayName: Damascus Helmet
+	}
+
+	DamascusBreastplate: {
+		Tooltip: 4% increased melee damage
+		DisplayName: Damascus Breastplate
+	}
+
+	BlueDamascusChestplate: {
+		DisplayName: Blue Damascus Chestplate
+		Tooltip: 7% increased melee damage and 10% increased movement speed
+	}
+
+	BlueDamascusHelmet: {
+		DisplayName: Blue Damascus Helmet
+		Tooltip: 6% increased melee speed and critical strike chance
+	}
+
+	BlueDamascusLeggings: {
+		DisplayName: Blue Damascus Leggings
+		Tooltip: 5% increased movement speed and 6% increased critical strike chance
+	}
+
+	GreenDamascusChestplate: {
+		DisplayName: Green Damascus Chestplate
+		Tooltip: 10% increased melee speed and 15% increased melee damage
+	}
+
+	GreenDamascusHelmet: {
+		DisplayName: Green Damascus Helmet
+		Tooltip: 20% increased melee speed and 14% increased critical strike chance
+	}
+
+	GreenDamascusLeggings: {
+		DisplayName: Green Damascus Leggings
+		Tooltip: 35% increased movement speed and 10% increased critical strike chance
+	}
+
+	RedDamascusChestplate: {
+		DisplayName: Red Damascus Chestplate
+		Tooltip: 10% increased melee damage and critical strike chance
+	}
+
+	RedDamascusHelmet: {
+		DisplayName: Red Damascus Helmet
+		Tooltip: 10% increased melee damage and 14% increased critical strike chance
+	}
+
+	RedDamascusLeggings: {
+		DisplayName: Red Damascus Leggings
+		Tooltip: 10% increased melee damage and critical strike chance
+	}
+
+	DamascusHamaxe: {
+		DisplayName: Damascus Hamaxe
+		Tooltip: ""
+	}
+
+	DamascusPickaxe: {
+		DisplayName: Damascus Pickaxe
+		Tooltip: ""
+	}
+
+	PaladinSword: {
+		DisplayName: Paladin Sword
+		Tooltip: ""
+	}
+
+	CthulhuJudge: {
+		DisplayName: Cthulhu Judge
+		Tooltip: ""
+	}
+
+	SkoomaPotion: {
+		Tooltip: ""
+		DisplayName: Skooma
+	}
+}
+
+Buffs: {
+	LesserMeleePower: {
+		Description: Increased melee capabilities
+		DisplayName: Melee Power
+	}
+
+	SkoomaBuff: {
+		Description: Increased speed and jump height
+		DisplayName: Skooma
+	}
+
+	NordMeadBuff: {
+		Description: Warrior mode
+		DisplayName: Nord Mead
+	}
+}
+
+Configs: {
+	OSTARConfig: {
+		DisplayName: O S T A R Config
+
+		UseDoubleTap: {
+			Label: Use Double Tap
+			Tooltip: ""
+		}
+	}
+}
+
+Tiles: {
+	DamascusOreTile.MapEntry: Damascus
+	DamascusBarTile.MapEntry: Damascus Bar
+	DamascusOreSpawn.MapEntry: Damascus Ore Spawn
+}
+
+WorldGen.BlessedMessage: Your world has been blessed with Damascus!

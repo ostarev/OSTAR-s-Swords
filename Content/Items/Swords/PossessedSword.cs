@@ -1,0 +1,27 @@
+﻿using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace OSTARsSWORDS.Content.Items.Swords;
+
+public class PossessedSword : ModItem
+{
+	public override void SetDefaults()
+	{
+		Item.width = 32;
+		Item.height = 32;
+		Item.scale = 1.9f;
+		Item.rare = 5;
+		Item.useStyle = ItemUseStyleID.Swing;
+		Item.useTime = 20;
+		Item.useAnimation = 20;
+		Item.damage = 57;
+		Item.knockBack = 4f;
+		Item.UseSound = SoundID.Item1;
+		Item.value = 57800;
+		Item.autoReuse = true;
+		Item.DamageType = DamageClass.Melee;
+		Item.ResearchUnlockCount = 1;
+	}
+}

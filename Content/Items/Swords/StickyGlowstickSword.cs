@@ -1,0 +1,29 @@
+﻿using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace OSTARsSWORDS.Content.Items.Swords;
+
+public class StickyGlowstickSword : ModItem
+{
+	public override void SetDefaults()
+	{
+		Item.width = 46;
+		Item.height = 46;
+		Item.scale = 1f;
+		Item.rare = 2;
+		Item.useStyle = ItemUseStyleID.Swing;
+		Item.useTime = 30;
+		Item.useAnimation = 30;
+		Item.damage = 15;
+		Item.knockBack = 3.5f;
+		Item.UseSound = SoundID.Item1;
+		Item.value = 12000;
+		Item.shoot = 53;
+		Item.shootSpeed = 20f;
+		Item.autoReuse = false;
+		Item.DamageType = DamageClass.Melee;
+		Item.ResearchUnlockCount = 1;
+	}
+}
