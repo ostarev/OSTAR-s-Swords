@@ -18,7 +18,7 @@ public class TheNightmareAmalgamation : ModItem
 		Item.width = 110;
 		Item.height = 110;
 		Item.scale = 0.9f;
-		Item.rare = 11;
+		Item.rare = ItemRarityID.Purple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
@@ -47,16 +47,16 @@ public class TheNightmareAmalgamation : ModItem
 	{
 		if (Main.rand.Next(1) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 62, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.PurpleTorch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
-			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 62, 0f, 0f, 100, default(Color), 2f);
+			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.PurpleTorch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(153, 800, false);
+		target.AddBuff(BuffID.ShadowFlame, 800, false);
 	}
 
 	public override void AddRecipes()
@@ -65,9 +65,9 @@ public class TheNightmareAmalgamation : ModItem
 		recipe.AddIngredient(Mod, "CthulhuJudge", 1);
 		recipe.AddIngredient(Mod, "StickyGlowstickSword", 1);
 		recipe.AddIngredient(Mod, "TheEater", 1);
-		recipe.AddIngredient(1123, 1);
+		recipe.AddIngredient(ItemID.BeeKeeper, 1);
 		recipe.AddIngredient(Mod, "SwordOfPower", 1);
-		recipe.AddIngredient(426, 1);
+		recipe.AddIngredient(ItemID.BreakerBlade, 1);
 		recipe.AddIngredient(Mod, "PrimeSword", 1);
 		recipe.AddIngredient(Mod, "DestroyerSword", 1);
 		recipe.AddIngredient(Mod, "TwinsSword", 1);
@@ -81,9 +81,9 @@ public class TheNightmareAmalgamation : ModItem
 		recipe2.AddIngredient(Mod, "CthulhuJudge", 1);
 		recipe2.AddIngredient(Mod, "StickyGlowstickSword", 1);
 		recipe2.AddIngredient(Mod, "TheBrain", 1);
-		recipe2.AddIngredient(1123, 1);
+		recipe2.AddIngredient(ItemID.BeeKeeper, 1);
 		recipe2.AddIngredient(Mod, "SwordOfPower", 1);
-		recipe2.AddIngredient(426, 1);
+		recipe2.AddIngredient(ItemID.BreakerBlade, 1);
 		recipe2.AddIngredient(Mod, "PrimeSword", 1);
 		recipe2.AddIngredient(Mod, "DestroyerSword", 1);
 		recipe2.AddIngredient(Mod, "TwinsSword", 1);

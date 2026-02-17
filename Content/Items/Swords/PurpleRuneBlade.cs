@@ -16,14 +16,14 @@ public class PurpleRuneBlade : ModItem
 		Item.width = 52;
 		Item.height = 52;
 		Item.scale = 1.1f;
-		Item.rare = 11;
+		Item.rare = ItemRarityID.Purple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
 		Item.damage = 40;
 		Item.knockBack = 5f;
 		Item.UseSound = SoundID.Item104;
-		Item.shoot = 497;
+		Item.shoot = ProjectileID.ShadowFlameKnife;
 		Item.shootSpeed = 20f;
 		Item.value = Item.sellPrice(0, 1, 0, 0);
 		Item.autoReuse = true;
@@ -35,7 +35,7 @@ public class PurpleRuneBlade : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 173, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.ShadowbeamStaff, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 			Main.dust[dust].velocity.X -= (float)player.direction * 0f;
 			Main.dust[dust].velocity.Y -= 0f;
@@ -45,7 +45,7 @@ public class PurpleRuneBlade : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(3054, 1);
+		recipe.AddIngredient(ItemID.ShadowFlameKnife, 1);
 		recipe.AddIngredient(Mod, "DamascusBar", 10);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe.AddTile(TileID.Anvils);
@@ -54,6 +54,6 @@ public class PurpleRuneBlade : ModItem
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(153, 400, false);
+		target.AddBuff(BuffID.ShadowFlame, 400, false);
 	}
 }

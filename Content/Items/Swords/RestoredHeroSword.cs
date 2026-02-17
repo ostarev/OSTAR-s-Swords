@@ -12,7 +12,7 @@ public class RestoredHeroSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.4f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 9;
 		Item.useAnimation = 9;

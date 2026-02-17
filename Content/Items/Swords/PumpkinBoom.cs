@@ -16,14 +16,14 @@ public class PumpkinBoom : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 2f;
-		Item.rare = 8;
+		Item.rare = ItemRarityID.Yellow;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
 		Item.damage = 65;
 		Item.knockBack = 7f;
 		Item.UseSound = SoundID.Item1;
-		Item.shoot = 312;
+		Item.shoot = ProjectileID.JackOLantern;
 		Item.shootSpeed = 10f;
 		Item.value = 360500;
 		Item.autoReuse = true;
@@ -34,7 +34,7 @@ public class PumpkinBoom : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1784, 1);
+		recipe.AddIngredient(ItemID.JackOLanternLauncher, 1);
 		recipe.AddIngredient(Mod, "Orichalcon", 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
 		recipe.AddTile(TileID.MythrilAnvil);

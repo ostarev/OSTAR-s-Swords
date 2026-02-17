@@ -16,7 +16,7 @@ public class FreezeFireClaw : ModItem
 		Item.width = 48;
 		Item.height = 56;
 		Item.scale = 1f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
@@ -33,11 +33,11 @@ public class FreezeFireClaw : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 180, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.DungeonSpirit, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 			Main.dust[dust].velocity.X += (float)player.direction * 0f;
 			Main.dust[dust].velocity.Y += 0f;
-			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 6, 0f, 0f, 100, default(Color), 2f);
+			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.Torch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 			Main.dust[dust].velocity.X += (float)player.direction * 0f;
 			Main.dust[dust].velocity.Y += 0f;
@@ -49,8 +49,8 @@ public class FreezeFireClaw : ModItem
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "OrangeRuneSword", 1);
 		recipe.AddIngredient(Mod, "BlueRuneBlade", 1);
-		recipe.AddIngredient(2701, 25);
-		recipe.AddIngredient(664, 150);
+		recipe.AddIngredient(ItemID.LivingFireBlock, 25);
+		recipe.AddIngredient(ItemID.IceBlock, 150);
 		recipe.AddIngredient(Mod, "SwordMatter", 170);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();

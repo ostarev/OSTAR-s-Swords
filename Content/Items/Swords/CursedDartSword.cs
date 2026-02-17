@@ -12,14 +12,14 @@ public class CursedDartSword : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 2f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
 		Item.damage = 59;
 		Item.knockBack = 6f;
 		Item.UseSound = SoundID.Item99;
-		Item.shoot = 478;
+		Item.shoot = ProjectileID.CursedDart;
 		Item.shootSpeed = 20f;
 		Item.value = 311200;
 		Item.autoReuse = true;
@@ -32,7 +32,7 @@ public class CursedDartSword : ModItem
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "SwordMatter", 125);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
-		recipe.AddIngredient(3010, 999);
+		recipe.AddIngredient(ItemID.CursedDart, 999);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();
 	}

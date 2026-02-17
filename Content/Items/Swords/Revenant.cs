@@ -19,7 +19,7 @@ public class Revenant : ModItem
 		Item.DamageType = DamageClass.Melee;
 		Item.ResearchUnlockCount = 1;
 		Item.channel = true;
-		Item.rare = 10;
+		Item.rare = ItemRarityID.Red;
 		Item.width = 28;
 		Item.height = 30;
 		Item.useTime = 20;
@@ -28,7 +28,7 @@ public class Revenant : ModItem
 		Item.shootSpeed = 10f;
 		Item.useAnimation = 20;
 		Item.autoReuse = true;
-		Item.shoot = 297;
+		Item.shoot = ProjectileID.LostSoulFriendly;
 		Item.value = Item.sellPrice(0, 50, 0, 0);
 	}
 

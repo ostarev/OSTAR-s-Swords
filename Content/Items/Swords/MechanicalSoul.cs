@@ -79,11 +79,11 @@ public class MechanicalSoul : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 59, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.BlueTorch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
-			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 60, 0f, 0f, 100, default(Color), 2f);
+			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.RedTorch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
-			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 61, 0f, 0f, 100, default(Color), 2f);
+			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.GreenTorch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -92,10 +92,10 @@ public class MechanicalSoul : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "Nightlight", 1);
-		recipe.AddIngredient(1225, 30);
-		recipe.AddIngredient(548, 15);
-		recipe.AddIngredient(547, 15);
-		recipe.AddIngredient(549, 15);
+		recipe.AddIngredient(ItemID.HallowedBar, 30);
+		recipe.AddIngredient(ItemID.SoulofMight, 15);
+		recipe.AddIngredient(ItemID.SoulofFright, 15);
+		recipe.AddIngredient(ItemID.SoulofSight, 15);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();
 	}

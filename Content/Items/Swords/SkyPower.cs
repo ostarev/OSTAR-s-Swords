@@ -14,13 +14,13 @@ public class SkyPower : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 2f;
-		Item.rare = 5;
+		Item.rare = ItemRarityID.Pink;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 17;
 		Item.useAnimation = 17;
 		Item.damage = 60;
 		Item.knockBack = 7f;
-		Item.shoot = 660;
+		Item.shoot = ProjectileID.SkyFracture;
 		Item.shootSpeed = 15f;
 		Item.UseSound = SoundID.Item1;
 		Item.value = 88500;

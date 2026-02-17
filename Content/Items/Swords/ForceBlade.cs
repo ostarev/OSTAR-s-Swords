@@ -16,7 +16,7 @@ public class ForceBlade : ModItem
 		Item.width = 64;
 		Item.height = 64;
 		Item.scale = 1f;
-		Item.rare = 5;
+		Item.rare = ItemRarityID.Pink;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 40;
 		Item.useAnimation = 40;
@@ -32,16 +32,16 @@ public class ForceBlade : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(426, 1);
+		recipe.AddIngredient(ItemID.BreakerBlade, 1);
 		recipe.AddIngredient(Mod, "OrcWarSword", 1);
-		recipe.AddIngredient(381, 11);
+		recipe.AddIngredient(ItemID.CobaltBar, 11);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 		Recipe recipe2 = CreateRecipe();
-		recipe2.AddIngredient(426, 1);
+		recipe2.AddIngredient(ItemID.BreakerBlade, 1);
 		recipe2.AddIngredient(Mod, "OrcWarSword", 1);
-		recipe2.AddIngredient(1184, 11);
+		recipe2.AddIngredient(ItemID.PalladiumBar, 11);
 		recipe2.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe2.AddTile(TileID.Anvils);
 		recipe2.Register();

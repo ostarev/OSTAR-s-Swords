@@ -15,7 +15,7 @@ public class Narsil : ModItem
 		Item.width = 60;
 		Item.height = 60;
 		Item.scale = 1.3f;
-		Item.rare = 8;
+		Item.rare = ItemRarityID.Yellow;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 13;
 		Item.useAnimation = 13;
@@ -41,7 +41,7 @@ public class Narsil : ModItem
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(72, 360, false);
+		target.AddBuff(BuffID.Midas, 360, false);
 		target.AddBuff(BuffID.Ichor, 360, false);
 		target.AddBuff(BuffID.OnFire, 360, false);
 	}

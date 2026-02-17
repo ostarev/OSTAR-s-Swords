@@ -11,7 +11,7 @@ public class Extase : ModItem
 		Item.width = 64;
 		Item.height = 64;
 		Item.scale = 1f;
-		Item.rare = 4;
+		Item.rare = ItemRarityID.LightRed;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;

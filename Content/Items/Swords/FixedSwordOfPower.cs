@@ -16,7 +16,7 @@ public class FixedSwordOfPower : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.7f;
-		Item.rare = 3;
+		Item.rare = ItemRarityID.Orange;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
@@ -24,7 +24,7 @@ public class FixedSwordOfPower : ModItem
 		Item.knockBack = 4f;
 		Item.UseSound = SoundID.Item1;
 		Item.value = 18000;
-		Item.shoot = 21;
+		Item.shoot = ProjectileID.Bone;
 		Item.shootSpeed = 20f;
 		Item.autoReuse = true;
 		Item.DamageType = DamageClass.Melee;
@@ -35,7 +35,7 @@ public class FixedSwordOfPower : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "SwordOfPower", 1);
-		recipe.AddIngredient(154, 20);
+		recipe.AddIngredient(ItemID.Bone, 20);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 110);
 		recipe.AddTile(TileID.Anvils);
@@ -44,6 +44,6 @@ public class FixedSwordOfPower : ModItem
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(72, 360, false);
+		target.AddBuff(BuffID.Midas, 360, false);
 	}
 }

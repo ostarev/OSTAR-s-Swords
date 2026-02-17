@@ -12,7 +12,7 @@ public class WraithBlade : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 16;
 		Item.useAnimation = 16;

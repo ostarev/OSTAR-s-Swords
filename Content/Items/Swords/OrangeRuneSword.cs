@@ -16,14 +16,14 @@ public class OrangeRuneSword : ModItem
 		Item.width = 48;
 		Item.height = 50;
 		Item.scale = 1.1f;
-		Item.rare = 3;
+		Item.rare = ItemRarityID.Orange;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
 		Item.damage = 40;
 		Item.knockBack = 5f;
 		Item.UseSound = SoundID.Item20;
-		Item.shoot = 15;
+		Item.shoot = ProjectileID.BallofFire;
 		Item.shootSpeed = 10f;
 		Item.value = Item.sellPrice(0, 1, 0, 0);
 		Item.autoReuse = true;
@@ -34,7 +34,7 @@ public class OrangeRuneSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(2701, 100);
+		recipe.AddIngredient(ItemID.LivingFireBlock, 100);
 		recipe.AddIngredient(Mod, "DamascusBar", 10);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe.AddTile(TileID.Anvils);
@@ -45,7 +45,7 @@ public class OrangeRuneSword : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 6, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.Torch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 			Main.dust[dust].velocity.X -= (float)player.direction * 0f;
 			Main.dust[dust].velocity.Y -= 0f;

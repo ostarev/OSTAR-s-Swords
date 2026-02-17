@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace OSTARsSWORDS.Content.Projectiles;
 
-public class VugarMutater : ModProjectile
+public class VugarMutaterProjectile : ModProjectile
 {
 	public override void SetStaticDefaults()
 	{

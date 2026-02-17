@@ -16,7 +16,7 @@ public class TwinsSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.9f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
@@ -24,7 +24,7 @@ public class TwinsSword : ModItem
 		Item.knockBack = 6f;
 		Item.UseSound = SoundID.Item1;
 		Item.value = 160000;
-		Item.shoot = 95;
+		Item.shoot = ProjectileID.CursedFlameFriendly;
 		Item.shootSpeed = 10f;
 		Item.autoReuse = true;
 		Item.DamageType = DamageClass.Melee;

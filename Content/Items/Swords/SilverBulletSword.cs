@@ -16,7 +16,7 @@ public class SilverBulletSword : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.8f;
-		Item.rare = 3;
+		Item.rare = ItemRarityID.Orange;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
@@ -24,7 +24,7 @@ public class SilverBulletSword : ModItem
 		Item.knockBack = 4.1f;
 		Item.UseSound = SoundID.Item11;
 		Item.value = 26000;
-		Item.shoot = 14;
+		Item.shoot = ProjectileID.Bullet;
 		Item.shootSpeed = 20f;
 		Item.autoReuse = true;
 		Item.DamageType = DamageClass.Melee;
@@ -34,7 +34,7 @@ public class SilverBulletSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(278, 999);
+		recipe.AddIngredient(ItemID.SilverBullet, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

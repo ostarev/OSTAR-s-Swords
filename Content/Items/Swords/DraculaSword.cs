@@ -14,14 +14,14 @@ public class DraculaSword : ModItem
 		Item.width = 64;
 		Item.height = 64;
 		Item.scale = 1.1f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
 		Item.useAnimation = 15;
 		Item.damage = 43;
 		Item.knockBack = 6f;
 		Item.UseSound = SoundID.Item1;
-		Item.shoot = 304;
+		Item.shoot = ProjectileID.VampireKnife;
 		Item.shootSpeed = 20f;
 		Item.value = Item.sellPrice(0, 5, 0, 0);
 		Item.autoReuse = true;

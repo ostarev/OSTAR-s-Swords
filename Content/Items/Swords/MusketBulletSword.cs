@@ -16,7 +16,7 @@ public class MusketBulletSword : ModItem
 		Item.width = 64;
 		Item.height = 64;
 		Item.scale = 1f;
-		Item.rare = 3;
+		Item.rare = ItemRarityID.Orange;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
@@ -24,7 +24,7 @@ public class MusketBulletSword : ModItem
 		Item.knockBack = 3.5f;
 		Item.UseSound = SoundID.Item11;
 		Item.value = 16000;
-		Item.shoot = 14;
+		Item.shoot = ProjectileID.Bullet;
 		Item.shootSpeed = 20f;
 		Item.autoReuse = true;
 		Item.DamageType = DamageClass.Melee;
@@ -34,7 +34,7 @@ public class MusketBulletSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(97, 999);
+		recipe.AddIngredient(ItemID.MusketBall, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

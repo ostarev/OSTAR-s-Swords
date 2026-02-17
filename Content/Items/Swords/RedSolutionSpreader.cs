@@ -16,12 +16,12 @@ public class RedSolutionSpreader : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.3f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
 		Item.UseSound = SoundID.Item34;
-		Item.shoot = 149;
+		Item.shoot = ProjectileID.CrimsonSpray;
 		Item.shootSpeed = 10f;
 		Item.value = 830000;
 		Item.autoReuse = true;
@@ -33,7 +33,7 @@ public class RedSolutionSpreader : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "SwordMatter", 200);
-		recipe.AddIngredient(784, 100);
+		recipe.AddIngredient(ItemID.RedSolution, 100);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();
 	}

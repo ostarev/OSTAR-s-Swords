@@ -16,7 +16,7 @@ public class Ice : ModItem
 		Item.width = 64;
 		Item.height = 64;
 		Item.scale = 1.5f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 12;
 		Item.useAnimation = 12;
@@ -38,12 +38,12 @@ public class Ice : ModItem
 		recipe.AddIngredient(Mod, "Orcrist", 1);
 		recipe.AddIngredient(Mod, "Glamdring", 1);
 		recipe.AddIngredient(Mod, "Sting", 1);
-		recipe.AddIngredient(177, 10);
-		recipe.AddIngredient(178, 10);
-		recipe.AddIngredient(179, 10);
-		recipe.AddIngredient(180, 10);
-		recipe.AddIngredient(181, 10);
-		recipe.AddIngredient(182, 10);
+		recipe.AddIngredient(ItemID.Sapphire, 10);
+		recipe.AddIngredient(ItemID.Ruby, 10);
+		recipe.AddIngredient(ItemID.Emerald, 10);
+		recipe.AddIngredient(ItemID.Topaz, 10);
+		recipe.AddIngredient(ItemID.Amethyst, 10);
+		recipe.AddIngredient(ItemID.Diamond, 10);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();
 	}

@@ -16,7 +16,7 @@ public class BetterShroomiteBlade : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 2.5f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 10;
 		Item.useAnimation = 10;

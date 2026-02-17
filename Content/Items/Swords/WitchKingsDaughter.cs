@@ -15,7 +15,7 @@ public class WitchKingsDaughter : ModItem
 		Item.width = 64;
 		Item.height = 64;
 		Item.scale = 1.2f;
-		Item.rare = 5;
+		Item.rare = ItemRarityID.Pink;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;

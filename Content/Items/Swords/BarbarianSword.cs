@@ -16,7 +16,7 @@ public class BarbarianSword : ModItem
 		Item.width = 58;
 		Item.height = 58;
 		Item.scale = 1f;
-		Item.rare = 1;
+		Item.rare = ItemRarityID.Blue;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 24;
 		Item.useAnimation = 24;
@@ -32,12 +32,12 @@ public class BarbarianSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(4, 1);
+		recipe.AddIngredient(ItemID.IronBroadsword, 1);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 		Recipe recipe2 = CreateRecipe();
-		recipe2.AddIngredient(3496, 1);
+		recipe2.AddIngredient(ItemID.LeadBroadsword, 1);
 		recipe2.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe2.AddTile(TileID.Anvils);
 		recipe2.Register();

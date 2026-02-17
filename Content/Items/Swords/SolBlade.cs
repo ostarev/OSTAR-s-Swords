@@ -18,7 +18,7 @@ public class SolBlade : ModItem
 		Item.width = 86;
 		Item.height = 86;
 		Item.scale = 1f;
-		Item.rare = -11;
+		Item.rare = ItemRarityID.Quest;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
@@ -37,7 +37,7 @@ public class SolBlade : ModItem
 	{
 		if (Main.rand.Next(3) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 174, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.InfernoFork, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -58,7 +58,7 @@ public class SolBlade : ModItem
 		IEntitySource source = Item.GetSource_OnHit((Entity)(object)target, (string)null);
 		if (Main.rand.Next(3) == 0)
 		{
-			Projectile.NewProjectile(source, ((Entity)target).Center.X, ((Entity)target).Center.Y, 0f, 0f, 296, damageDone, hit.Knockback, player.whoAmI, 0f, 0f, 0f);
+			Projectile.NewProjectile(source, ((Entity)target).Center.X, ((Entity)target).Center.Y, 0f, 0f, ProjectileID.InfernoFriendlyBlast, damageDone, hit.Knockback, player.whoAmI, 0f, 0f, 0f);
 		}
 	}
 }

@@ -12,7 +12,7 @@ public class StickyGlowstickSword : ModItem
 		Item.width = 46;
 		Item.height = 46;
 		Item.scale = 1f;
-		Item.rare = 2;
+		Item.rare = ItemRarityID.Green;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
@@ -20,7 +20,7 @@ public class StickyGlowstickSword : ModItem
 		Item.knockBack = 3.5f;
 		Item.UseSound = SoundID.Item1;
 		Item.value = 12000;
-		Item.shoot = 53;
+		Item.shoot = ProjectileID.StickyGlowstick;
 		Item.shootSpeed = 20f;
 		Item.autoReuse = false;
 		Item.DamageType = DamageClass.Melee;

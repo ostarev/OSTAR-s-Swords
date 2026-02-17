@@ -9,8 +9,8 @@ public class SOTU7 : ModProjectile
 {
 	public override void SetStaticDefaults()
 	{
-		Sets.TrailCacheLength[Projectile.type] = 5;
-		Sets.TrailingMode[Projectile.type] = 0;
+        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 5;
+        ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
 	}
 
 	public override void SetDefaults()
@@ -35,7 +35,7 @@ public class SOTU7 : ModProjectile
 	{
 		if (Main.rand.Next(4) == 0)
 		{
-			int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, 21, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.VilePowder, 0f, 0f, 100, default, 2f);
 			Main.dust[dust].noGravity = true;
 			Dust obj = Main.dust[dust];
 			obj.velocity *= 0.2f;

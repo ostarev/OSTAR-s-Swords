@@ -18,14 +18,14 @@ public class AntiInvader : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 2f;
-		Item.rare = 8;
+		Item.rare = ItemRarityID.Yellow;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 10;
 		Item.useAnimation = 10;
 		Item.damage = 99;
 		Item.knockBack = 8f;
 		Item.UseSound = SoundID.Item33;
-		Item.shoot = 440;
+		Item.shoot = ProjectileID.LaserMachinegunLaser;
 		Item.shootSpeed = 30f;
 		Item.value = Item.sellPrice(0, 25, 0, 0);
 		Item.autoReuse = true;
@@ -50,7 +50,7 @@ public class AntiInvader : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(2860, 999);
+		recipe.AddIngredient(ItemID.MartianConduitPlating, 999);
 		recipe.AddIngredient(Mod, "MartianSaucerCore", 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 200);
 		recipe.AddTile(TileID.MythrilAnvil);

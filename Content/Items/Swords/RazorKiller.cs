@@ -18,14 +18,14 @@ public class RazorKiller : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 2f;
-		Item.rare = 8;
+		Item.rare = ItemRarityID.Yellow;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 9;
 		Item.useAnimation = 9;
 		Item.damage = 50;
 		Item.knockBack = 6f;
 		Item.UseSound = SoundID.Item1;
-		Item.shoot = 336;
+		Item.shoot = ProjectileID.PineNeedleFriendly;
 		Item.shootSpeed = 10f;
 		Item.value = 450500;
 		Item.autoReuse = true;
@@ -50,7 +50,7 @@ public class RazorKiller : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1930, 1);
+		recipe.AddIngredient(ItemID.Razorpine, 1);
 		recipe.AddIngredient(Mod, "Orichalcon", 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
 		recipe.AddTile(TileID.MythrilAnvil);

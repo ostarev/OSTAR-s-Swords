@@ -16,14 +16,14 @@ public class VenomArrowSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.7f;
-		Item.rare = 5;
+		Item.rare = ItemRarityID.Pink;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 22;
 		Item.useAnimation = 22;
 		Item.damage = 51;
 		Item.knockBack = 5f;
 		Item.UseSound = SoundID.Item5;
-		Item.shoot = 282;
+		Item.shoot = ProjectileID.VenomArrow;
 		Item.shootSpeed = 10f;
 		Item.value = 36500;
 		Item.autoReuse = true;
@@ -34,7 +34,7 @@ public class VenomArrowSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1341, 999);
+		recipe.AddIngredient(ItemID.VenomArrow, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 110);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace OSTARsSWORDS.Content.Items.Swords;
@@ -16,14 +17,14 @@ public class MagicSword : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.7f;
-		Item.rare = 3;
+		Item.rare = ItemRarityID.Orange;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
 		Item.useAnimation = 15;
 		Item.damage = 35;
 		Item.knockBack = 8.55f;
 		Item.UseSound = new SoundStyle("UniverseOfSwordsModOld/Sounds/Item/Spell", (SoundType)0);
-		Item.shoot = 173;
+		Item.shoot = ProjectileID.EnchantedBeam;
 		Item.shootSpeed = 10f;
 		Item.value = 110000;
 		Item.autoReuse = true;
@@ -35,7 +36,7 @@ public class MagicSword : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "TheForce", 1);
-		recipe.AddIngredient(113, 1);
+		recipe.AddIngredient(ItemID.MagicMissile, 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe.AddTile(TileID.Anvils);

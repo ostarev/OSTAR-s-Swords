@@ -12,8 +12,8 @@ public class SmolderBlade : ModItem
 		Item.width = 36;
 		Item.height = 42;
 		Item.scale = 1f;
-		Item.rare = 4;
-		Item.useStyle = 3;
+		Item.rare = ItemRarityID.LightRed;
+		Item.useStyle = ItemUseStyleID.Thrust;
 		Item.useTime = 15;
 		Item.useAnimation = 15;
 		Item.damage = 30;
@@ -29,7 +29,7 @@ public class SmolderBlade : ModItem
 	{
 		if (Main.rand.Next(1) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 127, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.Flare, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -37,7 +37,7 @@ public class SmolderBlade : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(175, 10);
+		recipe.AddIngredient(ItemID.HellstoneBar, 10);
 		recipe.AddIngredient(Mod, "SwordMatter", 15);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

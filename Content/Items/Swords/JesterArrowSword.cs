@@ -16,14 +16,14 @@ public class JesterArrowSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.3f;
-		Item.rare = 1;
+		Item.rare = ItemRarityID.Blue;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
 		Item.damage = 22;
 		Item.knockBack = 5f;
 		Item.UseSound = SoundID.Item5;
-		Item.shoot = 5;
+		Item.shoot = ProjectileID.JestersArrow;
 		Item.shootSpeed = 10f;
 		Item.value = 10500;
 		Item.autoReuse = true;
@@ -34,7 +34,7 @@ public class JesterArrowSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(51, 999);
+		recipe.AddIngredient(ItemID.JestersArrow, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 110);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

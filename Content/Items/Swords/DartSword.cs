@@ -12,14 +12,14 @@ public class DartSword : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 2f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
 		Item.damage = 58;
 		Item.knockBack = 5f;
 		Item.UseSound = SoundID.Item99;
-		Item.shoot = 267;
+		Item.shoot = ProjectileID.PoisonDartBlowgun;
 		Item.shootSpeed = 20f;
 		Item.value = 304200;
 		Item.autoReuse = true;

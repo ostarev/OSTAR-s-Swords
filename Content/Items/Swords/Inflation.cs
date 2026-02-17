@@ -16,7 +16,7 @@ public class Inflation : ModItem
 		Item.width = 64;
 		Item.height = 64;
 		Item.scale = 2.5f;
-		Item.rare = 10;
+		Item.rare = ItemRarityID.Red;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.knockBack = 10f;
 		Item.useTime = 32;
@@ -30,7 +30,7 @@ public class Inflation : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(73, 2000);
+		recipe.AddIngredient(ItemID.GoldCoin, 2000);
 		recipe.AddRecipeGroup("UniverseOfSwordsModOld:GoldCrates", 10);
 		recipe.AddRecipeGroup("UniverseOfSwordsModOld:GoldBricks", 999);
 		recipe.AddRecipeGroup("UniverseOfSwordsModOld:GoldSwords", 10);
@@ -41,6 +41,6 @@ public class Inflation : ModItem
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(72, 360, false);
+		target.AddBuff(BuffID.Midas, 360, false);
 	}
 }

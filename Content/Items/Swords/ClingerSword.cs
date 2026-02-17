@@ -12,14 +12,14 @@ public class ClingerSword : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 2.1f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 20;
 		Item.damage = 50;
 		Item.knockBack = 5f;
 		Item.UseSound = SoundID.Item100;
-		Item.shoot = 95;
+		Item.shoot = ProjectileID.CursedFlameFriendly;
 		Item.shootSpeed = 10f;
 		Item.value = Item.sellPrice(0, 10, 0, 0);
 		Item.autoReuse = true;

@@ -8,8 +8,8 @@ public class SOTUV4Projectile : ModProjectile
 {
 	public override void SetStaticDefaults()
 	{
-		Sets.TrailCacheLength[Projectile.type] = 5;
-		Sets.TrailingMode[Projectile.type] = 0;
+        ProjectileID.Sets.TrailCacheLength[Projectile.type] = 5;
+        ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
 	}
 
 	public override void SetDefaults()

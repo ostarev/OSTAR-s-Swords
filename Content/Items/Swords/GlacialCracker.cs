@@ -17,14 +17,14 @@ public class GlacialCracker : ModItem
 		Item.width = 81;
 		Item.height = 81;
 		Item.scale = 2f;
-		Item.rare = 10;
+		Item.rare = ItemRarityID.Red;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 23;
 		Item.useAnimation = 23;
 		Item.damage = 180;
 		Item.knockBack = 10f;
 		Item.UseSound = SoundID.Item28;
-		Item.shoot = 343;
+		Item.shoot = ProjectileID.NorthPoleSpear;
 		Item.shootSpeed = 70f;
 		Item.value = Item.sellPrice(0, 50, 0, 0);
 		Item.autoReuse = true;
@@ -35,14 +35,14 @@ public class GlacialCracker : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(724, 1);
-		recipe.AddIngredient(3289, 1);
-		recipe.AddIngredient(676, 2);
-		recipe.AddIngredient(1947, 1);
-		recipe.AddIngredient(2161, 10);
-		recipe.AddIngredient(1519, 2);
+		recipe.AddIngredient(ItemID.IceBlade, 1);
+		recipe.AddIngredient(ItemID.Amarok, 1);
+		recipe.AddIngredient(ItemID.Frostbrand, 2);
+		recipe.AddIngredient(ItemID.NorthPole, 1);
+		recipe.AddIngredient(ItemID.FrostCore, 10);
+		recipe.AddIngredient(ItemID.IceFeather, 2);
 		recipe.AddIngredient(ItemID.BrokenHeroSword, 1);
-		recipe.AddIngredient(664, 999);
+		recipe.AddIngredient(ItemID.IceBlock, 999);
 		recipe.AddTile(TileID.AncientManipulator);
 		recipe.Register();
 	}

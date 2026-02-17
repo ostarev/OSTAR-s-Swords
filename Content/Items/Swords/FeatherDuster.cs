@@ -13,7 +13,7 @@ public class FeatherDuster : ModItem
 		Item.width = 36;
 		Item.height = 36;
 		Item.scale = 1.2f;
-		Item.rare = 1;
+		Item.rare = ItemRarityID.Blue;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;

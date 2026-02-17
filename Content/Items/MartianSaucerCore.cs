@@ -1,4 +1,5 @@
 ﻿using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace OSTARsSWORDS.Content.Items;
@@ -15,7 +16,7 @@ public class MartianSaucerCore : ModItem
 		Item.height = 40;
 		Item.maxStack = 999;
 		Item.value = 400000;
-		Item.rare = 8;
+		Item.rare = ItemRarityID.Yellow;
 		Item.ResearchUnlockCount = 25;
 	}
 }

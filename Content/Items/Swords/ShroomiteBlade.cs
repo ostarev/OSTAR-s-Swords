@@ -12,7 +12,7 @@ public class ShroomiteBlade : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.9f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
 		Item.useAnimation = 15;
@@ -28,7 +28,7 @@ public class ShroomiteBlade : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1552, 10);
+		recipe.AddIngredient(ItemID.ShroomiteBar, 10);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();
 	}

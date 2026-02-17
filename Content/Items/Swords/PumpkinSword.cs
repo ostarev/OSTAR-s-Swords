@@ -12,7 +12,7 @@ public class PumpkinSword : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.4f;
-		Item.rare = 1;
+		Item.rare = ItemRarityID.Blue;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
@@ -28,7 +28,7 @@ public class PumpkinSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1725, 15);
+		recipe.AddIngredient(ItemID.Pumpkin, 15);
 		recipe.AddTile(TileID.WorkBenches);
 		recipe.Register();
 	}

@@ -16,14 +16,14 @@ public class WoodenArrowSword : ModItem
 		Item.width = 38;
 		Item.height = 38;
 		Item.scale = 1.1f;
-		Item.rare = 0;
+		Item.rare = ItemRarityID.White;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
 		Item.damage = 10;
 		Item.knockBack = 2f;
 		Item.UseSound = SoundID.Item5;
-		Item.shoot = 1;
+		Item.shoot = ProjectileID.WoodenArrowFriendly;
 		Item.shootSpeed = 10f;
 		Item.value = 3500;
 		Item.autoReuse = true;
@@ -34,7 +34,7 @@ public class WoodenArrowSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(40, 999);
+		recipe.AddIngredient(ItemID.WoodenArrow, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 80);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

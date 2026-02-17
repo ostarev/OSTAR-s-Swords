@@ -12,7 +12,7 @@ public class EmeraldSword : ModItem
 		Item.width = 38;
 		Item.height = 44;
 		Item.scale = 1f;
-		Item.rare = 2;
+		Item.rare = ItemRarityID.Green;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
@@ -29,7 +29,7 @@ public class EmeraldSword : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 61, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.GreenTorch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -37,7 +37,7 @@ public class EmeraldSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(179, 5);
+		recipe.AddIngredient(ItemID.Emerald, 5);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 	}

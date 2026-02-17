@@ -16,7 +16,7 @@ public class BiggoronSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.9f;
-		Item.rare = 2;
+		Item.rare = ItemRarityID.Green;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 40;
 		Item.useAnimation = 40;
@@ -33,13 +33,13 @@ public class BiggoronSword : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddRecipeGroup("IronBar", 10);
-		recipe.AddIngredient(19, 10);
+		recipe.AddIngredient(ItemID.GoldBar, 10);
 		recipe.AddIngredient(Mod, "SwordMatter", 60);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 		Recipe recipe2 = CreateRecipe();
 		recipe2.AddRecipeGroup("IronBar", 10);
-		recipe2.AddIngredient(706, 10);
+		recipe2.AddIngredient(ItemID.PlatinumBar, 10);
 		recipe2.AddIngredient(Mod, "SwordMatter", 60);
 		recipe2.AddTile(TileID.Anvils);
 		recipe2.Register();

@@ -16,7 +16,7 @@ public class WolfDestroyer : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.9f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 13;
 		Item.useAnimation = 13;

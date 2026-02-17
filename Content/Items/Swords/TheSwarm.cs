@@ -18,13 +18,13 @@ public class TheSwarm : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.7f;
-		Item.rare = 4;
+		Item.rare = ItemRarityID.LightRed;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 17;
 		Item.useAnimation = 17;
 		Item.damage = 15;
 		Item.knockBack = 5f;
-		Item.shoot = 181;
+		Item.shoot = ProjectileID.Bee;
 		Item.shootSpeed = 10f;
 		Item.UseSound = SoundID.Item1;
 		Item.value = 38500;
@@ -38,7 +38,7 @@ public class TheSwarm : ModItem
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
 		recipe.AddIngredient(Mod, "TheStinger", 1);
-		recipe.AddIngredient(1121, 1);
+		recipe.AddIngredient(ItemID.BeeGun, 1);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 	}

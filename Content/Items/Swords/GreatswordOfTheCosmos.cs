@@ -18,7 +18,7 @@ public class GreatswordOfTheCosmos : ModItem
 		Item.width = 100;
 		Item.height = 100;
 		Item.scale = 1.3f;
-		Item.rare = 11;
+		Item.rare = ItemRarityID.Purple;
 		Item.crit = 6;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 10;
@@ -26,7 +26,7 @@ public class GreatswordOfTheCosmos : ModItem
 		Item.damage = 440;
 		Item.knockBack = 9f;
 		Item.UseSound = SoundID.Item46;
-		Item.shoot = 424;
+		Item.shoot = ProjectileID.Meteor1;
 		Item.shootSpeed = 10f;
 		Item.value = Item.sellPrice(0, 50, 0, 0);
 		Item.autoReuse = true;
@@ -68,16 +68,16 @@ public class GreatswordOfTheCosmos : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(3065, 1);
+		recipe.AddIngredient(ItemID.StarWrath, 1);
 		recipe.AddIngredient(Mod, "Saphira", 1);
-		recipe.AddIngredient(3458, 30);
-		recipe.AddIngredient(3456, 30);
-		recipe.AddIngredient(3457, 30);
-		recipe.AddIngredient(3459, 30);
+		recipe.AddIngredient(ItemID.FragmentSolar, 30);
+		recipe.AddIngredient(ItemID.FragmentVortex, 30);
+		recipe.AddIngredient(ItemID.FragmentNebula, 30);
+		recipe.AddIngredient(ItemID.FragmentStardust, 30);
 		recipe.AddIngredient(Mod, "PowerOfTheGalactic", 1);
-		recipe.AddIngredient(2750, 1);
-		recipe.AddIngredient(117, 100);
-		recipe.AddIngredient(175, 100);
+		recipe.AddIngredient(ItemID.MeteorStaff, 1);
+		recipe.AddIngredient(ItemID.MeteoriteBar, 100);
+		recipe.AddIngredient(ItemID.HellstoneBar, 100);
 		recipe.AddIngredient(Mod, "Orichalcon", 10);
 		recipe.AddIngredient(ItemID.LuminiteBar, 50);
 		recipe.AddIngredient(Mod, "SwordMatter", 2000);

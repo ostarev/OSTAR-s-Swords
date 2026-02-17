@@ -16,7 +16,7 @@ public class Dawn : ModItem
 		Item.width = 64;
 		Item.height = 64;
 		Item.scale = 1f;
-		Item.rare = 4;
+		Item.rare = ItemRarityID.LightRed;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
@@ -32,7 +32,7 @@ public class Dawn : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(320, 30);
+		recipe.AddIngredient(ItemID.Feather, 30);
 		recipe.AddRecipeGroup("IronBar", 10);
 		recipe.AddIngredient(Mod, "SwordMatter", 50);
 		recipe.AddTile(TileID.Anvils);

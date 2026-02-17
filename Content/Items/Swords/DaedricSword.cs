@@ -16,7 +16,7 @@ public class DaedricSword : ModItem
 		Item.width = 48;
 		Item.height = 58;
 		Item.scale = 1f;
-		Item.rare = 10;
+		Item.rare = ItemRarityID.Red;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
@@ -43,7 +43,7 @@ public class DaedricSword : ModItem
 			Item.useAnimation = 20;
 			Item.knockBack = 6f;
 			Item.damage = 30;
-			Item.shoot = 0;
+			Item.shoot = ProjectileID.None;
 		}
 		else
 		{

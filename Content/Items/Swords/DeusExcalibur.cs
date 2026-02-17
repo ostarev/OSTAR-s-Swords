@@ -7,10 +7,6 @@ namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class DeusExcalibur : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.damage = 200;
@@ -24,7 +20,7 @@ public class DeusExcalibur : ModItem
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.knockBack = 12f;
 		Item.value = Item.sellPrice(1, 0, 0, 0);
-		Item.rare = 11;
+		Item.rare = ItemRarityID.Purple;
 		Item.scale = 2.5f;
 		Item.UseSound = SoundID.Item1;
 		Item.autoReuse = true;
@@ -35,11 +31,11 @@ public class DeusExcalibur : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 135, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.IceTorch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 			Main.dust[dust].velocity.X += (float)player.direction * 0f;
 			Main.dust[dust].velocity.Y += 0f;
-			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 242, 0f, 0f, 100, default(Color), 2f);
+			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.PinkTorch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 			Main.dust[dust].velocity.X += (float)player.direction * 0f;
 			Main.dust[dust].velocity.Y += 0f;
@@ -54,7 +50,7 @@ public class DeusExcalibur : ModItem
 		recipe.AddIngredient(Mod, "LunarOrb", 1);
 		recipe.AddIngredient(Mod, "Orichalcon", 5);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 8);
-		recipe.AddTile(TileID.DemonAltars);
+		recipe.AddTile(TileID.DemonAltar);
 		recipe.Register();
 	}
 

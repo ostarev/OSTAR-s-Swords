@@ -12,7 +12,7 @@ public class TopazSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.2f;
-		Item.rare = 8;
+		Item.rare = ItemRarityID.Yellow;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
@@ -29,7 +29,7 @@ public class TopazSword : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 162, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.HeatRay, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -37,7 +37,7 @@ public class TopazSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(180, 5);
+		recipe.AddIngredient(ItemID.Topaz, 5);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 	}

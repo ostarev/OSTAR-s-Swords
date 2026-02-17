@@ -16,7 +16,7 @@ public class GelBlade : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 0.9f;
-		Item.rare = 0;
+		Item.rare = ItemRarityID.White;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
@@ -32,13 +32,13 @@ public class GelBlade : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(23, 20);
+		recipe.AddIngredient(ItemID.Gel, 20);
 		recipe.AddTile(TileID.WorkBenches);
 		recipe.Register();
 	}
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(137, 360, false);
+		target.AddBuff(BuffID.Slimed, 360, false);
 	}
 }

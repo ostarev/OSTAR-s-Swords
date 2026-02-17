@@ -29,10 +29,10 @@ public class Nightlight : ModProjectile
 	{
 		if (Main.rand.Next(1) == 0)
 		{
-			Dust obj = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, 242, 0f, 0f, 0, default(Color), 1f);
+			Dust obj = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.PinkTorch, 0f, 0f, 0, default(Color), 1f);
 			obj.noGravity = true;
 			obj.scale = 1f;
-			Dust obj2 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, 21, 0f, 0f, 0, default(Color), 1f);
+			Dust obj2 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.VilePowder, 0f, 0f, 0, default(Color), 1f);
 			obj2.noGravity = true;
 			obj2.scale = 1f;
 		}
@@ -42,8 +42,8 @@ public class Nightlight : ModProjectile
 	{
 		for (int i = 0; i < 10; i++)
 		{
-			Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, 242, Projectile.oldVelocity.X * 0.5f, Projectile.oldVelocity.Y * 0.5f, 0, default(Color), 1f);
-			Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, 21, Projectile.oldVelocity.X * 0.1f, Projectile.oldVelocity.Y * 0.1f, 0, default(Color), 1f);
+			Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.PinkTorch, Projectile.oldVelocity.X * 0.5f, Projectile.oldVelocity.Y * 0.5f, 0, default(Color), 1f);
+			Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.VilePowder, Projectile.oldVelocity.X * 0.1f, Projectile.oldVelocity.Y * 0.1f, 0, default(Color), 1f);
 		}
 		SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
 	}

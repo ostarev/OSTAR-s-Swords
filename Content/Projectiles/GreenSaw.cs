@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace OSTARsSWORDS.Content.Projectiles;
@@ -19,17 +20,17 @@ public class GreenSaw : ModProjectile
 		Projectile.alpha = 1;
 		Projectile.ignoreWater = true;
 		Projectile.tileCollide = false;
-		Projectile.aiStyle = 71;
+		Projectile.aiStyle = ProjAIStyleID.Typhoon;
 	}
 
 	public override void PostAI()
 	{
 		if (Main.rand.Next(1) == 0)
 		{
-			Dust obj = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, 74, 0f, 0f, 0, default(Color), 1f);
+			Dust obj = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.GreenFairy, 0f, 0f, 0, default(Color), 1f);
 			obj.noGravity = true;
 			obj.scale = 1f;
-			Dust obj2 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, 74, 0f, 0f, 0, default(Color), 1f);
+			Dust obj2 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.GreenFairy, 0f, 0f, 0, default(Color), 1f);
 			obj2.noGravity = true;
 			obj2.scale = 3f;
 		}

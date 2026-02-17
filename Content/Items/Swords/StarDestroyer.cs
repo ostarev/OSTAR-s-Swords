@@ -18,14 +18,14 @@ public class StarDestroyer : ModItem
 		Item.width = 60;
 		Item.height = 60;
 		Item.scale = 1.4f;
-		Item.rare = 10;
+		Item.rare = ItemRarityID.Red;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 10;
 		Item.useAnimation = 10;
 		Item.damage = 100;
 		Item.knockBack = 4.5f;
 		Item.UseSound = SoundID.Item88;
-		Item.shoot = 645;
+		Item.shoot = ProjectileID.LunarFlare;
 		Item.shootSpeed = 30f;
 		Item.value = 750000;
 		Item.autoReuse = true;
@@ -67,13 +67,13 @@ public class StarDestroyer : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(3570, 1);
+		recipe.AddIngredient(ItemID.LunarFlareBook, 1);
 		recipe.AddIngredient(ItemID.LuminiteBar, 10);
 		recipe.AddIngredient(Mod, "Orichalcon", 2);
-		recipe.AddIngredient(3458, 5);
-		recipe.AddIngredient(3456, 5);
-		recipe.AddIngredient(3457, 5);
-		recipe.AddIngredient(3459, 5);
+		recipe.AddIngredient(ItemID.FragmentSolar, 5);
+		recipe.AddIngredient(ItemID.FragmentVortex, 5);
+		recipe.AddIngredient(ItemID.FragmentNebula, 5);
+		recipe.AddIngredient(ItemID.FragmentStardust, 5);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe.AddIngredient(Mod, "LunarOrb", 1);
 		recipe.AddTile(TileID.AncientManipulator);

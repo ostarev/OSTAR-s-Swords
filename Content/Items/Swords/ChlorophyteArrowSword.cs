@@ -16,14 +16,14 @@ public class ChlorophyteArrowSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.7f;
-		Item.rare = 5;
+		Item.rare = ItemRarityID.Pink;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
 		Item.damage = 68;
 		Item.knockBack = 8f;
 		Item.UseSound = SoundID.Item5;
-		Item.shoot = 225;
+		Item.shoot = ProjectileID.ChlorophyteArrow;
 		Item.shootSpeed = 10f;
 		Item.value = 78500;
 		Item.autoReuse = true;
@@ -34,7 +34,7 @@ public class ChlorophyteArrowSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1235, 999);
+		recipe.AddIngredient(ItemID.ChlorophyteArrow, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 110);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();

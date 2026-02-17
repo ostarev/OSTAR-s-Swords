@@ -16,7 +16,7 @@ public class GoblinKnife : ModItem
 		Item.width = 20;
 		Item.height = 20;
 		Item.scale = 1.5f;
-		Item.rare = 2;
+		Item.rare = ItemRarityID.Green;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 9;
 		Item.useAnimation = 9;

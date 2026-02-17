@@ -16,7 +16,7 @@ public class Golem : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 2f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 21;
 		Item.useAnimation = 21;
@@ -24,7 +24,7 @@ public class Golem : ModItem
 		Item.knockBack = 10f;
 		Item.UseSound = SoundID.Item12;
 		Item.value = 280000;
-		Item.shoot = 260;
+		Item.shoot = ProjectileID.HeatRay;
 		Item.shootSpeed = 10f;
 		Item.autoReuse = true;
 		Item.DamageType = DamageClass.Melee;
@@ -33,6 +33,6 @@ public class Golem : ModItem
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(72, 360, false);
+		target.AddBuff(BuffID.Midas, 360, false);
 	}
 }

@@ -12,14 +12,14 @@ public class DevilBlade : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 2.2f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 18;
 		Item.useAnimation = 18;
 		Item.damage = 74;
 		Item.knockBack = 7f;
 		Item.UseSound = SoundID.Item8;
-		Item.shoot = 114;
+		Item.shoot = ProjectileID.UnholyTridentFriendly;
 		Item.shootSpeed = 10f;
 		Item.value = 351200;
 		Item.autoReuse = true;

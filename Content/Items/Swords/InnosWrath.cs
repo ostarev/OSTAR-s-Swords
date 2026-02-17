@@ -16,7 +16,7 @@ public class InnosWrath : ModItem
 		Item.width = 124;
 		Item.height = 124;
 		Item.scale = 1.5f;
-		Item.rare = 10;
+		Item.rare = ItemRarityID.Red;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
@@ -31,7 +31,7 @@ public class InnosWrath : ModItem
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(72, 360, false);
+		target.AddBuff(BuffID.Midas, 360, false);
 		target.AddBuff(BuffID.Ichor, 360, false);
 		target.AddBuff(BuffID.Frostburn, 360, false);
 		target.AddBuff(BuffID.OnFire, 360, false);

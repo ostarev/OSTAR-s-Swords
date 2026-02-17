@@ -16,7 +16,7 @@ public class Orcrist : ModItem
 		Item.width = 64;
 		Item.height = 64;
 		Item.scale = 1f;
-		Item.rare = 5;
+		Item.rare = ItemRarityID.Pink;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
 		Item.useAnimation = 15;
@@ -33,12 +33,12 @@ public class Orcrist : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
-		recipe.AddIngredient(1199, 1);
+		recipe.AddIngredient(ItemID.TitaniumSword, 1);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();
 		Recipe recipe2 = CreateRecipe();
 		recipe2.AddIngredient(Mod, "UpgradeMatter", 1);
-		recipe2.AddIngredient(482, 1);
+		recipe2.AddIngredient(ItemID.AdamantiteSword, 1);
 		recipe2.AddTile(TileID.MythrilAnvil);
 		recipe2.Register();
 	}

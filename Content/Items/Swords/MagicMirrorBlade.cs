@@ -79,7 +79,7 @@ public class MagicMirrorBlade : ModItem
 				// Post-teleport dust
 				for (int i = 0; i < 70; i++)
 				{
-					Dust.NewDust(player.position, player.width, player.height, 15, 0f, 0f, 150, default(Color), 1.5f);
+					Dust.NewDust(player.position, player.width, player.height, DustID.MagicMirror, 0f, 0f, 150, default(Color), 1.5f);
 				}
 			}
 		}

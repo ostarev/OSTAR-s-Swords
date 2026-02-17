@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.Enums;
 using Terraria.GameContent;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace OSTARsSWORDS.Content.Projectiles;
@@ -135,7 +136,7 @@ public class GreenSOTUBeam : ModProjectile
 			for (int j = 0; j < chargeFact + 1; j++)
 			{
 				Vector2 spawn = spawnPos + Utils.ToRotationVector2((float)Main.rand.NextDouble() * 6.28f) * (12f - (float)(chargeFact * 2));
-				Dust obj = Main.dust[Dust.NewDust(pos, 20, 20, 74, Projectile.velocity.X / 2f, Projectile.velocity.Y / 2f, 0, default(Color), 1f)];
+				Dust obj = Main.dust[Dust.NewDust(pos, 20, 20, DustID.GreenFairy, Projectile.velocity.X / 2f, Projectile.velocity.Y / 2f, 0, default(Color), 1f)];
 				obj.velocity = Vector2.Normalize(spawnPos - spawn) * 1.5f * (10f - (float)chargeFact * 2f) / 10f;
 				obj.noGravity = true;
 				obj.scale = 2f;
@@ -166,10 +167,10 @@ public class GreenSOTUBeam : ModProjectile
 			float num2 = (float)(Main.rand.NextDouble() * 0.800000011920929 + 1.0);
 			dustVel.X = (float)Math.Cos(num1) * num2;
 			dustVel.Y = (float)Math.Sin(num1) * num2;
-			Dust obj2 = Main.dust[Dust.NewDust(dustPos, 0, 0, 74, dustVel.X, dustVel.Y, 0, default(Color), 1f)];
+			Dust obj2 = Main.dust[Dust.NewDust(dustPos, 0, 0, DustID.GreenFairy, dustVel.X, dustVel.Y, 0, default(Color), 1f)];
 			obj2.noGravity = true;
 			obj2.scale = 1f;
-			Dust obj3 = Dust.NewDustDirect(player.Center, 0, 0, 74, (0f - unit.X) * Distance, (0f - unit.Y) * Distance, 0, default(Color), 1f);
+			Dust obj3 = Dust.NewDustDirect(player.Center, 0, 0, DustID.GreenFairy, (0f - unit.X) * Distance, (0f - unit.Y) * Distance, 0, default(Color), 1f);
 			obj3.fadeIn = 0f;
 			obj3.noGravity = true;
 			obj3.scale = 1f;
@@ -177,11 +178,11 @@ public class GreenSOTUBeam : ModProjectile
 		if (Main.rand.Next(5) == 0)
 		{
 			Vector2 offset2 = Utils.RotatedBy(Projectile.velocity, 1.5700000524520874, default(Vector2)) * ((float)Main.rand.NextDouble() - 0.5f) * (float)Projectile.width;
-			Dust dust = Main.dust[Dust.NewDust(dustPos + offset2 - Vector2.One * 4f, 8, 8, 74, 0f, 0f, 100, default(Color), 1.5f)];
+			Dust dust = Main.dust[Dust.NewDust(dustPos + offset2 - Vector2.One * 4f, 8, 8, DustID.GreenFairy, 0f, 0f, 100, default(Color), 1.5f)];
 			Dust obj4 = dust;
 			obj4.velocity *= 0.5f;
 			dust.velocity.Y = 0f - Math.Abs(dust.velocity.Y);
-			dust = Main.dust[Dust.NewDust(player.Center + 55f * unit, 8, 8, 74, 0f, 0f, 100, default(Color), 1.5f)];
+			dust = Main.dust[Dust.NewDust(player.Center + 55f * unit, 8, 8, DustID.GreenFairy, 0f, 0f, 100, default(Color), 1.5f)];
 			Dust obj5 = dust;
 			obj5.velocity *= 0.5f;
 			dust.velocity.Y = 0f - Math.Abs(dust.velocity.Y);

@@ -12,7 +12,7 @@ public class ClaySword : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.6f;
-		Item.rare = 0;
+		Item.rare = ItemRarityID.White;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
@@ -28,7 +28,7 @@ public class ClaySword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(133, 15);
+		recipe.AddIngredient(ItemID.ClayBlock, 15);
 		recipe.AddTile(TileID.WorkBenches);
 		recipe.Register();
 	}

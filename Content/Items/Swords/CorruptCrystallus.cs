@@ -13,7 +13,7 @@ public class CorruptCrystallus : ModItem
 		Item.width = 44;
 		Item.height = 54;
 		Item.scale = 1f;
-		Item.rare = 2;
+		Item.rare = ItemRarityID.Green;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
@@ -32,7 +32,7 @@ public class CorruptCrystallus : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 14, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.Demonite, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -41,8 +41,8 @@ public class CorruptCrystallus : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "Crystallus", 1);
-		recipe.AddIngredient(57, 12);
-		recipe.AddIngredient(86, 8);
+		recipe.AddIngredient(ItemID.DemoniteBar, 12);
+		recipe.AddIngredient(ItemID.ShadowScale, 8);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 	}

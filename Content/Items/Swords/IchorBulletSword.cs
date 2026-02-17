@@ -16,7 +16,7 @@ public class IchorBulletSword : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.9f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 13;
 		Item.useAnimation = 13;
@@ -24,7 +24,7 @@ public class IchorBulletSword : ModItem
 		Item.knockBack = 6.1f;
 		Item.UseSound = SoundID.Item11;
 		Item.value = 210000;
-		Item.shoot = 279;
+		Item.shoot = ProjectileID.IchorBullet;
 		Item.shootSpeed = 20f;
 		Item.autoReuse = true;
 		Item.DamageType = DamageClass.Melee;
@@ -34,7 +34,7 @@ public class IchorBulletSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1335, 999);
+		recipe.AddIngredient(ItemID.IchorBullet, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

@@ -17,7 +17,7 @@ public class PoisonCrystallus : ModItem
 		Item.width = 44;
 		Item.height = 54;
 		Item.scale = 1f;
-		Item.rare = 3;
+		Item.rare = ItemRarityID.Orange;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
@@ -36,7 +36,7 @@ public class PoisonCrystallus : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 39, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.JungleGrass, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -45,14 +45,14 @@ public class PoisonCrystallus : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "CorruptCrystallus", 1);
-		recipe.AddIngredient(209, 14);
-		recipe.AddIngredient(331, 9);
+		recipe.AddIngredient(ItemID.Stinger, 14);
+		recipe.AddIngredient(ItemID.JungleSpores, 9);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 		Recipe recipe2 = CreateRecipe();
 		recipe2.AddIngredient(Mod, "CrimsonCrystallus", 1);
-		recipe2.AddIngredient(209, 14);
-		recipe2.AddIngredient(331, 9);
+		recipe2.AddIngredient(ItemID.Stinger, 14);
+		recipe2.AddIngredient(ItemID.JungleSpores, 9);
 		recipe2.AddTile(TileID.Anvils);
 		recipe2.Register();
 	}

@@ -11,10 +11,6 @@ namespace OSTARsSWORDS.Content.Projectiles;
 
 public class DoubleBladedLightsaberProjectile : ModProjectile
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Projectile.width = 52;
@@ -66,7 +62,8 @@ public class DoubleBladedLightsaberProjectile : ModProjectile
 	public override bool PreDraw(ref Color lightColor)
 	{
 		Texture2D texture = TextureAssets.Projectile[Projectile.type].Value;
-		Main.spriteBatch.Draw(texture, Projectile.Center - Main.screenPosition, (Rectangle?)null, Color.White, Projectile.rotation, new Vector2((float)(texture.Width / 2), (float)(texture.Height / 2)), 1f, (SpriteEffects)(Projectile.spriteDirection = -1), 0f);
+		Main.spriteBatch.Draw(texture, Projectile.Center - Main.screenPosition, (Rectangle?)null, Color.White, Projectile.rotation, 
+			new Vector2((float)(texture.Width / 2), (float)(texture.Height / 2)), 1f, (SpriteEffects)(Projectile.spriteDirection = -1), 0f);
 		return false;
 	}
 }

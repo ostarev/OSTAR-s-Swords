@@ -12,7 +12,7 @@ public class AmberSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.5f;
-		Item.rare = 2;
+		Item.rare = ItemRarityID.Green;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
@@ -28,7 +28,7 @@ public class AmberSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(999, 10);
+		recipe.AddIngredient(ItemID.Amber, 10);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 	}

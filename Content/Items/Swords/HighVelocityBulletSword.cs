@@ -16,7 +16,7 @@ public class HighVelocityBulletSword : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.8f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
 		Item.useAnimation = 15;
@@ -24,7 +24,7 @@ public class HighVelocityBulletSword : ModItem
 		Item.knockBack = 4.1f;
 		Item.UseSound = SoundID.Item11;
 		Item.value = 130000;
-		Item.shoot = 242;
+		Item.shoot = ProjectileID.BulletHighVelocity;
 		Item.shootSpeed = 20f;
 		Item.autoReuse = true;
 		Item.DamageType = DamageClass.Melee;
@@ -34,7 +34,7 @@ public class HighVelocityBulletSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1302, 999);
+		recipe.AddIngredient(ItemID.HighVelocityBullet, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

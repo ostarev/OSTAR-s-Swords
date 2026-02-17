@@ -4,21 +4,18 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
 using OSTARsSWORDS.Content.Projectiles;
+using Terraria.ID;
 
 namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class SwordOfTheMultiverse : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.width = 555;
 		Item.height = 555;
 		Item.scale = 1f;
-		Item.rare = 11;
+		Item.rare = ItemRarityID.Purple;
 		Item.crit = 65;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.axe = 1000;

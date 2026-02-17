@@ -15,7 +15,7 @@ public class DragonsDeath : ModItem
 		Item.width = 128;
 		Item.height = 128;
 		Item.scale = 1f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;

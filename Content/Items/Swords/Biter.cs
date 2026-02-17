@@ -16,7 +16,7 @@ public class Biter : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.7f;
-		Item.rare = 3;
+		Item.rare = ItemRarityID.Orange;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 17;
 		Item.useAnimation = 17;

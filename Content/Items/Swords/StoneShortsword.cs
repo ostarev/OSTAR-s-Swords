@@ -11,8 +11,8 @@ public class StoneShortsword : ModItem
 		Item.width = 38;
 		Item.height = 38;
 		Item.scale = 1f;
-		Item.rare = 1;
-		Item.useStyle = 3;
+		Item.rare = ItemRarityID.Blue;
+		Item.useStyle = ItemUseStyleID.Thrust;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
 		Item.damage = 5;
@@ -27,7 +27,7 @@ public class StoneShortsword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(3, 15);
+		recipe.AddIngredient(ItemID.StoneBlock, 15);
 		recipe.AddTile(TileID.WorkBenches);
 		recipe.Register();
 	}

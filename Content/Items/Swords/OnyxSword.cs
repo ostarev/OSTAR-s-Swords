@@ -16,13 +16,13 @@ public class OnyxSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.5f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
 		Item.damage = 40;
 		Item.knockBack = 7.7f;
-		Item.shoot = 661;
+		Item.shoot = ProjectileID.BlackBolt;
 		Item.shootSpeed = 15f;
 		Item.UseSound = SoundID.Item1;
 		Item.value = 70500;
@@ -36,7 +36,7 @@ public class OnyxSword : ModItem
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "SwordMatter", 170);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
-		recipe.AddIngredient(3788, 1);
+		recipe.AddIngredient(ItemID.OnyxBlaster, 1);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();
 	}

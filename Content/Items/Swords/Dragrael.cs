@@ -9,16 +9,12 @@ namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class Dragrael : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.width = 58;
 		Item.height = 58;
 		Item.scale = 1.1f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
 		Item.useAnimation = 15;
@@ -26,7 +22,7 @@ public class Dragrael : ModItem
 		Item.knockBack = 6f;
 		Item.UseSound = SoundID.Item1;
 		Item.value = 780000;
-		Item.shoot = 132;
+		Item.shoot = ProjectileID.TerraBeam;
 		Item.shootSpeed = 20f;
 		Item.autoReuse = true;
 		Item.DamageType = DamageClass.Melee;
@@ -37,11 +33,11 @@ public class Dragrael : ModItem
 	{
 		if (Main.rand.Next(5) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 74, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.GreenFairy, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
-			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 182, 0f, 0f, 100, default(Color), 2f);
+			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.TheDestroyer, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
-			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 111, 0f, 0f, 100, default(Color), 2f);
+			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.HallowSpray, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -52,16 +48,16 @@ public class Dragrael : ModItem
 		recipe.AddIngredient(Mod, "ZarRoc", 1);
 		recipe.AddIngredient(Mod, "Tamerlein", 1);
 		recipe.AddIngredient(Mod, "Brisingr", 1);
-		recipe.AddIngredient(521, 10);
-		recipe.AddIngredient(520, 10);
-		recipe.AddIngredient(549, 10);
-		recipe.AddIngredient(547, 10);
-		recipe.AddIngredient(548, 10);
-		recipe.AddIngredient(501, 25);
+		recipe.AddIngredient(ItemID.SoulofNight, 10);
+		recipe.AddIngredient(ItemID.SoulofLight, 10);
+		recipe.AddIngredient(ItemID.SoulofSight, 10);
+		recipe.AddIngredient(ItemID.SoulofFright, 10);
+		recipe.AddIngredient(ItemID.SoulofMight, 10);
+		recipe.AddIngredient(ItemID.PixieDust, 25);
 		recipe.AddIngredient(Mod, "SwordMatter", 150);
 		recipe.AddIngredient(Mod, "Orichalcon", 1);
 		recipe.AddIngredient(ItemID.TerraBlade, 1);
-		recipe.AddTile(TileID.DemonAltars);
+		recipe.AddTile(TileID.DemonAltar);
 		recipe.Register();
 	}
 
@@ -81,8 +77,8 @@ public class Dragrael : ModItem
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(72, 360, false);
-		target.AddBuff(153, 360, false);
+		target.AddBuff(BuffID.Midas, 360, false);
+		target.AddBuff(BuffID.ShadowFlame, 360, false);
 		target.AddBuff(BuffID.Confused, 360, false);
 		target.AddBuff(BuffID.OnFire, 360, false);
 		target.AddBuff(BuffID.Frostburn, 360, false);

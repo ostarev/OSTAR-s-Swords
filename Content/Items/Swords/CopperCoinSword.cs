@@ -16,14 +16,14 @@ public class CopperCoinSword : ModItem
 		Item.width = 56;
 		Item.height = 56;
 		Item.scale = 0.8f;
-		Item.rare = 0;
+		Item.rare = ItemRarityID.White;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
 		Item.damage = 2;
 		Item.knockBack = 2f;
 		Item.UseSound = SoundID.Item11;
-		Item.shoot = 158;
+		Item.shoot = ProjectileID.CopperCoin;
 		Item.shootSpeed = 10f;
 		Item.value = 500;
 		Item.autoReuse = true;
@@ -34,7 +34,7 @@ public class CopperCoinSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(71, 99);
+		recipe.AddIngredient(ItemID.CopperCoin, 99);
 		recipe.AddIngredient(Mod, "SwordMatter", 10);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

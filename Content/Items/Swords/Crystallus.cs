@@ -16,7 +16,7 @@ public class Crystallus : ModItem
 		Item.width = 40;
 		Item.height = 46;
 		Item.scale = 1f;
-		Item.rare = 1;
+		Item.rare = ItemRarityID.Blue;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
@@ -34,7 +34,7 @@ public class Crystallus : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 20, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.PurificationPowder, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -42,7 +42,7 @@ public class Crystallus : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(109, 5);
+		recipe.AddIngredient(ItemID.ManaCrystal, 5);
 		recipe.AddIngredient(ItemID.FallenStar, 3);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

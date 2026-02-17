@@ -12,13 +12,13 @@ public class Fireball : ModItem
 		Item.width = 54;
 		Item.height = 54;
 		Item.scale = 1.2f;
-		Item.rare = 4;
+		Item.rare = ItemRarityID.LightRed;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 26;
 		Item.useAnimation = 26;
 		Item.damage = 31;
 		Item.knockBack = 5f;
-		Item.shoot = 15;
+		Item.shoot = ProjectileID.BallofFire;
 		Item.shootSpeed = 10f;
 		Item.UseSound = SoundID.Item20;
 		Item.value = Item.sellPrice(0, 3, 0, 0);
@@ -31,11 +31,11 @@ public class Fireball : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 6, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.Torch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 			Main.dust[dust].velocity.X += (float)player.direction * 0f;
 			Main.dust[dust].velocity.Y += 0f;
-			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 6, 0f, 0f, 100, default(Color), 2f);
+			dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.Torch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 			Main.dust[dust].velocity.X += (float)player.direction * 0f;
 			Main.dust[dust].velocity.Y += 0f;

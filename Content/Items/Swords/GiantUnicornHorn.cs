@@ -16,7 +16,7 @@ public class GiantUnicornHorn : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.7f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
 		Item.useAnimation = 15;

@@ -18,11 +18,11 @@ public class PrismSword : ModItem
 		Item.height = 35;
 		Item.scale = 1.5f;
 		Item.channel = true;
-		Item.rare = 10;
+		Item.rare = ItemRarityID.Red;
 		Item.useStyle = ItemUseStyleID.Shoot;
 		Item.damage = 120;
 		Item.UseSound = SoundID.Item67;
-		Item.shoot = 633;
+		Item.shoot = ProjectileID.LastPrism;
 		Item.shootSpeed = 120f;
 		Item.value = 600000;
 		Item.autoReuse = true;
@@ -33,17 +33,17 @@ public class PrismSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1524, 1);
-		recipe.AddIngredient(1526, 1);
-		recipe.AddIngredient(1525, 1);
-		recipe.AddIngredient(1523, 1);
-		recipe.AddIngredient(1522, 1);
-		recipe.AddIngredient(1527, 1);
-		recipe.AddIngredient(502, 50);
-		recipe.AddIngredient(29, 3);
-		recipe.AddIngredient(109, 3);
-		recipe.AddIngredient(3571, 1);
-		recipe.AddIngredient(3541, 1);
+		recipe.AddIngredient(ItemID.LargeSapphire, 1);
+		recipe.AddIngredient(ItemID.LargeRuby, 1);
+		recipe.AddIngredient(ItemID.LargeEmerald, 1);
+		recipe.AddIngredient(ItemID.LargeTopaz, 1);
+		recipe.AddIngredient(ItemID.LargeAmethyst, 1);
+		recipe.AddIngredient(ItemID.LargeDiamond, 1);
+		recipe.AddIngredient(ItemID.CrystalShard, 50);
+		recipe.AddIngredient(ItemID.LifeCrystal, 3);
+		recipe.AddIngredient(ItemID.ManaCrystal, 3);
+		recipe.AddIngredient(ItemID.RainbowCrystalStaff, 1);
+		recipe.AddIngredient(ItemID.LastPrism, 1);
 		recipe.AddIngredient(ItemID.LuminiteBar, 10);
 		recipe.AddTile(TileID.CrystalBall);
 		recipe.Register();
@@ -51,7 +51,7 @@ public class PrismSword : ModItem
 
 	public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo spawnSource, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 	{
-		Projectile.NewProjectileDirect((IEntitySource)(object)spawnSource, position, velocity, 633, damage, knockback, player.whoAmI, 0f, 0f, 0f).DamageType = DamageClass.Melee;
+		Projectile.NewProjectileDirect((IEntitySource)(object)spawnSource, position, velocity, ProjectileID.LastPrism, damage, knockback, player.whoAmI, 0f, 0f, 0f).DamageType = DamageClass.Melee;
 		return false;
 	}
 }

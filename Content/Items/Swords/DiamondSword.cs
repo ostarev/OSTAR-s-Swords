@@ -12,7 +12,7 @@ public class DiamondSword : ModItem
 		Item.width = 42;
 		Item.height = 42;
 		Item.scale = 1f;
-		Item.rare = 5;
+		Item.rare = ItemRarityID.Pink;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
@@ -29,7 +29,7 @@ public class DiamondSword : ModItem
 	{
 		if (Main.rand.Next(5) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 63, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.WhiteTorch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -37,7 +37,7 @@ public class DiamondSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(182, 5);
+		recipe.AddIngredient(ItemID.Diamond, 5);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 	}

@@ -17,7 +17,7 @@ public class UltraMachine : ModItem
 		Item.width = 132;
 		Item.height = 132;
 		Item.scale = 1.4f;
-		Item.rare = 10;
+		Item.rare = ItemRarityID.Red;
 		Item.crit = 6;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
@@ -25,7 +25,7 @@ public class UltraMachine : ModItem
 		Item.damage = 120;
 		Item.knockBack = 10f;
 		Item.UseSound = SoundID.Item62;
-		Item.shoot = 616;
+		Item.shoot = ProjectileID.VortexBeaterRocket;
 		Item.shootSpeed = 30f;
 		Item.value = Item.sellPrice(1, 0, 0, 0);
 		Item.autoReuse = true;
@@ -39,31 +39,31 @@ public class UltraMachine : ModItem
 		recipe.AddIngredient(Mod, "Machine", 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 1000);
 		recipe.AddIngredient(Mod, "DamascusBar", 20);
-		recipe.AddIngredient(1367, 1);
-		recipe.AddIngredient(1366, 1);
-		recipe.AddIngredient(1368, 1);
-		recipe.AddIngredient(1369, 1);
-		recipe.AddIngredient(3261, 20);
+		recipe.AddIngredient(ItemID.SkeletronPrimeTrophy, 1);
+		recipe.AddIngredient(ItemID.DestroyerTrophy, 1);
+		recipe.AddIngredient(ItemID.RetinazerTrophy, 1);
+		recipe.AddIngredient(ItemID.SpazmatismTrophy, 1);
+		recipe.AddIngredient(ItemID.SpectreBar, 20);
 		recipe.AddIngredient(Mod, "PrimeSword", 1);
 		recipe.AddIngredient(Mod, "DestroyerSword", 1);
 		recipe.AddIngredient(Mod, "TwinsSword", 1);
 		recipe.AddIngredient(Mod, "MartianSaucerCore", 1);
-		recipe.AddIngredient(1552, 10);
-		recipe.AddIngredient(1293, 5);
+		recipe.AddIngredient(ItemID.ShroomiteBar, 10);
+		recipe.AddIngredient(ItemID.LihzahrdPowerCell, 5);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();
 	}
 
 	public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 	{
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, 440, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, 134, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y + 2f, velocity.X, velocity.Y + 2f, 134, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y + 2f, velocity.X, velocity.Y + 2f, 440, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y + 2f, velocity.X, velocity.Y + 2f, 616, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y - 2f, velocity.X, velocity.Y - 2f, 134, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y - 2f, velocity.X, velocity.Y - 2f, 440, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y - 2f, velocity.X, velocity.Y - 2f, 616, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ProjectileID.LaserMachinegunLaser, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ProjectileID.RocketI, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y + 2f, velocity.X, velocity.Y + 2f, ProjectileID.RocketI, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y + 2f, velocity.X, velocity.Y + 2f, ProjectileID.LaserMachinegunLaser, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y + 2f, velocity.X, velocity.Y + 2f, ProjectileID.VortexBeaterRocket, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y - 2f, velocity.X, velocity.Y - 2f, ProjectileID.RocketI, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y - 2f, velocity.X, velocity.Y - 2f, ProjectileID.LaserMachinegunLaser, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y - 2f, velocity.X, velocity.Y - 2f, ProjectileID.VortexBeaterRocket, damage, knockback, player.whoAmI, 0f, 0f, 0f);
 		return true;
 	}
 }

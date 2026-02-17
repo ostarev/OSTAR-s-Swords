@@ -16,14 +16,14 @@ public class MagnetSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 2.1f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
 		Item.damage = 74;
 		Item.knockBack = 10f;
 		Item.UseSound = SoundID.Item43;
-		Item.shoot = 254;
+		Item.shoot = ProjectileID.MagnetSphereBall;
 		Item.shootSpeed = 10f;
 		Item.value = 660000;
 		Item.autoReuse = true;

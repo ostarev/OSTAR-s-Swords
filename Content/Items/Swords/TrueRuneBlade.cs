@@ -17,14 +17,14 @@ public class TrueRuneBlade : ModItem
 		Item.width = 68;
 		Item.height = 68;
 		Item.scale = 1.2f;
-		Item.rare = 10;
+		Item.rare = ItemRarityID.Red;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
 		Item.useAnimation = 15;
 		Item.damage = 60;
 		Item.knockBack = 7f;
 		Item.UseSound = SoundID.Item60;
-		Item.shoot = 280;
+		Item.shoot = ProjectileID.GoldenShowerFriendly;
 		Item.shootSpeed = 20f;
 		Item.value = Item.sellPrice(0, 6, 0, 0);
 		Item.expert = true;
@@ -52,7 +52,7 @@ public class TrueRuneBlade : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 204, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.TreasureSparkle, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 			Main.dust[dust].velocity.X -= (float)player.direction * 0f;
 			Main.dust[dust].velocity.Y -= 0f;
@@ -61,10 +61,10 @@ public class TrueRuneBlade : ModItem
 
 	public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 	{
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, 118, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, 15, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, 497, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, 95, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ProjectileID.IceBolt, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ProjectileID.BallofFire, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ProjectileID.ShadowFlameKnife, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ProjectileID.CursedFlameFriendly, damage, knockback, player.whoAmI, 0f, 0f, 0f);
 		return true;
 	}
 

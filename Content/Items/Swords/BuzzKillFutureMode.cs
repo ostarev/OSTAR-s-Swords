@@ -9,16 +9,12 @@ namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class BuzzKillFutureMode : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.3f;
-		Item.rare = 10;
+		Item.rare = ItemRarityID.Red;
 		Item.crit = 4;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
@@ -26,7 +22,7 @@ public class BuzzKillFutureMode : ModItem
 		Item.damage = 50;
 		Item.knockBack = 1f;
 		Item.UseSound = SoundID.Item1;
-		Item.shoot = 183;
+		Item.shoot = ProjectileID.Beenade;
 		Item.shootSpeed = 9f;
 		Item.value = Item.sellPrice(0, 10, 0, 0);
 		Item.autoReuse = true;
@@ -52,10 +48,10 @@ public class BuzzKillFutureMode : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "LunarOrb", 1);
-		recipe.AddIngredient(3333, 1);
-		recipe.AddIngredient(ItemID.LuminiteBar, 20);
+		recipe.AddIngredient(ItemID.HiveBackpack, 1);
+		recipe.AddIngredient(ItemID.LunarBar, 20);
 		recipe.AddIngredient(Mod, "BuzzKill", 1);
-		recipe.AddTile(TileID.AncientManipulator);
+		recipe.AddTile(TileID.LunarCraftingStation);
 		recipe.Register();
 	}
 }

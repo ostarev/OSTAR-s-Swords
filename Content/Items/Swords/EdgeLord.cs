@@ -9,23 +9,19 @@ namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class EdgeLord : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.6f;
-		Item.rare = 10;
+		Item.rare = ItemRarityID.Red;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 12;
 		Item.useAnimation = 12;
 		Item.damage = 222;
 		Item.knockBack = 11f;
 		Item.UseSound = SoundID.Item1;
-		Item.shoot = 304;
+		Item.shoot = ProjectileID.VampireKnife;
 		Item.shootSpeed = 30f;
 		Item.value = 800000;
 		Item.autoReuse = true;
@@ -37,25 +33,25 @@ public class EdgeLord : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "DraculaSword", 2);
-		recipe.AddIngredient(1569, 1);
-		recipe.AddIngredient(1692, 1);
-		recipe.AddIngredient(175, 80);
-		recipe.AddIngredient(ItemID.LuminiteBar, 40);
+		recipe.AddIngredient(ItemID.VampireKnives, 1);
+		recipe.AddIngredient(ItemID.VampireBanner, 1);
+		recipe.AddIngredient(ItemID.HellstoneBar, 80);
+		recipe.AddIngredient(ItemID.LunarBar, 40);
 		recipe.AddIngredient(Mod, "SwordShard", 3);
 		recipe.AddIngredient(Mod, "SwordMatter", 66);
-		recipe.AddIngredient(ItemID.TrueNightEdge, 1);
-		recipe.AddTile(TileID.AncientManipulator);
+		recipe.AddIngredient(ItemID.TrueNightsEdge, 1);
+		recipe.AddTile(TileID.LunarCraftingStation);
 		recipe.Register();
 		Recipe recipe2 = CreateRecipe();
 		recipe2.AddIngredient(Mod, "DraculaSword", 2);
-		recipe2.AddIngredient(1571, 1);
-		recipe2.AddIngredient(1692, 1);
-		recipe2.AddIngredient(175, 80);
-		recipe2.AddIngredient(ItemID.LuminiteBar, 40);
+		recipe2.AddIngredient(ItemID.ScourgeoftheCorruptor, 1);
+		recipe2.AddIngredient(ItemID.VampireBanner, 1);
+		recipe2.AddIngredient(ItemID.HellstoneBar, 80);
+		recipe2.AddIngredient(ItemID.LunarBar, 40);
 		recipe2.AddIngredient(Mod, "SwordShard", 3);
 		recipe2.AddIngredient(Mod, "SwordMatter", 66);
-		recipe2.AddIngredient(ItemID.TrueNightEdge, 1);
-		recipe2.AddTile(TileID.AncientManipulator);
+		recipe2.AddIngredient(ItemID.TrueNightsEdge, 1);
+		recipe2.AddTile(TileID.LunarCraftingStation);
 		recipe2.Register();
 	}
 

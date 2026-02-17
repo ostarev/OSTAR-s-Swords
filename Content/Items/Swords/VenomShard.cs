@@ -17,7 +17,7 @@ public class VenomShard : ModItem
 		Item.width = 48;
 		Item.height = 56;
 		Item.scale = 1f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
@@ -36,7 +36,7 @@ public class VenomShard : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 164, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.TeleportationPotion, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -45,7 +45,7 @@ public class VenomShard : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "MoltenShard", 1);
-		recipe.AddIngredient(2607, 10);
+		recipe.AddIngredient(ItemID.SpiderFang, 10);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();
 	}

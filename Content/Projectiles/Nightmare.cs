@@ -25,13 +25,13 @@ public class Nightmare : ModProjectile
 
 	public override void AI()
 	{
-		Dust obj = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, 62, 0f, 0f, 0, default(Color), 1f);
+		Dust obj = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.PurpleTorch, 0f, 0f, 0, default(Color), 1f);
 		obj.noGravity = true;
 		obj.scale = 1f;
-		Dust obj2 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, 62, 0f, 0f, 0, default(Color), 1f);
+		Dust obj2 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.PurpleTorch, 0f, 0f, 0, default(Color), 1f);
 		obj2.noGravity = true;
 		obj2.scale = 1.5f;
-		Dust obj3 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, 62, 0f, 0f, 0, default(Color), 1f);
+		Dust obj3 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.PurpleTorch, 0f, 0f, 0, default(Color), 1f);
 		obj3.noGravity = true;
 		obj3.scale = 2f;
 		if (Projectile.velocity.X < 0f)
@@ -84,8 +84,8 @@ public class Nightmare : ModProjectile
 	{
 		for (int i = 0; i < 10; i++)
 		{
-			Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, 62, Projectile.oldVelocity.X * 0.1f, Projectile.oldVelocity.Y * 0.1f, 0, default(Color), 1f);
-			Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, 62, Projectile.oldVelocity.X * 0.1f, Projectile.oldVelocity.Y * 0.1f, 0, default(Color), 1f);
+			Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.PurpleTorch, Projectile.oldVelocity.X * 0.1f, Projectile.oldVelocity.Y * 0.1f, 0, default(Color), 1f);
+			Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.PurpleTorch, Projectile.oldVelocity.X * 0.1f, Projectile.oldVelocity.Y * 0.1f, 0, default(Color), 1f);
 		}
 		SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
 	}
@@ -95,7 +95,7 @@ public class Nightmare : ModProjectile
 		Player owner = Main.player[Projectile.owner];
 		if (Main.rand.Next(2) == 0)
 		{
-			owner.AddBuff(153, 800, false, false);
+			owner.AddBuff(BuffID.ShadowFlame, 800, false, false);
 			owner.statLife += 2;
 			owner.HealEffect(2, true);
 		}

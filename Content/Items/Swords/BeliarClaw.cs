@@ -15,7 +15,7 @@ public class BeliarClaw : ModItem
 		Item.width = 128;
 		Item.height = 128;
 		Item.scale = 1.5f;
-		Item.rare = 10;
+		Item.rare = ItemRarityID.Red;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;

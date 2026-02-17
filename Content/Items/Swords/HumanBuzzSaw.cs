@@ -27,7 +27,7 @@ public class HumanBuzzSaw : ModItem
 		Item.useStyle = 100;
 		Item.knockBack = 5f;
 		Item.value = Item.sellPrice(0, 5, 0, 0);
-		Item.rare = 4;
+		Item.rare = ItemRarityID.LightRed;
 		Item.shoot = ModContent.ProjectileType<HumanBuzzSaw>();
 		Item.noUseGraphic = true;
 	}
@@ -35,15 +35,15 @@ public class HumanBuzzSaw : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(363, 1);
-		recipe.AddIngredient(1198, 8);
+		recipe.AddIngredient(ItemID.Sawmill, 1);
+		recipe.AddIngredient(ItemID.TitaniumBar, 8);
 		recipe.AddIngredient(Mod, "SwordMatter", 60);
 		recipe.AddIngredient(Mod, "DamascusBar", 20);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();
 		Recipe recipe2 = CreateRecipe();
-		recipe2.AddIngredient(363, 1);
-		recipe2.AddIngredient(391, 8);
+		recipe2.AddIngredient(ItemID.Sawmill, 1);
+		recipe2.AddIngredient(ItemID.AdamantiteBar, 8);
 		recipe2.AddIngredient(Mod, "SwordMatter", 60);
 		recipe2.AddIngredient(Mod, "DamascusBar", 20);
 		recipe2.AddTile(TileID.MythrilAnvil);

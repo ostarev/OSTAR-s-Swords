@@ -17,14 +17,14 @@ public class Executioner : ModItem
 		Item.width = 78;
 		Item.height = 78;
 		Item.scale = 1.2f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
 		Item.damage = 70;
 		Item.knockBack = 7f;
 		Item.UseSound = SoundID.Item1;
-		Item.shoot = 227;
+		Item.shoot = ProjectileID.CrystalLeafShot;
 		Item.shootSpeed = 70f;
 		Item.value = Item.sellPrice(0, 15, 0, 0);
 		Item.autoReuse = true;

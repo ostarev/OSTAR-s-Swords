@@ -16,14 +16,14 @@ public class IchorArrowSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.7f;
-		Item.rare = 5;
+		Item.rare = ItemRarityID.Pink;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 22;
 		Item.useAnimation = 22;
 		Item.damage = 55;
 		Item.knockBack = 5f;
 		Item.UseSound = SoundID.Item5;
-		Item.shoot = 278;
+		Item.shoot = ProjectileID.IchorArrow;
 		Item.shootSpeed = 10f;
 		Item.value = 38500;
 		Item.autoReuse = true;
@@ -34,7 +34,7 @@ public class IchorArrowSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1334, 999);
+		recipe.AddIngredient(ItemID.IchorArrow, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 110);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();

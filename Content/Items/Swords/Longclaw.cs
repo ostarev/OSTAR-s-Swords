@@ -16,7 +16,7 @@ public class Longclaw : ModItem
 		Item.width = 58;
 		Item.height = 58;
 		Item.scale = 1f;
-		Item.rare = 2;
+		Item.rare = ItemRarityID.Green;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.knockBack = 4f;
 		Item.useTime = 20;
@@ -32,19 +32,19 @@ public class Longclaw : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(22, 20);
+		recipe.AddIngredient(ItemID.IronBar, 20);
 		recipe.AddIngredient(Mod, "KokiriSword", 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
-		recipe.AddIngredient(3507, 1);
-		recipe.AddIngredient(72, 100);
+		recipe.AddIngredient(ItemID.CopperShortsword, 1);
+		recipe.AddIngredient(ItemID.SilverCoin, 100);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 		Recipe recipe2 = CreateRecipe();
-		recipe2.AddIngredient(704, 20);
+		recipe2.AddIngredient(ItemID.LeadBar, 20);
 		recipe2.AddIngredient(Mod, "KokiriSword", 1);
 		recipe2.AddIngredient(Mod, "SwordMatter", 100);
-		recipe2.AddIngredient(3507, 1);
-		recipe2.AddIngredient(72, 100);
+		recipe2.AddIngredient(ItemID.CopperShortsword, 1);
+		recipe2.AddIngredient(ItemID.SilverCoin, 100);
 		recipe2.AddTile(TileID.Anvils);
 		recipe2.Register();
 	}

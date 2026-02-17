@@ -1,15 +1,12 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 using OSTARsSWORDS.Content.Projectiles;
+using Terraria.ID;
 
 namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class DoubleBladedLightsaber : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.damage = 65;
@@ -24,7 +21,7 @@ public class DoubleBladedLightsaber : ModItem
 		Item.useStyle = 100;
 		Item.knockBack = 8f;
 		Item.value = Item.sellPrice(0, 4, 0, 0);
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.shoot = ModContent.ProjectileType<DoubleBladedLightsaberProjectile>();
 		Item.noUseGraphic = true;
 	}
@@ -32,17 +29,17 @@ public class DoubleBladedLightsaber : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(3769, 1);
-		recipe.AddIngredient(3768, 1);
-		recipe.AddIngredient(3767, 1);
-		recipe.AddIngredient(3766, 1);
-		recipe.AddIngredient(3764, 1);
-		recipe.AddIngredient(3765, 1);
-		recipe.AddIngredient(547, 12);
-		recipe.AddIngredient(549, 12);
-		recipe.AddIngredient(548, 12);
+		recipe.AddIngredient(ItemID.YellowPhasesaber, 1);
+		recipe.AddIngredient(ItemID.WhitePhasesaber, 1);
+		recipe.AddIngredient(ItemID.PurplePhasesaber, 1);
+		recipe.AddIngredient(ItemID.GreenPhasesaber, 1);
+		recipe.AddIngredient(ItemID.BluePhasesaber, 1);
+		recipe.AddIngredient(ItemID.RedPhasesaber, 1);
+		recipe.AddIngredient(ItemID.SoulofFright, 12);
+		recipe.AddIngredient(ItemID.SoulofSight, 12);
+		recipe.AddIngredient(ItemID.SoulofMight, 12);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
-		recipe.AddIngredient(502, 50);
+		recipe.AddIngredient(ItemID.CrystalShard, 50);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();
 	}

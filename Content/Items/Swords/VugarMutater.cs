@@ -20,7 +20,7 @@ public class VugarMutater : ModItem
 		Item.damage = 214;
 		Item.knockBack = 6f;
 		Item.UseSound = SoundID.Item1;
-		Item.shoot = ModContent.ProjectileType<OSTARsSWORDS.Content.Projectiles.VugarMutater>();
+		Item.shoot = ModContent.ProjectileType<VugarMutaterProjectile>();
 		Item.shootSpeed = 40f;
 		Item.value = 750000;
 		Item.autoReuse = true;

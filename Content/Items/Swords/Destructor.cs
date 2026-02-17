@@ -16,7 +16,7 @@ public class Destructor : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.9f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
 		Item.useAnimation = 15;
@@ -32,13 +32,13 @@ public class Destructor : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(482, 1);
+		recipe.AddIngredient(ItemID.AdamantiteSword, 1);
 		recipe.AddIngredient(Mod, "SwordShard", 1);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();
 		Recipe recipe2 = CreateRecipe();
-		recipe2.AddIngredient(1199, 1);
+		recipe2.AddIngredient(ItemID.TitaniumSword, 1);
 		recipe2.AddIngredient(Mod, "SwordShard", 1);
 		recipe2.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe2.AddTile(TileID.MythrilAnvil);

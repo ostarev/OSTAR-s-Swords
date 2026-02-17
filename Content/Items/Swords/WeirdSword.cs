@@ -16,7 +16,7 @@ public class WeirdSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 2.3f;
-		Item.rare = 2;
+		Item.rare = ItemRarityID.Green;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 13;
 		Item.useAnimation = 13;

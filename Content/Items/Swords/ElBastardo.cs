@@ -15,7 +15,7 @@ public class ElBastardo : ModItem
 		Item.width = 44;
 		Item.height = 44;
 		Item.scale = 1.3f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 16;
 		Item.useAnimation = 16;

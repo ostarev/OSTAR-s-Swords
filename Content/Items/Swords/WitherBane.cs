@@ -16,7 +16,7 @@ public class WitherBane : ModItem
 		Item.width = 40;
 		Item.height = 42;
 		Item.scale = 1.1f;
-		Item.rare = 2;
+		Item.rare = ItemRarityID.Green;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;

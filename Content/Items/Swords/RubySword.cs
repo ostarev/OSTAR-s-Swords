@@ -12,7 +12,7 @@ public class RubySword : ModItem
 		Item.width = 42;
 		Item.height = 42;
 		Item.scale = 1f;
-		Item.rare = 4;
+		Item.rare = ItemRarityID.LightRed;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
@@ -29,7 +29,7 @@ public class RubySword : ModItem
 	{
 		if (Main.rand.Next(10) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 130, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.Firework_Red, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -37,7 +37,7 @@ public class RubySword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(178, 5);
+		recipe.AddIngredient(ItemID.Ruby, 5);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 	}

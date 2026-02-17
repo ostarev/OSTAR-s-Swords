@@ -16,7 +16,7 @@ public class BowSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.1f;
-		Item.rare = 3;
+		Item.rare = ItemRarityID.Orange;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
@@ -28,14 +28,14 @@ public class BowSword : ModItem
 		Item.autoReuse = true;
 		Item.DamageType = DamageClass.Melee;
 		Item.ResearchUnlockCount = 1;
-		Item.shoot = 10;
+		Item.shoot = ProjectileID.PurificationPowder;
 		Item.useAmmo = AmmoID.Arrow;
 	}
 
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(39, 1);
+		recipe.AddIngredient(ItemID.WoodenBow, 1);
 		recipe.AddRecipeGroup("IronBar", 15);
 		recipe.AddIngredient(Mod, "SwordMatter", 60);
 		recipe.AddTile(TileID.Anvils);

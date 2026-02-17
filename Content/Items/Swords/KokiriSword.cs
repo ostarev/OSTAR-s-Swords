@@ -12,7 +12,7 @@ public class KokiriSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.6f;
-		Item.rare = 2;
+		Item.rare = ItemRarityID.Green;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
 		Item.useAnimation = 15;
@@ -28,8 +28,8 @@ public class KokiriSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(9, 30);
-		recipe.AddIngredient(178, 1);
+		recipe.AddIngredient(ItemID.Wood, 30);
+		recipe.AddIngredient(ItemID.Ruby, 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 20);
 		recipe.AddTile(TileID.WorkBenches);
 		recipe.Register();

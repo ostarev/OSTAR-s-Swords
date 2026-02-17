@@ -17,14 +17,14 @@ public class IceBreaker : ModItem
 		Item.width = 64;
 		Item.height = 64;
 		Item.scale = 1.3f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
 		Item.damage = 61;
 		Item.knockBack = 7f;
 		Item.UseSound = SoundID.Item28;
-		Item.shoot = 118;
+		Item.shoot = ProjectileID.IceBolt;
 		Item.shootSpeed = 40f;
 		Item.value = 300200;
 		Item.autoReuse = true;
@@ -35,8 +35,8 @@ public class IceBreaker : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(724, 1);
-		recipe.AddIngredient(593, 999);
+		recipe.AddIngredient(ItemID.IceBlade, 1);
+		recipe.AddIngredient(ItemID.SnowBlock, 999);
 		recipe.AddIngredient(Mod, "Orichalcon", 1);
 		recipe.AddIngredient(Mod, "SwordShard", 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 150);

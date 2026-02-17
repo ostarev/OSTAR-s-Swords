@@ -19,7 +19,7 @@ public class Saphira : ModItem
 		Item.width = 56;
 		Item.height = 56;
 		Item.scale = 1.3f;
-		Item.rare = 9;
+		Item.rare = ItemRarityID.Cyan;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 10;
 		Item.useAnimation = 10;
@@ -68,11 +68,11 @@ public class Saphira : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(177, 25);
-		recipe.AddIngredient(1729, 400);
-		recipe.AddIngredient(2971, 1);
-		recipe.AddIngredient(2994, 1);
-		recipe.AddIngredient(1931, 1);
+		recipe.AddIngredient(ItemID.Sapphire, 25);
+		recipe.AddIngredient(ItemID.SpookyWood, 400);
+		recipe.AddIngredient(ItemID.ScarecrowBanner, 1);
+		recipe.AddIngredient(ItemID.ZombieElfBanner, 1);
+		recipe.AddIngredient(ItemID.BlizzardStaff, 1);
 		recipe.AddIngredient(Mod, "BlizzardRage", 1);
 		recipe.AddIngredient(Mod, "Orichalcon", 2);
 		recipe.AddIngredient(Mod, "SwordMatter", 300);

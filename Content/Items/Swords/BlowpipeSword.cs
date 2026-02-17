@@ -16,14 +16,14 @@ public class BlowpipeSword : ModItem
 		Item.width = 38;
 		Item.height = 36;
 		Item.scale = 1.2f;
-		Item.rare = 2;
+		Item.rare = ItemRarityID.Green;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 23;
 		Item.useAnimation = 23;
 		Item.damage = 16;
 		Item.knockBack = 3.5f;
 		Item.UseSound = SoundID.Item17;
-		Item.shoot = 51;
+		Item.shoot = ProjectileID.Seed;
 		Item.shootSpeed = 20f;
 		Item.value = Item.sellPrice(0, 0, 40, 0);
 		Item.autoReuse = true;
@@ -34,7 +34,7 @@ public class BlowpipeSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(281, 1);
+		recipe.AddIngredient(ItemID.Blowpipe, 1);
 		recipe.AddIngredient(Mod, "DamascusBar", 10);
 		recipe.AddIngredient(Mod, "SwordMatter", 40);
 		recipe.AddTile(TileID.Anvils);

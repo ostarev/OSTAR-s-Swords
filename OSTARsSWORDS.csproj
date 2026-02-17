@@ -15,6 +15,7 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include=".github\copilot-instructions.md" />
+	  <None Include="Rarities\GlobalRarities.cs" />
 	</ItemGroup>
 
 </Project>

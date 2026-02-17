@@ -16,14 +16,14 @@ public class ThunderOathSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.3f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
 		Item.damage = 40;
 		Item.knockBack = 4f;
 		Item.UseSound = SoundID.Item92;
-		Item.shoot = 443;
+		Item.shoot = ProjectileID.Electrosphere;
 		Item.shootSpeed = 10f;
 		Item.value = Item.sellPrice(0, 2, 0, 0);
 		Item.autoReuse = true;

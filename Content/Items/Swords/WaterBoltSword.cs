@@ -12,13 +12,13 @@ public class WaterBoltSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.9f;
-		Item.rare = 4;
+		Item.rare = ItemRarityID.LightRed;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 32;
 		Item.useAnimation = 32;
 		Item.damage = 15;
 		Item.knockBack = 6f;
-		Item.shoot = 27;
+		Item.shoot = ProjectileID.WaterBolt;
 		Item.shootSpeed = 10f;
 		Item.UseSound = SoundID.Item1;
 		Item.value = 48500;

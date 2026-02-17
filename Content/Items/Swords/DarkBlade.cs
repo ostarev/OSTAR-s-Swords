@@ -16,7 +16,7 @@ public class DarkBlade : ModItem
 		Item.width = 36;
 		Item.height = 40;
 		Item.scale = 1f;
-		Item.rare = 11;
+		Item.rare = ItemRarityID.Purple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
@@ -33,7 +33,7 @@ public class DarkBlade : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 62, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.PurpleTorch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -41,8 +41,8 @@ public class DarkBlade : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(172, 200);
-		recipe.AddIngredient(433, 10);
+		recipe.AddIngredient(ItemID.AshBlock, 200);
+		recipe.AddIngredient(ItemID.DemonTorch, 10);
 		recipe.AddIngredient(Mod, "SwordMatter", 20);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
@@ -50,6 +50,6 @@ public class DarkBlade : ModItem
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(153, 200, false);
+		target.AddBuff(BuffID.ShadowFlame, 200, false);
 	}
 }

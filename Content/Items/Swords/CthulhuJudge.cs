@@ -15,7 +15,7 @@ public class CthulhuJudge : ModItem
 		Item.width = 58;
 		Item.height = 60;
 		Item.scale = 1f;
-		Item.rare = 3;
+		Item.rare = ItemRarityID.Orange;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;

@@ -16,7 +16,7 @@ public class HeisenbergsFlask : ModItem
 		Item.width = 28;
 		Item.height = 28;
 		Item.scale = 1.2f;
-		Item.rare = 9;
+		Item.rare = ItemRarityID.Cyan;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;

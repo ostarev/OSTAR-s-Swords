@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace OSTARsSWORDS.Content.Items.Swords;
@@ -19,14 +20,14 @@ public class MolotovSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.7f;
-		Item.rare = 4;
+		Item.rare = ItemRarityID.LightRed;
 		Item.crit = 8;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
 		Item.damage = 69;
 		Item.knockBack = 6f;
-		Item.shoot = 399;
+		Item.shoot = ProjectileID.MolotovCocktail;
 		Item.shootSpeed = 12f;
 		Item.UseSound = new SoundStyle("UniverseOfSwordsModOld/Sounds/Item/Flare", (SoundType)0);
 		Item.value = Item.sellPrice(0, 20, 0, 0);
@@ -40,12 +41,12 @@ public class MolotovSword : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "DamascusBar", 30);
-		recipe.AddIngredient(2590, 99);
-		recipe.AddIngredient(175, 50);
-		recipe.AddIngredient(2701, 100);
-		recipe.AddIngredient(2266, 30);
-		recipe.AddIngredient(506, 1);
-		recipe.AddTile(94);
+		recipe.AddIngredient(ItemID.MolotovCocktail, 99);
+		recipe.AddIngredient(ItemID.HellstoneBar, 50);
+		recipe.AddIngredient(ItemID.LivingFireBlock, 100);
+		recipe.AddIngredient(ItemID.Sake, 30);
+		recipe.AddIngredient(ItemID.Flamethrower, 1);
+		recipe.AddTile(TileID.Kegs);
 		recipe.Register();
 	}
 

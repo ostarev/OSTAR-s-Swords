@@ -16,7 +16,7 @@ public class PhantomScimitar : ModItem
 		Item.width = 48;
 		Item.height = 56;
 		Item.scale = 1.1f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
@@ -31,6 +31,6 @@ public class PhantomScimitar : ModItem
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(153, 400, false);
+		target.AddBuff(BuffID.ShadowFlame, 400, false);
 	}
 }

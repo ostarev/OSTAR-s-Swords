@@ -16,7 +16,7 @@ public class PrimeSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.9f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
 		Item.useAnimation = 15;
@@ -24,7 +24,7 @@ public class PrimeSword : ModItem
 		Item.knockBack = 6f;
 		Item.UseSound = SoundID.Item33;
 		Item.value = 160000;
-		Item.shoot = 440;
+		Item.shoot = ProjectileID.LaserMachinegunLaser;
 		Item.shootSpeed = 20f;
 		Item.autoReuse = true;
 		Item.DamageType = DamageClass.Melee;

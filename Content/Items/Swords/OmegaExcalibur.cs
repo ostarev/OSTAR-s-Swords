@@ -12,7 +12,7 @@ public class OmegaExcalibur : ModItem
 		Item.width = 58;
 		Item.height = 58;
 		Item.scale = 1f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 10;
 		Item.useAnimation = 10;
@@ -29,7 +29,7 @@ public class OmegaExcalibur : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 135, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.IceTorch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 			Main.dust[dust].velocity.X += (float)player.direction * 2f;
 			Main.dust[dust].velocity.Y += 0.2f;
@@ -40,11 +40,11 @@ public class OmegaExcalibur : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(ItemID.Excalibur, 1);
-		recipe.AddIngredient(547, 10);
-		recipe.AddIngredient(548, 10);
-		recipe.AddIngredient(549, 10);
-		recipe.AddIngredient(1225, 10);
-		recipe.AddIngredient(528, 1);
+		recipe.AddIngredient(ItemID.SoulofFright, 10);
+		recipe.AddIngredient(ItemID.SoulofMight, 10);
+		recipe.AddIngredient(ItemID.SoulofSight, 10);
+		recipe.AddIngredient(ItemID.HallowedBar, 10);
+		recipe.AddIngredient(ItemID.LightShard, 1);
 		recipe.AddIngredient(Mod, "Orichalcon", 1);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 150);

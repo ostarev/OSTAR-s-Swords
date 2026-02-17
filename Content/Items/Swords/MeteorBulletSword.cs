@@ -16,7 +16,7 @@ public class MeteorBulletSword : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.8f;
-		Item.rare = 3;
+		Item.rare = ItemRarityID.Orange;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
@@ -24,7 +24,7 @@ public class MeteorBulletSword : ModItem
 		Item.knockBack = 4.1f;
 		Item.UseSound = SoundID.Item11;
 		Item.value = 26000;
-		Item.shoot = 36;
+		Item.shoot = ProjectileID.MeteorShot;
 		Item.shootSpeed = 20f;
 		Item.autoReuse = true;
 		Item.DamageType = DamageClass.Melee;
@@ -34,7 +34,7 @@ public class MeteorBulletSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(234, 999);
+		recipe.AddIngredient(ItemID.MeteorShot, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

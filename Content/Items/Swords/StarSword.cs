@@ -16,13 +16,13 @@ public class StarSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.7f;
-		Item.rare = 4;
+		Item.rare = ItemRarityID.LightRed;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
 		Item.damage = 33;
 		Item.knockBack = 5f;
-		Item.shoot = 12;
+		Item.shoot = ProjectileID.FallingStar;
 		Item.shootSpeed = 10f;
 		Item.UseSound = SoundID.Item1;
 		Item.value = 48500;
@@ -35,7 +35,7 @@ public class StarSword : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
-		recipe.AddIngredient(197, 1);
+		recipe.AddIngredient(ItemID.StarCannon, 1);
 		recipe.AddIngredient(ItemID.FallenStar, 15);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

@@ -14,14 +14,14 @@ public class BlizzardRage : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1f;
-		Item.rare = 8;
+		Item.rare = ItemRarityID.Yellow;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 10;
 		Item.useAnimation = 10;
 		Item.damage = 50;
 		Item.knockBack = 5f;
 		Item.UseSound = SoundID.Item1;
-		Item.shoot = 337;
+		Item.shoot = ProjectileID.Blizzard;
 		Item.shootSpeed = 10f;
 		Item.value = 450500;
 		Item.autoReuse = true;
@@ -63,7 +63,7 @@ public class BlizzardRage : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1931, 1);
+		recipe.AddIngredient(ItemID.BlizzardStaff, 1);
 		recipe.AddIngredient(Mod, "Orichalcon", 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
 		recipe.AddTile(TileID.MythrilAnvil);

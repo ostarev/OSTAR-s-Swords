@@ -45,7 +45,7 @@ public class Corrupt : ModProjectile
 	{
 		for (int i = 0; i < 10; i++)
 		{
-			Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, 14, Projectile.oldVelocity.X * 0.1f, Projectile.oldVelocity.Y * 0.1f, 0, default, 1f);
+			Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.Demonite, Projectile.oldVelocity.X * 0.1f, Projectile.oldVelocity.Y * 0.1f, 0, default, 1f);
 		}
 		SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
 	}

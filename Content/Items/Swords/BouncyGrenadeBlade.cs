@@ -16,14 +16,14 @@ public class BouncyGrenadeBlade : ModItem
 		Item.width = 56;
 		Item.height = 56;
 		Item.scale = 1f;
-		Item.rare = 4;
+		Item.rare = ItemRarityID.LightRed;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 28;
 		Item.useAnimation = 25;
 		Item.damage = 40;
 		Item.knockBack = 8f;
 		Item.UseSound = SoundID.Item1;
-		Item.shoot = 517;
+		Item.shoot = ProjectileID.BouncyGrenade;
 		Item.shootSpeed = 10f;
 		Item.value = Item.sellPrice(0, 2, 0, 0);
 		Item.autoReuse = true;
@@ -34,9 +34,9 @@ public class BouncyGrenadeBlade : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(3111, 48);
-		recipe.AddIngredient(168, 99);
-		recipe.AddIngredient(530, 20);
+		recipe.AddIngredient(ItemID.PinkGel, 48);
+		recipe.AddIngredient(ItemID.Grenade, 99);
+		recipe.AddIngredient(ItemID.Wire, 20);
 		recipe.AddIngredient(Mod, "DamascusBar", 15);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

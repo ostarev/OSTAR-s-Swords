@@ -16,14 +16,14 @@ public class UnholyArrowSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.3f;
-		Item.rare = 1;
+		Item.rare = ItemRarityID.Blue;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
 		Item.damage = 20;
 		Item.knockBack = 5f;
 		Item.UseSound = SoundID.Item5;
-		Item.shoot = 4;
+		Item.shoot = ProjectileID.UnholyArrow;
 		Item.shootSpeed = 10f;
 		Item.value = 8500;
 		Item.autoReuse = true;
@@ -34,7 +34,7 @@ public class UnholyArrowSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(47, 999);
+		recipe.AddIngredient(ItemID.UnholyArrow, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 90);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

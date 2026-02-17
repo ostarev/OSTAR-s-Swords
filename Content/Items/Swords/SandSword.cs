@@ -12,7 +12,7 @@ public class SandSword : ModItem
 		Item.width = 36;
 		Item.height = 36;
 		Item.scale = 1f;
-		Item.rare = 0;
+		Item.rare = ItemRarityID.White;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
@@ -29,7 +29,7 @@ public class SandSword : ModItem
 	{
 		if (Main.rand.Next(3) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 10, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.Gold, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -37,7 +37,7 @@ public class SandSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(169, 15);
+		recipe.AddIngredient(ItemID.SandBlock, 15);
 		recipe.AddTile(TileID.WorkBenches);
 		recipe.Register();
 	}

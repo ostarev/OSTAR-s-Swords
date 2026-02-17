@@ -4,6 +4,7 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
 using OSTARsSWORDS.Content.Projectiles;
+using Terraria.ID;
 
 namespace OSTARsSWORDS.Content.Items.Swords;
 
@@ -18,7 +19,7 @@ public class SwordOfTheUniverseV4 : ModItem
 		Item.width = 87;
 		Item.height = 87;
 		Item.scale = 3.2f;
-		Item.rare = 11;
+		Item.rare = ItemRarityID.Purple;
 		Item.crit = 16;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
@@ -65,32 +66,32 @@ public class SwordOfTheUniverseV4 : ModItem
 
 	public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 	{
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, 616, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 2f, velocity.Y + 2f, 616, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 2f, velocity.Y - 2f, 616, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 4f, velocity.Y + 4f, 616, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 4f, velocity.Y - 4f, 616, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 6f, velocity.Y + 6f, 616, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 6f, velocity.Y - 6f, 616, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 8f, velocity.Y + 8f, 616, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 8f, velocity.Y - 8f, 616, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 10f, velocity.Y + 10f, 616, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, 451, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 1f, velocity.Y + 1f, 451, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 1f, velocity.Y - 1f, 451, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 2f, velocity.Y + 2f, 451, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 2f, velocity.Y - 2f, 451, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 3f, velocity.Y + 3f, 451, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 3f, velocity.Y - 3f, 451, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 4f, velocity.Y + 4f, 451, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 4f, velocity.Y - 4f, 451, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 5f, velocity.Y + 5f, 451, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ProjectileID.VortexBeaterRocket, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 2f, velocity.Y + 2f, ProjectileID.VortexBeaterRocket, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 2f, velocity.Y - 2f, ProjectileID.VortexBeaterRocket, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 4f, velocity.Y + 4f, ProjectileID.VortexBeaterRocket, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 4f, velocity.Y - 4f, ProjectileID.VortexBeaterRocket, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 6f, velocity.Y + 6f, ProjectileID.VortexBeaterRocket, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 6f, velocity.Y - 6f, ProjectileID.VortexBeaterRocket, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 8f, velocity.Y + 8f, ProjectileID.VortexBeaterRocket, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 8f, velocity.Y - 8f, ProjectileID.VortexBeaterRocket, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 10f, velocity.Y + 10f, ProjectileID.VortexBeaterRocket, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ProjectileID.InfluxWaver, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 1f, velocity.Y + 1f, ProjectileID.InfluxWaver, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 1f, velocity.Y - 1f, ProjectileID.InfluxWaver, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 2f, velocity.Y + 2f, ProjectileID.InfluxWaver, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 2f, velocity.Y - 2f, ProjectileID.InfluxWaver, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 3f, velocity.Y + 3f, ProjectileID.InfluxWaver, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 3f, velocity.Y - 3f, ProjectileID.InfluxWaver, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 4f, velocity.Y + 4f, ProjectileID.InfluxWaver, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X - 4f, velocity.Y - 4f, ProjectileID.InfluxWaver, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 5f, velocity.Y + 5f, ProjectileID.InfluxWaver, damage, knockback, player.whoAmI, 0f, 0f, 0f);
 		return true;
 	}
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(72, 360, false);
+		target.AddBuff(BuffID.Midas, 360, false);
 		target.AddBuff(BuffID.Ichor, 360, false);
 		target.AddBuff(BuffID.Frostburn, 360, false);
 		target.AddBuff(BuffID.OnFire, 360, false);

@@ -16,14 +16,14 @@ public class HellfireArrowSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.3f;
-		Item.rare = 3;
+		Item.rare = ItemRarityID.Orange;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
 		Item.damage = 25;
 		Item.knockBack = 5f;
 		Item.UseSound = SoundID.Item5;
-		Item.shoot = 41;
+		Item.shoot = ProjectileID.HellfireArrow;
 		Item.shootSpeed = 10f;
 		Item.value = 14500;
 		Item.autoReuse = true;
@@ -34,7 +34,7 @@ public class HellfireArrowSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(265, 999);
+		recipe.AddIngredient(ItemID.HellfireArrow, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 110);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

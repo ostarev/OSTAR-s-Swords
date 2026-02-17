@@ -12,14 +12,14 @@ public class SnowballShooter : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.9f;
-		Item.rare = 8;
+		Item.rare = ItemRarityID.Yellow;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
 		Item.useAnimation = 15;
 		Item.damage = 67;
 		Item.knockBack = 6f;
 		Item.UseSound = SoundID.Item1;
-		Item.shoot = 338;
+		Item.shoot = ProjectileID.RocketSnowmanI;
 		Item.shootSpeed = 10f;
 		Item.value = 420500;
 		Item.autoReuse = true;
@@ -30,7 +30,7 @@ public class SnowballShooter : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1946, 1);
+		recipe.AddIngredient(ItemID.SnowmanCannon, 1);
 		recipe.AddIngredient(Mod, "Orichalcon", 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
 		recipe.AddTile(TileID.MythrilAnvil);

@@ -14,13 +14,13 @@ public class PoisonSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.7f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
 		Item.knockBack = 5.6f;
 		Item.damage = 48;
-		Item.shoot = 265;
+		Item.shoot = ProjectileID.PoisonFang;
 		Item.shootSpeed = 5f;
 		Item.UseSound = SoundID.Item43;
 		Item.value = 100000;

@@ -9,23 +9,19 @@ namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class BuzzKill : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.3f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
 		Item.damage = 30;
 		Item.knockBack = 1f;
 		Item.UseSound = SoundID.Item1;
-		Item.shoot = 183;
+		Item.shoot = ProjectileID.Beenade;
 		Item.shootSpeed = 8f;
 		Item.value = Item.sellPrice(0, 5, 0, 0);
 		Item.autoReuse = true;
@@ -50,14 +46,14 @@ public class BuzzKill : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1123, 1);
-		recipe.AddIngredient(1121, 1);
-		recipe.AddIngredient(1130, 80);
-		recipe.AddIngredient(1225, 10);
-		recipe.AddIngredient(1125, 500);
-		recipe.AddIngredient(1124, 500);
+		recipe.AddIngredient(ItemID.BeeKeeper, 1);
+		recipe.AddIngredient(ItemID.BeeGun, 1);
+		recipe.AddIngredient(ItemID.Beenade, 80);
+		recipe.AddIngredient(ItemID.HallowedBar, 10);
+		recipe.AddIngredient(ItemID.HoneyBlock, 500);
+		recipe.AddIngredient(ItemID.Hive, 500);
 		recipe.AddIngredient(Mod, "TheStinger", 1);
-		recipe.AddTile(308);
+		recipe.AddTile(TileID.HoneyDispenser);
 		recipe.Register();
 	}
 }

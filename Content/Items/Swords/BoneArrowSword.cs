@@ -16,14 +16,14 @@ public class BoneArrowSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.4f;
-		Item.rare = 2;
+		Item.rare = ItemRarityID.Green;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
 		Item.damage = 22;
 		Item.knockBack = 6f;
 		Item.UseSound = SoundID.Item5;
-		Item.shoot = 117;
+		Item.shoot = ProjectileID.BoneArrow;
 		Item.shootSpeed = 10f;
 		Item.value = 14800;
 		Item.autoReuse = true;
@@ -34,7 +34,7 @@ public class BoneArrowSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(3003, 999);
+		recipe.AddIngredient(ItemID.BoneArrow, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

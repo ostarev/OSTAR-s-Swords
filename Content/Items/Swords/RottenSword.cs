@@ -12,14 +12,14 @@ public class RottenSword : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 2f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
 		Item.damage = 62;
 		Item.knockBack = 5f;
 		Item.UseSound = SoundID.Item8;
-		Item.shoot = 150;
+		Item.shoot = ProjectileID.NettleBurstRight;
 		Item.shootSpeed = 20f;
 		Item.value = 304200;
 		Item.autoReuse = true;

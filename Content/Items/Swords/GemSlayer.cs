@@ -16,7 +16,7 @@ public class GemSlayer : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.5f;
-		Item.rare = 3;
+		Item.rare = ItemRarityID.Orange;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 24;
 		Item.useAnimation = 24;
@@ -47,6 +47,6 @@ public class GemSlayer : ModItem
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(72, 360, false);
+		target.AddBuff(BuffID.Midas, 360, false);
 	}
 }

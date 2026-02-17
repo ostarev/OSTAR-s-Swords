@@ -24,7 +24,7 @@ public class EctoplasmicRipper : ModItem
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.knockBack = 6f;
 		Item.value = Item.sellPrice(0, 15, 0, 0);
-		Item.rare = 9;
+		Item.rare = ItemRarityID.Cyan;
 		Item.scale = 1f;
 		Item.UseSound = SoundID.Item103;
 		Item.autoReuse = true;
@@ -35,7 +35,7 @@ public class EctoplasmicRipper : ModItem
 	{
 		if (Main.rand.Next(1) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 15, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.MagicMirror, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -43,8 +43,8 @@ public class EctoplasmicRipper : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1508, 15);
-		recipe.AddIngredient(3261, 10);
+		recipe.AddIngredient(ItemID.Ectoplasm, 15);
+		recipe.AddIngredient(ItemID.SpectreBar, 10);
 		recipe.AddIngredient(Mod, "DeathSword", 1);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();

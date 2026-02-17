@@ -16,7 +16,7 @@ public class TheEater : ModItem
 		Item.width = 58;
 		Item.height = 58;
 		Item.scale = 1f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
@@ -24,7 +24,7 @@ public class TheEater : ModItem
 		Item.knockBack = 3f;
 		Item.UseSound = SoundID.Item1;
 		Item.value = Item.sellPrice(0, 0, 50, 0);
-		Item.shoot = 306;
+		Item.shoot = ProjectileID.EatersBite;
 		Item.shootSpeed = 10f;
 		Item.autoReuse = false;
 		Item.DamageType = DamageClass.Melee;
@@ -35,7 +35,7 @@ public class TheEater : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 17, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.CorruptPlants, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}

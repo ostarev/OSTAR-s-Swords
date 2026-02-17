@@ -16,7 +16,7 @@ public class CaesarSword : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.5f;
-		Item.rare = 2;
+		Item.rare = ItemRarityID.Green;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 15;
 		Item.useAnimation = 15;

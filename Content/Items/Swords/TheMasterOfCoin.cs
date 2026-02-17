@@ -18,12 +18,12 @@ public class TheMasterOfCoin : ModItem
 		Item.width = 48;
 		Item.height = 48;
 		Item.scale = 1.2f;
-		Item.rare = 11;
+		Item.rare = ItemRarityID.Purple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
 		Item.UseSound = SoundID.Item43;
-		Item.shoot = 518;
+		Item.shoot = ProjectileID.CoinPortal;
 		Item.shootSpeed = 10f;
 		Item.value = Item.sellPrice(0, 0, 0, 1);
 		Item.autoReuse = true;
@@ -48,27 +48,27 @@ public class TheMasterOfCoin : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(855, 1);
-		recipe.AddIngredient(264, 10);
-		recipe.AddIngredient(13, 999);
-		recipe.AddIngredient(1355, 60);
+		recipe.AddIngredient(ItemID.LuckyCoin, 1);
+		recipe.AddIngredient(ItemID.GoldCrown, 10);
+		recipe.AddIngredient(ItemID.GoldOre, 999);
+		recipe.AddIngredient(ItemID.FlaskofGold, 60);
 		recipe.AddIngredient(Mod, "Inflation", 1);
-		recipe.AddIngredient(74, 9);
-		recipe.AddIngredient(73, 99);
-		recipe.AddIngredient(72, 999);
-		recipe.AddIngredient(71, 999);
+		recipe.AddIngredient(ItemID.PlatinumCoin, 9);
+		recipe.AddIngredient(ItemID.GoldCoin, 99);
+		recipe.AddIngredient(ItemID.SilverCoin, 999);
+		recipe.AddIngredient(ItemID.CopperCoin, 999);
 		recipe.AddTile(TileID.AncientManipulator);
 		recipe.Register();
 		Recipe recipe2 = CreateRecipe();
-		recipe2.AddIngredient(855, 1);
-		recipe2.AddIngredient(715, 10);
-		recipe2.AddIngredient(702, 999);
-		recipe2.AddIngredient(1355, 60);
+		recipe2.AddIngredient(ItemID.LuckyCoin, 1);
+		recipe2.AddIngredient(ItemID.PlatinumCrown, 10);
+		recipe2.AddIngredient(ItemID.PlatinumOre, 999);
+		recipe2.AddIngredient(ItemID.FlaskofGold, 60);
 		recipe2.AddIngredient(Mod, "Inflation", 1);
-		recipe2.AddIngredient(74, 9);
-		recipe2.AddIngredient(73, 99);
-		recipe2.AddIngredient(72, 999);
-		recipe2.AddIngredient(71, 999);
+		recipe2.AddIngredient(ItemID.PlatinumCoin, 9);
+		recipe2.AddIngredient(ItemID.GoldCoin, 99);
+		recipe2.AddIngredient(ItemID.SilverCoin, 999);
+		recipe2.AddIngredient(ItemID.CopperCoin, 999);
 		recipe2.AddTile(TileID.AncientManipulator);
 		recipe2.Register();
 	}

@@ -1,0 +1,80 @@
+﻿using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Graphics;
+using Terraria.GameContent;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.UI.Chat;
+using Terraria.ID;
+
+namespace OSTARsSWORDS.Rarities
+{
+    public class Inferno : ModRarity
+    {
+        // A nice, bright fiery orange for the base UI color
+        public override Color RarityColor => new Color(TextClr.R, TextClr.G, TextClr.B, 255);
+
+        public static float MaxY = 4.5f;
+        public static Color TextClr = new Color(255, 60, 0, 255); // Reddish orange
+        public static Color BloomClr = new Color(255, 150, 0, 0); // Bright orange/yellow glow
+
+        public static void Draw(Item Item, SpriteBatch spriteBatch, string text, int X, int Y, Color textColor, Color lightColor, float rotation,
+        Vector2 origin, Vector2 baseScale, float time, bool renderTextSparkles, DynamicSpriteFont font)
+        {
+            // 1. Define Fire Colors (Red -> Orange -> Yellow)
+            Color fireRed = new Color(220, 30, 0);
+            Color fireOrange = new Color(255, 120, 0);
+            Color fireYellow = new Color(255, 230, 0);
+
+            // 2. Create a "flicker" effect
+            // Combining two sine waves at different, prime-ish speeds makes it erratic like fire
+            float flicker = (float)(Math.Sin(time * 11f) * 0.5f + Math.Sin(time * 17f) * 0.5f);
+            float t = (flicker + 1f) / 2f; // Normalize from roughly (-1.0 to 1.0) down to (0.0 to 1.0)
+
+            // 3. Interpolate colors based on the flicker
+            // If t < 0.5, it blends Red to Orange. If t >= 0.5, it blends Orange to Yellow
+            Color currentColor;
+            if (t < 0.5f)
+                currentColor = Color.Lerp(fireRed, fireOrange, t * 2f);
+            else
+                currentColor = Color.Lerp(fireOrange, fireYellow, (t - 0.5f) * 2f);
+
+            // 4. Calculate the glow offset (expands more when it burns hotter/yellower)
+            float glowOffset = 1.5f + t * 2.5f;
+
+            // 5. Draw the outer fiery glow
+            // We use a reddish-orange for the glow to act as the "ambient heat"
+            Color glowColor = Color.Lerp(fireRed, fireOrange, t) * 0.7f;
+            glowColor.A = 0; // Additive blending logic for that bright, luminous TModLoader text look
+
+            for (float f = 0f; f < MathHelper.TwoPi; f += 0.79f)
+            {
+                // Add a slight upward drift to the Y axis of the glow to simulate rising heat
+                float upDrift = (float)Math.Sin(time * 6f + f) * 1.5f;
+                Vector2 drawPos = new Vector2(X, Y) + new Vector2(glowOffset, -Math.Abs(upDrift)).RotatedBy(f);
+
+                ChatManager.DrawColorCodedString(
+                    spriteBatch, font, text,
+                    drawPos,
+                    glowColor,
+                    rotation, origin, baseScale);
+            }
+
+            // 6. Draw the Main Text
+            // Uses the flickered color so the actual letters transition between red, orange, and yellow
+            ChatManager.DrawColorCodedString(spriteBatch, font, text, new Vector2(X, Y), currentColor, rotation, origin, baseScale);
+        }
+
+        public static void Draw(Item Item, string text, int X, int Y, float rotation, Vector2 origin, Vector2 baseScale, Color? textColor = null, Color? lightColor = null, bool? renderTextSparkles = null)
+        {
+            Draw(Item, Main.spriteBatch, text, X, Y, Colors.AlphaDarken(textColor ?? TextClr), lightColor ?? BloomClr, rotation, origin, baseScale, Main.GlobalTimeWrappedHourly,
+                renderTextSparkles ?? true, FontAssets.MouseText.Value);
+        }
+
+        public static void Draw(Item Item, DrawableTooltipLine line)
+        {
+            Draw(Item, line.Text, line.X, line.Y, line.Rotation, line.Origin, line.BaseScale);
+        }
+    }
+}

@@ -13,14 +13,14 @@ public class RustySword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 2.1f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
 		Item.damage = 77;
 		Item.knockBack = 12f;
 		Item.UseSound = SoundID.Item5;
-		Item.shoot = 117;
+		Item.shoot = ProjectileID.BoneArrow;
 		Item.shootSpeed = 50f;
 		Item.value = 660000;
 		Item.autoReuse = true;

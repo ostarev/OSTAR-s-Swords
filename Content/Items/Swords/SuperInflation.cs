@@ -17,13 +17,13 @@ public class SuperInflation : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 3f;
-		Item.rare = 10;
+		Item.rare = ItemRarityID.Red;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.knockBack = 10f;
 		Item.useTime = 12;
 		Item.useAnimation = 12;
 		Item.damage = 240;
-		Item.shoot = 160;
+		Item.shoot = ProjectileID.GoldCoin;
 		Item.shootSpeed = 40f;
 		Item.UseSound = SoundID.Item1;
 		Item.value = 999999;
@@ -40,7 +40,7 @@ public class SuperInflation : ModItem
 		recipe.AddIngredient(Mod, "SilverCoinSword", 1);
 		recipe.AddIngredient(Mod, "GoldCoinSword", 1);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 2);
-		recipe.AddIngredient(3460, 1);
+		recipe.AddIngredient(ItemID.LunarOre, 1);
 		recipe.AddTile(TileID.AncientManipulator);
 		recipe.Register();
 	}
@@ -60,6 +60,6 @@ public class SuperInflation : ModItem
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(72, 360, false);
+		target.AddBuff(BuffID.Midas, 360, false);
 	}
 }

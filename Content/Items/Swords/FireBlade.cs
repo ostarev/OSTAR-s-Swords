@@ -16,7 +16,7 @@ public class FireBlade : ModItem
 		Item.width = 36;
 		Item.height = 40;
 		Item.scale = 1f;
-		Item.rare = 3;
+		Item.rare = ItemRarityID.Orange;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
@@ -33,7 +33,7 @@ public class FireBlade : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 6, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.Torch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -41,8 +41,8 @@ public class FireBlade : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(172, 100);
-		recipe.AddIngredient(8, 50);
+		recipe.AddIngredient(ItemID.AshBlock, 100);
+		recipe.AddIngredient(ItemID.Torch, 50);
 		recipe.AddIngredient(Mod, "SwordMatter", 20);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

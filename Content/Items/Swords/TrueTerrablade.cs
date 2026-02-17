@@ -26,7 +26,7 @@ public class TrueTerrablade : ModItem
 		Item.value = Item.sellPrice(0, 25, 0, 0);
 		Item.shoot = ModContent.ProjectileType<TrueTerrablade>();
 		Item.shootSpeed = 30f;
-		Item.rare = 11;
+		Item.rare = ItemRarityID.Purple;
 		Item.scale = 1f;
 		Item.UseSound = SoundID.Item60;
 		Item.autoReuse = true;
@@ -37,7 +37,7 @@ public class TrueTerrablade : ModItem
 	{
 		if (Main.rand.Next(1) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 107, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.Terra, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}

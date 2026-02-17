@@ -15,7 +15,7 @@ public class RefinedIronSword : ModItem
 		Item.width = 58;
 		Item.height = 60;
 		Item.scale = 1f;
-		Item.rare = 2;
+		Item.rare = ItemRarityID.Green;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
@@ -32,13 +32,13 @@ public class RefinedIronSword : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddRecipeGroup("IronBar", 5);
-		recipe.AddIngredient(4, 1);
+		recipe.AddIngredient(ItemID.IronBroadsword, 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 20);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 		Recipe recipe2 = CreateRecipe();
 		recipe2.AddRecipeGroup("IronBar", 5);
-		recipe2.AddIngredient(3496, 1);
+		recipe2.AddIngredient(ItemID.LeadBroadsword, 1);
 		recipe2.AddIngredient(Mod, "SwordMatter", 20);
 		recipe2.AddTile(TileID.Anvils);
 		recipe2.Register();

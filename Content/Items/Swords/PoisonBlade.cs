@@ -16,7 +16,7 @@ public class PoisonBlade : ModItem
 		Item.width = 36;
 		Item.height = 40;
 		Item.scale = 1f;
-		Item.rare = 4;
+		Item.rare = ItemRarityID.LightRed;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
@@ -33,7 +33,7 @@ public class PoisonBlade : ModItem
 	{
 		if (Main.rand.Next(2) == 0)
 		{
-			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, 61, 0f, 0f, 100, default(Color), 2f);
+			int dust = Dust.NewDust(new Vector2((float)hitbox.X, (float)hitbox.Y), hitbox.Width, hitbox.Height, DustID.GreenTorch, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dust].noGravity = true;
 		}
 	}
@@ -41,8 +41,8 @@ public class PoisonBlade : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(176, 200);
-		recipe.AddIngredient(429, 10);
+		recipe.AddIngredient(ItemID.MudBlock, 200);
+		recipe.AddIngredient(ItemID.GreenTorch, 10);
 		recipe.AddIngredient(Mod, "SwordMatter", 20);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();

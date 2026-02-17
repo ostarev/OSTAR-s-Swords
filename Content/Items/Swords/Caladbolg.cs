@@ -5,21 +5,18 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
 using OSTARsSWORDS.Content.Projectiles;
+using Terraria.ID;
 
 namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class Caladbolg : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.width = 535;
 		Item.height = 534;
 		Item.scale = 1f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.crit = 96;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;

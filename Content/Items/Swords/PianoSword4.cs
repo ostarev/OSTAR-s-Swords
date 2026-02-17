@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace OSTARsSWORDS.Content.Items.Swords;
@@ -17,14 +18,14 @@ public class PianoSword4 : ModItem
 		Item.width = 64;
 		Item.height = 64;
 		Item.scale = 2.5f;
-		Item.rare = 8;
+		Item.rare = ItemRarityID.Yellow;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
 		Item.damage = 88;
 		Item.knockBack = 3f;
 		Item.UseSound = new SoundStyle("UniverseOfSwordsModOld/Sounds/Item/PianoYellow", (SoundType)0);
-		Item.shoot = 91;
+		Item.shoot = ProjectileID.HolyArrow;
 		Item.shootSpeed = 17f;
 		Item.value = Item.sellPrice(0, 12, 0, 0);
 		Item.autoReuse = true;
@@ -35,31 +36,31 @@ public class PianoSword4 : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(643, 1);
-		recipe.AddIngredient(2821, 1);
-		recipe.AddIngredient(3915, 1);
-		recipe.AddIngredient(2383, 1);
-		recipe.AddIngredient(2246, 1);
-		recipe.AddIngredient(2385, 1);
-		recipe.AddIngredient(2256, 1);
-		recipe.AddIngredient(2379, 1);
-		recipe.AddTile(106);
+		recipe.AddIngredient(ItemID.PearlwoodPiano, 1);
+		recipe.AddIngredient(ItemID.MartianPiano, 1);
+		recipe.AddIngredient(ItemID.CrystalPiano, 1);
+		recipe.AddIngredient(ItemID.SpookyPiano, 1);
+		recipe.AddIngredient(ItemID.FleshPiano, 1);
+		recipe.AddIngredient(ItemID.LihzahrdPiano, 1);
+		recipe.AddIngredient(ItemID.SteampunkPiano, 1);
+		recipe.AddIngredient(ItemID.GoldenPiano, 1);
+		recipe.AddTile(TileID.Sawmill);
 		recipe.Register();
 	}
 
 	public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 	{
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, 89, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, 304, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, 260, damage, knockback, player.whoAmI, 0f, 0f, 0f);
-		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, 242, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ProjectileID.CrystalBullet, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ProjectileID.VampireKnife, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ProjectileID.HeatRay, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+		Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ProjectileID.BulletHighVelocity, damage, knockback, player.whoAmI, 0f, 0f, 0f);
 		return true;
 	}
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(144, 360, false);
+		target.AddBuff(BuffID.Electrified, 360, false);
 		target.AddBuff(BuffID.Bleeding, 360, false);
-		target.AddBuff(72, 360, false);
+		target.AddBuff(BuffID.Midas, 360, false);
 	}
 }

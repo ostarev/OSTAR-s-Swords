@@ -12,14 +12,14 @@ public class DutchmanSword : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 2.1f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 25;
 		Item.useAnimation = 25;
 		Item.damage = 40;
 		Item.knockBack = 7.77f;
 		Item.UseSound = SoundID.Item1;
-		Item.shoot = 162;
+		Item.shoot = ProjectileID.CannonballFriendly;
 		Item.shootSpeed = 20f;
 		Item.value = Item.sellPrice(0, 10, 0, 0);
 		Item.autoReuse = true;

@@ -12,7 +12,7 @@ public class CrystalSword : ModItem
 		Item.width = 80;
 		Item.height = 80;
 		Item.scale = 0.8f;
-		Item.rare = 6;
+		Item.rare = ItemRarityID.LightPurple;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 20;
 		Item.useAnimation = 20;
@@ -28,7 +28,7 @@ public class CrystalSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(502, 20);
+		recipe.AddIngredient(ItemID.CrystalShard, 20);
 		recipe.AddTile(TileID.MythrilAnvil);
 		recipe.Register();
 	}

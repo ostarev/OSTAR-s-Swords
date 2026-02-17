@@ -16,14 +16,14 @@ public class SweetCornSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.8f;
-		Item.rare = 8;
+		Item.rare = ItemRarityID.Yellow;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 9;
 		Item.useAnimation = 9;
 		Item.damage = 44;
 		Item.knockBack = 5f;
 		Item.UseSound = SoundID.Item1;
-		Item.shoot = 311;
+		Item.shoot = ProjectileID.CandyCorn;
 		Item.shootSpeed = 20f;
 		Item.value = 390500;
 		Item.autoReuse = true;
@@ -34,7 +34,7 @@ public class SweetCornSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(1782, 1);
+		recipe.AddIngredient(ItemID.CandyCornRifle, 1);
 		recipe.AddIngredient(Mod, "Orichalcon", 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 150);
 		recipe.AddTile(TileID.MythrilAnvil);

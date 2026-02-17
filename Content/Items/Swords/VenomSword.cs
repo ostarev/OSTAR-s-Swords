@@ -13,13 +13,13 @@ public class VenomSword : ModItem
 		Item.width = 32;
 		Item.height = 32;
 		Item.scale = 1.9f;
-		Item.rare = 7;
+		Item.rare = ItemRarityID.Lime;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
 		Item.knockBack = 7f;
 		Item.damage = 63;
-		Item.shoot = 355;
+		Item.shoot = ProjectileID.VenomFang;
 		Item.shootSpeed = 40f;
 		Item.UseSound = SoundID.Item43;
 		Item.value = 200000;
@@ -45,7 +45,7 @@ public class VenomSword : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(Mod, "PoisonSword", 1);
-		recipe.AddIngredient(1308, 1);
+		recipe.AddIngredient(ItemID.PoisonStaff, 1);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe.AddIngredient(Mod, "SwordMatter", 100);
 		recipe.AddTile(TileID.MythrilAnvil);

@@ -16,7 +16,7 @@ public class PekkaSword : ModItem
 		Item.width = 56;
 		Item.height = 62;
 		Item.scale = 1f;
-		Item.rare = 1;
+		Item.rare = ItemRarityID.Blue;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 22;
 		Item.useAnimation = 22;
@@ -32,12 +32,12 @@ public class PekkaSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(3520, 1);
+		recipe.AddIngredient(ItemID.GoldBroadsword, 1);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 		Recipe recipe2 = CreateRecipe();
-		recipe2.AddIngredient(3484, 1);
+		recipe2.AddIngredient(ItemID.PlatinumBroadsword, 1);
 		recipe2.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe2.AddTile(TileID.Anvils);
 		recipe2.Register();

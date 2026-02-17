@@ -28,7 +28,7 @@ public class Soul2 : ModProjectile
 	{
 		if (Main.rand.Next(1) == 0)
 		{
-			Dust obj = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, 59, 0f, 0f, 0, default(Color), 1f);
+			Dust obj = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.BlueTorch, 0f, 0f, 0, default(Color), 1f);
 			obj.noGravity = true;
 			obj.scale = 1f;
 		}
@@ -38,7 +38,7 @@ public class Soul2 : ModProjectile
 	{
 		for (int i = 0; i < 10; i++)
 		{
-			Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, 59, Projectile.oldVelocity.X * 0.5f, Projectile.oldVelocity.Y * 0.5f, 0, default(Color), 1f);
+			Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.BlueTorch, Projectile.oldVelocity.X * 0.5f, Projectile.oldVelocity.Y * 0.5f, 0, default(Color), 1f);
 		}
 		SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
 	}

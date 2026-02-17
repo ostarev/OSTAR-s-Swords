@@ -12,7 +12,7 @@ public class MudSword : ModItem
 		Item.width = 35;
 		Item.height = 35;
 		Item.scale = 1.5f;
-		Item.rare = 0;
+		Item.rare = ItemRarityID.White;
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.useTime = 30;
 		Item.useAnimation = 30;
@@ -28,7 +28,7 @@ public class MudSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe recipe = CreateRecipe();
-		recipe.AddIngredient(176, 25);
+		recipe.AddIngredient(ItemID.MudBlock, 25);
 		recipe.AddTile(TileID.WorkBenches);
 		recipe.Register();
 	}
