@@ -1,2 +1,2 @@
-# OSTAR-s-Swords
+# OSTAR's Swords
 None
