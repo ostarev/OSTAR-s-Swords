@@ -1,9 +1,9 @@
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using OSTARsSWORDS.Content.Items.Swords.PostWOF.OldMansBlade;
+using OSTARsSWORDS.Content.Items.Swords.OldMansBlade;
 
-namespace OSTARsSWORDS.Players;
+namespace OSTARsSWORDS.Content.Players;
 
 public class OldMansBladePlayer : ModPlayer
 {

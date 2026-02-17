@@ -35,14 +35,14 @@ public class GnomBlade : ModItem
 		recipe.AddIngredient(ItemID.FragmentVortex, 10);
 		recipe.AddIngredient(ItemID.FragmentNebula, 10);
 		recipe.AddIngredient(ItemID.FragmentStardust, 10);
-		recipe.AddIngredient(ItemID.LuminiteBar, 14);
+		recipe.AddIngredient(ItemID.LunarBar, 14);
 		recipe.AddIngredient(Mod, "Dragrael", 1);
 		recipe.AddIngredient(Mod, "Doomsday", 1);
 		recipe.AddIngredient(ItemID.TerraBlade, 1);
 		recipe.AddIngredient(Mod, "LunarOrb", 1);
 		recipe.AddIngredient(Mod, "Orichalcon", 3);
 		recipe.AddIngredient(Mod, "SwordMatter", 200);
-		recipe.AddTile(TileID.AncientManipulator);
+		recipe.AddTile(TileID.LunarCraftingStation);
 		recipe.Register();
 	}
 

@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace OSTARsSWORDS.Content.Projectiles;
 
-public class MoltenShard : ModProjectile
+public class MoltenShardProjectile : ModProjectile
 {
 	public override void SetDefaults()
 	{

@@ -57,7 +57,7 @@ public class TheMasterOfCoin : ModItem
 		recipe.AddIngredient(ItemID.GoldCoin, 99);
 		recipe.AddIngredient(ItemID.SilverCoin, 999);
 		recipe.AddIngredient(ItemID.CopperCoin, 999);
-		recipe.AddTile(TileID.AncientManipulator);
+		recipe.AddTile(TileID.LunarCraftingStation);
 		recipe.Register();
 		Recipe recipe2 = CreateRecipe();
 		recipe2.AddIngredient(ItemID.LuckyCoin, 1);
@@ -69,7 +69,7 @@ public class TheMasterOfCoin : ModItem
 		recipe2.AddIngredient(ItemID.GoldCoin, 99);
 		recipe2.AddIngredient(ItemID.SilverCoin, 999);
 		recipe2.AddIngredient(ItemID.CopperCoin, 999);
-		recipe2.AddTile(TileID.AncientManipulator);
+		recipe2.AddTile(TileID.LunarCraftingStation);
 		recipe2.Register();
 	}
 }

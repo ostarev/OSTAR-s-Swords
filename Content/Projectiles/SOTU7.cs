@@ -31,6 +31,18 @@ public class SOTU7 : ModProjectile
 		AIType = ProjectileID.WoodenArrowFriendly;
 	}
 
+	public override void AI()
+	{
+		if (Projectile.alpha > 0)
+		{
+			Projectile.alpha -= 25;
+			if (Projectile.alpha < 0)
+			{
+				Projectile.alpha = 0;
+			}
+		}
+	}
+
 	public virtual void CreateDust()
 	{
 		if (Main.rand.Next(4) == 0)

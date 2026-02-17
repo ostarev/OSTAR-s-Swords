@@ -41,7 +41,7 @@ public class SuperInflation : ModItem
 		recipe.AddIngredient(Mod, "GoldCoinSword", 1);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 2);
 		recipe.AddIngredient(ItemID.LunarOre, 1);
-		recipe.AddTile(TileID.AncientManipulator);
+		recipe.AddTile(TileID.LunarCraftingStation);
 		recipe.Register();
 	}
 

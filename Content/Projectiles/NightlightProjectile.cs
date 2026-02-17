@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace OSTARsSWORDS.Content.Projectiles;
 
-public class Nightlight : ModProjectile
+public class NightlightProjectile : ModProjectile
 {
 	public override void SetDefaults()
 	{

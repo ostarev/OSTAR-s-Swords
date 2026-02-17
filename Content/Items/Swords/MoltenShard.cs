@@ -8,10 +8,6 @@ namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class MoltenShard : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.width = 48;
@@ -23,7 +19,7 @@ public class MoltenShard : ModItem
 		Item.useAnimation = 25;
 		Item.damage = 36;
 		Item.knockBack = 7f;
-		Item.shoot = ModContent.ProjectileType<MoltenShard>();
+		Item.shoot = ModContent.ProjectileType<MoltenShardProjectile>();
 		Item.shootSpeed = 5f;
 		Item.UseSound = SoundID.Item20;
 		Item.value = Item.sellPrice(0, 5, 0, 0);

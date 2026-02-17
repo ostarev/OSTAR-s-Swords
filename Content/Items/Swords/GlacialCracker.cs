@@ -8,10 +8,6 @@ namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class GlacialCracker : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.width = 81;
@@ -43,7 +39,7 @@ public class GlacialCracker : ModItem
 		recipe.AddIngredient(ItemID.IceFeather, 2);
 		recipe.AddIngredient(ItemID.BrokenHeroSword, 1);
 		recipe.AddIngredient(ItemID.IceBlock, 999);
-		recipe.AddTile(TileID.AncientManipulator);
+		recipe.AddTile(TileID.LunarCraftingStation);
 		recipe.Register();
 	}
 

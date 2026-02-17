@@ -8,10 +8,6 @@ namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class TrueTerrablade : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.damage = 125;
@@ -24,7 +20,7 @@ public class TrueTerrablade : ModItem
 		Item.useStyle = ItemUseStyleID.Swing;
 		Item.knockBack = 10f;
 		Item.value = Item.sellPrice(0, 25, 0, 0);
-		Item.shoot = ModContent.ProjectileType<TrueTerrablade>();
+		Item.shoot = ModContent.ProjectileType<TrueTerrabladeProjectile>();
 		Item.shootSpeed = 30f;
 		Item.rare = ItemRarityID.Purple;
 		Item.scale = 1f;
@@ -47,7 +43,7 @@ public class TrueTerrablade : ModItem
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(ItemID.TerraBlade, 3);
 		recipe.AddIngredient(Mod, "TheNightmareAmalgamation", 1);
-		recipe.AddTile(TileID.AncientManipulator);
+		recipe.AddTile(TileID.LunarCraftingStation);
 		recipe.Register();
 	}
 }

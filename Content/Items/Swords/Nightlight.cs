@@ -19,7 +19,7 @@ public class Nightlight : ModItem
 		Item.useAnimation = 20;
 		Item.damage = 84;
 		Item.knockBack = 8f;
-		Item.shoot = ModContent.ProjectileType<Nightlight>();
+		Item.shoot = ModContent.ProjectileType<NightlightProjectile>();
 		Item.shootSpeed = 10f;
 		Item.UseSound = SoundID.Item1;
 		Item.value = Item.sellPrice(0, 20, 0, 0);

@@ -4,11 +4,11 @@ using Microsoft.Xna.Framework;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Audio;
-using OSTARsSWORDS.Players;
 using OSTARsSWORDS.Rarities;
 using Terraria.DataStructures;
+using OSTARsSWORDS.Content.Players;
 
-namespace OSTARsSWORDS.Content.Items.Swords.PostWOF.OldMansBlade;
+namespace OSTARsSWORDS.Content.Items.Swords.OldMansBlade;
 
 public class OldMansBlade : ModItem
 {
@@ -17,7 +17,7 @@ public class OldMansBlade : ModItem
 		Item.width = 48;
 		Item.height = 48;
 		Item.scale = 1.5f;
-		Item.rare = ModContent.RarityType<Ancient>();
+		Item.rare = ModContent.RarityType<Inferno>();
 		Item.useTime = 30;
 		Item.useAnimation = 30;
 		Item.damage = 87;
@@ -97,7 +97,7 @@ public class OldMansBlade : ModItem
 		float alpha = Main.LocalPlayer.GetModPlayer<OldMansBladePlayer>().AwakenedAlpha;
 		if (alpha > 0f)
 		{
-			Texture2D texture = ModContent.Request<Texture2D>("OSTARsSWORDS/Content/Items/Swords/PostWOF/OldMansBlade/OldMansAwakened").Value;
+			Texture2D texture = ModContent.Request<Texture2D>("OSTARsSWORDS/Content/Items/Swords/OldMansBlade/OldMansAwakened").Value;
 			
 			// Pulse effect based on time
 			float pulse = (float)System.Math.Sin(Main.GlobalTimeWrappedHourly * 15f) * 0.2f + 0.8f;
@@ -167,7 +167,7 @@ public class OldMansBladeHeldLayer : PlayerDrawLayer
 		Item item = drawPlayer.HeldItem;
 		float alpha = drawPlayer.GetModPlayer<OldMansBladePlayer>().AwakenedAlpha;
 
-		Texture2D texture = ModContent.Request<Texture2D>("OSTARsSWORDS/Content/Items/Swords/PostWOF/OldMansBlade/OldMansAwakened").Value;
+		Texture2D texture = ModContent.Request<Texture2D>("OSTARsSWORDS/Content/Items/Swords/OldMansBlade/OldMansAwakened").Value;
 		
 		Vector2 position = new Vector2((int)(drawInfo.ItemLocation.X - Main.screenPosition.X), (int)(drawInfo.ItemLocation.Y - Main.screenPosition.Y));
 		Rectangle frame = texture.Bounds;

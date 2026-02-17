@@ -36,7 +36,7 @@ public class LuminiteArrowSword : ModItem
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(ItemID.MoonlordArrow, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 99);
-		recipe.AddTile(TileID.AncientManipulator);
+		recipe.AddTile(TileID.LunarCraftingStation);
 		recipe.Register();
 	}
 }

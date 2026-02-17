@@ -7,12 +7,8 @@ using Terraria.ModLoader;
 
 namespace OSTARsSWORDS.Content.Projectiles;
 
-public class HumanBuzzSaw : ModProjectile
+internal class HumanBuzzSawProjectile : ModProjectile
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Projectile.width = 30;

@@ -30,6 +30,18 @@ public class SOTM : ModProjectile
 		AIType = ProjectileID.WoodenArrowFriendly;
 	}
 
+	public override void AI()
+	{
+		if (Projectile.alpha > 0)
+		{
+			Projectile.alpha -= 25;
+			if (Projectile.alpha < 0)
+			{
+				Projectile.alpha = 0;
+			}
+		}
+	}
+
 	public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 	{
 		target.AddBuff(Mod.Find<ModBuff>("EmperorBlaze").Type, 1000, true);

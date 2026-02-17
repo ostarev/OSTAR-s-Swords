@@ -7,10 +7,6 @@ namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class HumanBuzzSaw : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.damage = 24;
@@ -28,7 +24,7 @@ public class HumanBuzzSaw : ModItem
 		Item.knockBack = 5f;
 		Item.value = Item.sellPrice(0, 5, 0, 0);
 		Item.rare = ItemRarityID.LightRed;
-		Item.shoot = ModContent.ProjectileType<HumanBuzzSaw>();
+		Item.shoot = ModContent.ProjectileType<HumanBuzzSawProjectile>();
 		Item.noUseGraphic = true;
 	}
 

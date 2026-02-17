@@ -1,9 +1,8 @@
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace OSTARsSWORDS.Content.Items.Swords.PreWOF
+namespace OSTARsSWORDS.Content.Items.Swords
 {
 	public class AllWoodSword : ModItem
 	{

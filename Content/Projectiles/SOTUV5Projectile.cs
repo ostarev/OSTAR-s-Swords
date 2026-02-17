@@ -29,4 +29,16 @@ public class SOTUV5Projectile : ModProjectile
 		Projectile.extraUpdates = 1;
 		AIType = ProjectileID.WoodenArrowFriendly;
 	}
+
+	public override void AI()
+	{
+		if (Projectile.alpha > 0)
+		{
+			Projectile.alpha -= 25;
+			if (Projectile.alpha < 0)
+			{
+				Projectile.alpha = 0;
+			}
+		}
+	}
 }

@@ -44,7 +44,7 @@ public class PrismSword : ModItem
 		recipe.AddIngredient(ItemID.ManaCrystal, 3);
 		recipe.AddIngredient(ItemID.RainbowCrystalStaff, 1);
 		recipe.AddIngredient(ItemID.LastPrism, 1);
-		recipe.AddIngredient(ItemID.LuminiteBar, 10);
+		recipe.AddIngredient(ItemID.LunarBar, 10);
 		recipe.AddTile(TileID.CrystalBall);
 		recipe.Register();
 	}

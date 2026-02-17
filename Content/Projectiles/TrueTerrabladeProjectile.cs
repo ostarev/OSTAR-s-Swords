@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace OSTARsSWORDS.Content.Projectiles;
 
-internal class TrueTerrablade : ModProjectile
+internal class TrueTerrabladeProjectile : ModProjectile
 {
 	public override void SetDefaults()
 	{

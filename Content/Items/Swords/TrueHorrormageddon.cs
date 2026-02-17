@@ -41,7 +41,7 @@ public class TrueHorrormageddon : ModItem
 		recipe.AddIngredient(ItemID.BrokenHeroSword, 10);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 25);
 		recipe.AddIngredient(Mod, "LunarOrb", 3);
-		recipe.AddIngredient(ItemID.LuminiteBar, 100);
+		recipe.AddIngredient(ItemID.LunarBar, 100);
 		recipe.AddTile(TileID.DemonAltar);
 		recipe.Register();
 	}

@@ -75,7 +75,7 @@ public class TheNightmareAmalgamation : ModItem
 		recipe.AddIngredient(Mod, "Golem", 1);
 		recipe.AddIngredient(Mod, "Doomsday", 1);
 		recipe.AddIngredient(Mod, "Sharkron", 1);
-		recipe.AddTile(TileID.AncientManipulator);
+		recipe.AddTile(TileID.LunarCraftingStation);
 		recipe.Register();
 		Recipe recipe2 = CreateRecipe();
 		recipe2.AddIngredient(Mod, "CthulhuJudge", 1);
@@ -91,7 +91,7 @@ public class TheNightmareAmalgamation : ModItem
 		recipe2.AddIngredient(Mod, "Golem", 1);
 		recipe2.AddIngredient(Mod, "Doomsday", 1);
 		recipe2.AddIngredient(Mod, "Sharkron", 1);
-		recipe2.AddTile(TileID.AncientManipulator);
+		recipe2.AddTile(TileID.LunarCraftingStation);
 		recipe2.Register();
 	}
 }

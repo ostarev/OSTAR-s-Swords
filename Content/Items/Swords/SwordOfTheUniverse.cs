@@ -10,10 +10,6 @@ namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class SwordOfTheUniverse : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.width = 100;

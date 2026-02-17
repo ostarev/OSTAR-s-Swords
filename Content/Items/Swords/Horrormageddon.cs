@@ -46,7 +46,7 @@ public class Horrormageddon : ModItem
 		recipe.AddIngredient(ItemID.LargeEmerald, 1);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 10);
 		recipe.AddIngredient(Mod, "LunarOrb", 1);
-		recipe.AddTile(TileID.AncientManipulator);
+		recipe.AddTile(TileID.LunarCraftingStation);
 		recipe.Register();
 	}
 

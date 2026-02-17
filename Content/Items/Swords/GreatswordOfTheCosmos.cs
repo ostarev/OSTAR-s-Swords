@@ -79,9 +79,9 @@ public class GreatswordOfTheCosmos : ModItem
 		recipe.AddIngredient(ItemID.MeteoriteBar, 100);
 		recipe.AddIngredient(ItemID.HellstoneBar, 100);
 		recipe.AddIngredient(Mod, "Orichalcon", 10);
-		recipe.AddIngredient(ItemID.LuminiteBar, 50);
+		recipe.AddIngredient(ItemID.LunarBar, 50);
 		recipe.AddIngredient(Mod, "SwordMatter", 2000);
-		recipe.AddTile(TileID.AncientManipulator);
+		recipe.AddTile(TileID.LunarCraftingStation);
 		recipe.Register();
 	}
 }

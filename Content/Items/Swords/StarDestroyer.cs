@@ -68,7 +68,7 @@ public class StarDestroyer : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(ItemID.LunarFlareBook, 1);
-		recipe.AddIngredient(ItemID.LuminiteBar, 10);
+		recipe.AddIngredient(ItemID.LunarBar, 10);
 		recipe.AddIngredient(Mod, "Orichalcon", 2);
 		recipe.AddIngredient(ItemID.FragmentSolar, 5);
 		recipe.AddIngredient(ItemID.FragmentVortex, 5);
@@ -76,7 +76,7 @@ public class StarDestroyer : ModItem
 		recipe.AddIngredient(ItemID.FragmentStardust, 5);
 		recipe.AddIngredient(Mod, "UpgradeMatter", 1);
 		recipe.AddIngredient(Mod, "LunarOrb", 1);
-		recipe.AddTile(TileID.AncientManipulator);
+		recipe.AddTile(TileID.LunarCraftingStation);
 		recipe.Register();
 	}
 }

@@ -36,7 +36,7 @@ public class LuminiteBulletSword : ModItem
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(ItemID.MoonlordBullet, 999);
 		recipe.AddIngredient(Mod, "SwordMatter", 99);
-		recipe.AddTile(TileID.AncientManipulator);
+		recipe.AddTile(TileID.LunarCraftingStation);
 		recipe.Register();
 	}
 }
