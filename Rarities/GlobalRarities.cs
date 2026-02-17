@@ -4,7 +4,7 @@ using OSTARsSWORDS.Rarities;
 
 namespace OSTARsSWORDS.Rarities
 {
-    public class AncientGlobalItem : GlobalItem
+    public class AncientGlobal : GlobalItem
     {
         public override bool PreDrawTooltipLine(Item item, DrawableTooltipLine line, ref int yOffset)
         {
