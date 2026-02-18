@@ -17,7 +17,7 @@ public class OldMansBlade : ModItem
 		Item.width = 48;
 		Item.height = 48;
 		Item.scale = 1.5f;
-		Item.rare = ModContent.RarityType<Inferno>();
+		Item.rare = ModContent.RarityType<Ancient>();
 		Item.useTime = 30;
 		Item.useAnimation = 30;
 		Item.damage = 87;

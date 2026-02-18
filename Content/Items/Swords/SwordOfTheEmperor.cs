@@ -38,11 +38,11 @@ public class SwordOfTheEmperor : ModItem
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(Mod.Find<ModBuff>("EmperorBlaze").Type, 999, true);
+		target.AddBuff(Mod.Find<ModBuff>("EmperorBlazeBuff").Type, 999, true);
 	}
 
 	public override void OnHitPvp(Player player, Player target, Player.HurtInfo hurtInfo)
 	{
-		target.AddBuff(Mod.Find<ModBuff>("EmperorBlaze").Type, 999, true, false);
+		target.AddBuff(Mod.Find<ModBuff>("EmperorBlazeBuff").Type, 999, true, false);
 	}
 }

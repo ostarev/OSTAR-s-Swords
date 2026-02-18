@@ -161,7 +161,7 @@ Items: {
 	}
 
 	SkoomaPotion: {
-		Tooltip: ""
+		Tooltip: "Gives the player mega speed and jump power"
 		DisplayName: Skooma
 	}
 
@@ -171,7 +171,7 @@ Items: {
 	}
 
 	HaloOfHorrors: {
-		Tooltip: ""
+		Tooltip: "you are tuff..."
 		DisplayName: Halo Of Horrors
 	}
 
@@ -1398,13 +1398,18 @@ Buffs: {
 	}
 
 	SkoomaBuff: {
-		Description: Increased speed and jump height
+		Description: Super speed!
 		DisplayName: Skooma
 	}
 
 	NordMeadBuff: {
 		Description: Warrior mode
 		DisplayName: Nord Mead
+	}
+
+	EmperorBlazeBuff: {
+		Description: Mods.OSTARsSWORDS.Buffs.EmperorBlazeBuff.Description
+		DisplayName: Emperor Blaze Buff
 	}
 }
 
@@ -1440,7 +1445,7 @@ Projectiles: {
 	HarpyFeather.DisplayName: Harpy Feather
 	HumanBuzzSawProjectile.DisplayName: Human Buzz Saw Projectile
 	InvisibleProj.DisplayName: Invisible Proj
-	MechanicalSoul.DisplayName: Mechanical Soul
+	MechanicalSoulProjectile.DisplayName: Mechanical Soul
 	MoltenShardProjectile.DisplayName: Molten Shard Projectile
 	NightlightProjectile.DisplayName: Nightlight Projectile
 	Nightmare.DisplayName: Nightmare

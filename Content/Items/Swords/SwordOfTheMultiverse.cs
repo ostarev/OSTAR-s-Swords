@@ -66,6 +66,6 @@ public class SwordOfTheMultiverse : ModItem
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(Mod.Find<ModBuff>("EmperorBlaze").Type, 1000, true);
+		target.AddBuff(Mod.Find<ModBuff>("EmperorBlazeBuff").Type, 1000, true);
 	}
 }

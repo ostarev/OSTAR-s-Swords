@@ -4,16 +4,11 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using OSTARsSWORDS.Content.Projectiles;
-using OSTARsSWORDS.Content.Projectiles;
 
 namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class MechanicalSoul : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.width = 52;
@@ -60,14 +55,14 @@ public class MechanicalSoul : ModItem
 			Item.damage = 80;
 			Item.shoot = ModContent.ProjectileType<Soul1>();
 		}
-		return CanUseItem(player);
+		return true;
 	}
 
 	public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 	{
 		if (player.altFunctionUse == 2)
 		{
-			Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ModContent.ProjectileType<global::OSTARsSWORDS.Content.Projectiles.MechanicalSoul>(), damage, knockback, player.whoAmI, 0f, 0f, 0f);
+			Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, ModContent.ProjectileType<MechanicalSoulProjectile>(), damage, knockback, player.whoAmI, 0f, 0f, 0f);
 			return true;
 		}
 		Projectile.NewProjectile(source, position.X, position.Y, velocity.X + 1f, velocity.Y + 1f, ModContent.ProjectileType<Soul2>(), damage, knockback, player.whoAmI, 0f, 0f, 0f);

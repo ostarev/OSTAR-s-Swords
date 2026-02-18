@@ -55,7 +55,7 @@ public class DaedricSword : ModItem
 			Item.shootSpeed = 20f;
 			Item.shoot = ModContent.ProjectileType<ScarletFlareBolt>();
 		}
-		return CanUseItem(player);
+		return true;
 	}
 
 	public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)

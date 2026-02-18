@@ -44,6 +44,6 @@ public class SOTM : ModProjectile
 
 	public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 	{
-		target.AddBuff(Mod.Find<ModBuff>("EmperorBlaze").Type, 1000, true);
+		target.AddBuff(Mod.Find<ModBuff>("EmperorBlazeBuff").Type, 1000, true);
 	}
 }
