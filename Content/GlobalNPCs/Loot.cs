@@ -13,12 +13,6 @@ public class Loot : GlobalNPC
 {
     public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
     {
-        if (npc.type == NPCID.GreenSlime || npc.type == NPCID.BlueSlime || npc.type == NPCID.PurpleSlime || npc.type == NPCID.RedSlime) //Gel Blade
-        {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SlimeKiller>(), chanceDenominator: 300, minimumDropped: 1, maximumDropped: 1));
-            // 1 in 300 chance
-        }
-
         //Materials
         if (!npc.friendly) //Sword Matter
         {
@@ -116,6 +110,56 @@ public class Loot : GlobalNPC
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GiantUnicornHorn>(), chanceDenominator: 1, minimumDropped: 1, maximumDropped: 1));
         }
 
+        if(npc.type == 481)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CaesarSword>(), chanceDenominator: 15, minimumDropped: 1, maximumDropped: 1));
+        }
+
+        if (npc.type == 491)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DutchmanSword>(), chanceDenominator: 1, minimumDropped: 1, maximumDropped: 1));
+        }
+
+        if (npc.type == 156)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DevilBlade>(), chanceDenominator: 1, minimumDropped: 1, maximumDropped: 1));
+        }
+
+        if (npc.type == 62)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DeathSword>(), chanceDenominator: 1, minimumDropped: 1, maximumDropped: 1));
+        }
+
+        if (npc.type == 28)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Sting>(), chanceDenominator: 1, minimumDropped: 1, maximumDropped: 1));
+        }
+
+        if (npc.type == 26)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GoblinKnife>(), chanceDenominator: 1, minimumDropped: 1, maximumDropped: 1));
+        }
+
+        if (npc.type == 24)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Fireball>(), chanceDenominator: 1, minimumDropped: 1, maximumDropped: 1));
+        }
+
+        if (npc.type == 58)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Biter>(), chanceDenominator: 1, minimumDropped: 1, maximumDropped: 1));
+        }
+
+        if (npc.type == 71)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SlimeKiller>(), chanceDenominator: 1, minimumDropped: 1, maximumDropped: 1));
+        }
+
+        if (npc.type == 53)
+        {
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<UselessWeapon>(), chanceDenominator: 1, minimumDropped: 1, maximumDropped: 1));
+        }
+
         //Biome Mimic Drops
         if (npc.type == NPCID.BigMimicCorruption) npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GiantUnicornHorn>(), chanceDenominator: 1, minimumDropped: 1, maximumDropped: 1));
         if (npc.type == NPCID.BigMimicCrimson) npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GiantUnicornHorn>(), chanceDenominator: 1, minimumDropped: 1, maximumDropped: 1));
@@ -124,13 +168,10 @@ public class Loot : GlobalNPC
 
         //Lunar Pillar Drops
         int[] pillars = { NPCID.LunarTowerNebula, NPCID.LunarTowerSolar, NPCID.LunarTowerStardust, NPCID.LunarTowerVortex };
-        if(npc.type == pillars[0] || npc.type == pillars[1] || npc.type == pillars[2] || npc.type == pillars[3] || Main.rand.Next(0,5) == 0) 
+        if(npc.type == pillars[0] || npc.type == pillars[1] || npc.type == pillars[2] || npc.type == pillars[3]) 
         { 
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<InnosWrath>(), chanceDenominator: 1, minimumDropped: 1, maximumDropped: 1));
-        }
-        if (npc.type == pillars[0] || npc.type == pillars[1] || npc.type == pillars[2] || npc.type == pillars[3] || Main.rand.Next(0, 5) == 1)
-        {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<BeliarClaw>(), chanceDenominator: 1, minimumDropped: 1, maximumDropped: 1));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<InnosWrath>(), chanceDenominator: 5, minimumDropped: 1, maximumDropped: 1));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<BeliarClaw>(), chanceDenominator: 5, minimumDropped: 1, maximumDropped: 1));
         }
     }
     public override void SetupTravelShop(int[] shop, ref int nextSlot)
