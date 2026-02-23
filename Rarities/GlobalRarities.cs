@@ -20,7 +20,14 @@ namespace OSTARsSWORDS.Rarities
                 Inferno.Draw(item, line);
                 return false; 
             }
+            //AbyssalBlue
+            else if (line.Mod == "Terraria" && line.Name == "ItemName" && item.rare == ModContent.RarityType<AbyssalBlue>())
+            {
+                AbyssalBlue.Draw(item, line);
+                return false;
+            }
             return true;
+
         }
     }
 }

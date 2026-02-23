@@ -16,7 +16,6 @@ public class SwordMatter : ModItem
 		ItemID.Sets.AnimatesAsSoul[Item.type] = true;
 		ItemID.Sets.ItemIconPulse[Item.type] = true;
 		ItemID.Sets.ItemNoGravity[Item.type] = true;
-
     }
 
 	public override void SetDefaults()
@@ -31,8 +30,8 @@ public class SwordMatter : ModItem
 
 	public static readonly Terraria.Audio.SoundStyle GhostSound = new("OSTARsSWORDS/Sounds/Ghost")
 	{
-		Volume = 0.25f,
-		Pitch = 0.44f,
+		Volume = 0.15f,
+		Pitch = 0.66f,
 		MaxInstances = 1
 	};
 

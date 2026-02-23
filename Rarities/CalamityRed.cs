@@ -1,0 +1,107 @@
+﻿using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Graphics;
+using Terraria.GameContent;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.UI.Chat;
+using Terraria.ID;
+
+namespace OSTARsSWORDS.Rarities
+{
+    public class CalamityRed : ModRarity
+    {
+        public override Color RarityColor => TextClr * 2f;
+
+        public static float MaxY = 4.5f;
+        public static Color BloomClr = new(180, 20, 75, 0);
+        public static Color TextClr = new(242, 27, 27, 255);
+
+        public static void Draw(Item Item, SpriteBatch spriteBatch, string text, int X, int Y, Color textColor, Color lightColor, float rotation,
+            Vector2 origin, Vector2 baseScale, float time, bool renderTextSparkles, DynamicSpriteFont font)
+        {
+            var crystalTextGlow = ModContent.Request<Texture2D>("OSTARsSWORDS/ExtraTextures/UI/CrystalTextGlow").Value;
+            var sparkle = ModContent.Request<Texture2D>("OSTARsSWORDS/ExtraTextures/UI/CrystalTextSparkle").Value;
+            var fontSize = font.MeasureString(text);
+            var center = fontSize / 2f; 
+
+            var glowPosition = new Vector2(X + center.X, Y + center.Y / 1.5f);
+            textColor.A = 0;
+            float pulsing = 10f + (float)Math.Sin(time * 20f);
+            float baseScalePulse = 1.03f;
+            float flameHeight = 5f;
+            float distortionAmount = 4f;
+
+            if (renderTextSparkles)
+
+                for (float f = 0f; f < MathHelper.TwoPi; f += 0.79f)
+                {
+                    float angle = f + (time * 2f % MathHelper.TwoPi);
+
+                    float distortion = (float)Math.Sin((Y + f * 100f + time * 20f) * 0.05f) * distortionAmount;
+
+                    Vector2 offset = new Vector2(
+                        (float)Math.Cos(angle) * pulsing * 0.4f + distortion,
+                        -(float)Math.Abs((float)Math.Sin(angle)) * flameHeight
+                    );
+
+                    float scaleVariation = 0.95f + 0.05f * (float)Math.Sin(time * 15f + f * 2f);
+                    Vector2 scale = new Vector2(baseScalePulse * scaleVariation);
+
+                    Color flameLayerColor = new Color(
+                        (int)(textColor.R * 0.5f),
+                        (int)(textColor.G * 0.5f),
+                        (int)(textColor.B * 0.5f),
+                        (int)(textColor.A * 0.5f)
+                    );
+
+                    ChatManager.DrawColorCodedString(
+                        spriteBatch,
+                        font,
+                        text,
+                        new Vector2(X, Y) + offset,
+                        flameLayerColor,
+                        rotation,
+                        origin,
+                        scale
+                    );
+                }
+
+            // Draw crisp center text - tekst okolu tekst, odnosno crveniot shadow na crniot text, goleminata e 1.03x od originalot
+            ChatManager.DrawColorCodedString(
+                spriteBatch,
+                font,
+                text,
+                new Vector2(X, Y),
+                textColor,
+                rotation,
+                origin,
+                new Vector2(baseScalePulse)
+            );
+
+            textColor.A = 255;
+
+            ChatManager.DrawColorCodedStringShadow(spriteBatch, font, text, new Vector2(X, Y), textColor * 2f, rotation, origin, baseScale);
+
+            spriteBatch.Draw(crystalTextGlow, glowPosition, null, lightColor, rotation + MathHelper.PiOver2, new Vector2(6f, 33f),
+               new Vector2(1.6f, fontSize.X / crystalTextGlow.Height * 1.2f), SpriteEffects.None, 0f);
+
+            //Layer 5 - Main text with black color and normal scale
+            ChatManager.DrawColorCodedString(spriteBatch, font, text, new Vector2(X, Y), Color.Black, rotation, origin, baseScale);
+
+            return;
+        }
+
+        public static void Draw(Item Item, string text, int X, int Y, float rotation, Vector2 origin, Vector2 baseScale, Color? textColor = null, Color? lightColor = null, bool? renderTextSparkles = null)
+        {
+            Draw(Item, Main.spriteBatch, text, X, Y, Colors.AlphaDarken(textColor ?? TextClr), lightColor ?? BloomClr, rotation, origin, baseScale, Main.GlobalTimeWrappedHourly,
+                renderTextSparkles ?? true, FontAssets.MouseText.Value);
+        }
+
+        public static void Draw(Item Item, DrawableTooltipLine line)
+        {
+            Draw(Item, line.Text, line.X, line.Y, line.Rotation, line.Origin, line.BaseScale);
+        }
+    }
+}

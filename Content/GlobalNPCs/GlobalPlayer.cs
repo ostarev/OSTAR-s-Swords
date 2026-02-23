@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace OSTARsSWORDS.Content.GlobalNPCs
@@ -8,10 +9,30 @@ namespace OSTARsSWORDS.Content.GlobalNPCs
     public class GlobalPlayer : ModPlayer
     {
         public bool eBlaze;
+        public bool slowReaper;
+
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            if(hit.DamageType == DamageClass.Melee && slowReaper == true)
+            {
+                target.AddBuff(BuffID.Slow, 600);
+                NPC.HitInfo hitInfo = new()
+                {
+                    Damage = (int)(target.lifeMax / 1000),
+                    Knockback = 0f,
+                    HitDirection = 0,
+                    DamageType = DamageClass.Generic
+                };
+                target.StrikeNPC(hitInfo);
+                if(target.lifeMax > 10) 
+                    target.lifeMax -= (int)target.lifeMax / 1000;
+            }
+        }
 
         public override void ResetEffects()
         {
             eBlaze = false;
+            slowReaper = false;
         }
 
         public override void UpdateBadLifeRegen()

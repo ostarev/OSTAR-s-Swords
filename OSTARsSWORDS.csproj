@@ -10,8 +10,9 @@
 
 	<!-- References -->
 	<ItemGroup>
-	  <None Include=".github\copilot-instructions.md" />
-	  <None Include="Rarities\GlobalRarities.cs" />
+		<Reference Include="Luminance">
+			<HintPath>C:\Users\filip\OneDrive\Documents\My Games\Terraria\tModLoader\ModSources\ModAssemblies\Luminance_v1.0.13.dll</HintPath>
+		</Reference>
 	</ItemGroup>
 
 </Project>

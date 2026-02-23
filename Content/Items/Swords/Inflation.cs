@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -7,10 +6,6 @@ namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class Inflation : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.width = 64;
@@ -31,10 +26,10 @@ public class Inflation : ModItem
 	{
 		Recipe recipe = CreateRecipe();
 		recipe.AddIngredient(ItemID.GoldCoin, 2000);
-		recipe.AddRecipeGroup("UniverseOfSwordsModOld:GoldCrates", 10);
-		recipe.AddRecipeGroup("UniverseOfSwordsModOld:GoldBricks", 999);
-		recipe.AddRecipeGroup("UniverseOfSwordsModOld:GoldSwords", 10);
-		recipe.AddRecipeGroup("UniverseOfSwordsModOld:GoldBars", 500);
+		recipe.AddIngredient(ItemID.GoldenCrate, 10);
+		recipe.AddIngredient(ItemID.GoldBrick, 999);
+		recipe.AddIngredient(ItemID.GoldBroadsword, 10);
+		recipe.AddIngredient(ItemID.GoldBar, 500);
 		recipe.AddTile(TileID.Anvils);
 		recipe.Register();
 	}

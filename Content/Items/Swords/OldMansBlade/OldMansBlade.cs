@@ -7,6 +7,8 @@ using Terraria.Audio;
 using OSTARsSWORDS.Rarities;
 using Terraria.DataStructures;
 using OSTARsSWORDS.Content.Players;
+using Luminance.Core.Graphics;
+using OSTARsSWORDS.Content.Particles;
 
 namespace OSTARsSWORDS.Content.Items.Swords.OldMansBlade;
 
@@ -17,7 +19,7 @@ public class OldMansBlade : ModItem
 		Item.width = 48;
 		Item.height = 48;
 		Item.scale = 1.5f;
-		Item.rare = ModContent.RarityType<Ancient>();
+		Item.rare = ModContent.RarityType<CalamityRed>();
 		Item.useTime = 30;
 		Item.useAnimation = 30;
 		Item.damage = 87;
@@ -54,22 +56,43 @@ public class OldMansBlade : ModItem
 
 		if (modPlayer.OldManBladeConsecutiveHits % 10 == 0)
 		{
-			int bonusDamage = (int)(target.lifeMax * 0.01f);
+            ScreenShakeSystem.StartShake(10f, 1f, null, 0.5f);
+
+            // Spawn some Luminance particles
+            for (int i = 0; i < 30; i++)
+            {
+                Vector2 velocity = Main.rand.NextVector2Circular(8f, Main.rand.NextFloat(2f, 48f));
+                Particle1Glow p = new()
+                {
+                    Position = target.Center,
+                    Velocity = velocity,
+                    RotationSpeed = Main.rand.NextFloat(-0.1f, 0.1f),
+                    Scale = Vector2.One * Main.rand.NextFloat(0.2f, 1.2f),
+                    DrawColor = Color.DeepSkyBlue,
+                    Lifetime = Main.rand.Next(30, 60)
+                };
+                p.Spawn();
+            }
+
+			int bonusDamage = (int)(target.lifeMax * 0.01f); // if max is lower than 50000
 			if (bonusDamage < 500) bonusDamage = Main.rand.Next(300, 500) + (int)(damageDone * 1.2f);
+			else bonusDamage += bonusDamage * (int)Main.rand.NextFloat(1.0f, 1.2f); 
 
 			SoundEngine.PlaySound(new SoundStyle("OSTARsSWORDS/Sounds/OldManHit") 
 			{ 
-				Volume = 1.2f,
+				Volume = 0.8f,
 				Pitch = 0.2f,
 				PitchVariance = 1.0f
 			}, target.position);
 
-			NPC.HitInfo extraHit = new NPC.HitInfo();
-			extraHit.Damage = bonusDamage;
-			extraHit.HitDirection = player.direction;
-			extraHit.Crit = false;
-			
-			target.StrikeNPC(extraHit);
+            NPC.HitInfo extraHit = new()
+            {
+                Damage = bonusDamage,
+                HitDirection = player.direction,
+                Crit = false
+            };
+
+            target.StrikeNPC(extraHit);
 			player.addDPS(bonusDamage);
 
             // Awakened Hit Text
@@ -91,8 +114,9 @@ public class OldMansBlade : ModItem
 		Item.noUseGraphic = false;
 	}
 
-	// Draw the awakened sprite on top of the original with transparency in the inventory
-	public override void PostDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
+    #region Drawing the awakened sprite
+    // Draw the awakened sprite on top of the original with transparency in the inventory
+    public override void PostDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
 	{
 		float alpha = Main.LocalPlayer.GetModPlayer<OldMansBladePlayer>().AwakenedAlpha;
 		if (alpha > 0f)
@@ -205,3 +229,4 @@ public class OldMansBladeHeldLayer : PlayerDrawLayer
 		drawInfo.DrawDataCache.Add(glowData);
 	}
 }
+#endregion

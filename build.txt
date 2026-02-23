@@ -1,3 +1,4 @@
 displayName = OSTARs SWORDS
 author = OSTAVER
 version = 0.13
+modReferences = Luminance

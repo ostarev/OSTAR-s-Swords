@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -49,6 +50,8 @@ namespace OSTARsSWORDS.Content.Items.Swords
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(BuffID.Ichor, 1800);
+            damageDone += (int)(target.lifeMax * 0.01f);
+			SoundEngine.PlaySound(new SoundStyle("OSTARsSWORDS/Sounds/ClickyHit") { PitchVariance = 0.8f, Volume = 0.24f }, target.position);
         }
     }
 }

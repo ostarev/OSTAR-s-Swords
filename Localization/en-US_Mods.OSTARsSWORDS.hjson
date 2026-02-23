@@ -161,7 +161,7 @@ Items: {
 	}
 
 	SkoomaPotion: {
-		Tooltip: "Gives the player mega speed and jump power"
+		Tooltip: Gives the player mega speed and jump power
 		DisplayName: Skooma
 	}
 
@@ -171,7 +171,7 @@ Items: {
 	}
 
 	HaloOfHorrors: {
-		Tooltip: "you are tuff..."
+		Tooltip: you are tuff...
 		DisplayName: Halo Of Horrors
 	}
 
@@ -1389,6 +1389,43 @@ Items: {
 		DisplayName: Sword Shard
 		Tooltip: ""
 	}
+
+	VolcanoCopy: {
+		Tooltip: ""
+		DisplayName: Volcano Copy
+	}
+
+	ShardSword: {
+		DisplayName: Shard Sword
+		Tooltip: ""
+	}
+
+	Teski: {
+		DisplayName: Teski
+		Tooltip:
+			'''
+			Every critical strike gives you the [c/00AEEF:Woltazha buff]
+			This buff multiplies your [c/FFC864:total] armor and [c/FFC864:total] attack speed by 20%,
+			but also decreases movement speed by 20%
+			"Boutta smack some bitch ass fat ass niggas with this"
+			"Jako ufuljivanje jebem ti"
+			'''
+	}
+
+	Grease: {
+		DisplayName: Grease
+		Tooltip: ""
+	}
+
+	ReapersToll: {
+		DisplayName: Reaper's Toll
+		Tooltip:
+			'''
+			Increases your [c/FFC864:total] attack speed from all sources by 15%
+			Each melee hit hit decreases the enemy's max hp by 0.1%
+			"Arena prime"
+			'''
+	}
 }
 
 Buffs: {
@@ -1408,8 +1445,13 @@ Buffs: {
 	}
 
 	EmperorBlazeBuff: {
-		Description: Mods.OSTARsSWORDS.Buffs.EmperorBlazeBuff.Description
+		Description: On magma!
 		DisplayName: Emperor Blaze Buff
+	}
+
+	WoltazhaBuff: {
+		DisplayName: Woltazha Mrsna
+		Description: Increased damage and speed substanitally
 	}
 }
 

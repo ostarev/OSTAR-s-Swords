@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -7,10 +6,6 @@ namespace OSTARsSWORDS.Content.Items.Swords;
 
 public class CrystalVineSword : ModItem
 {
-	public override void SetStaticDefaults()
-	{
-	}
-
 	public override void SetDefaults()
 	{
 		Item.width = 46;
@@ -24,7 +19,7 @@ public class CrystalVineSword : ModItem
 		Item.knockBack = 6f;
 		Item.UseSound = SoundID.Item101;
 		Item.shoot = ProjectileID.CrystalVileShardShaft;
-		Item.shootSpeed = 30f;
+		Item.shootSpeed = 8f;
 		Item.value = Item.sellPrice(0, 10, 0, 0);
 		Item.autoReuse = true;
 		Item.DamageType = DamageClass.Melee;
