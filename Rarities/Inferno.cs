@@ -1,75 +1,98 @@
-﻿using System;
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using ReLogic.Graphics;
-using Terraria.GameContent;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ModLoader;
 using Terraria.UI.Chat;
-using Terraria.ID;
 
 namespace OSTARsSWORDS.Rarities
 {
-    public class Inferno : ModRarity
+    public class InfernoRed : ModRarity
     {
-        // A nice, bright fiery orange for the base UI color
-        public override Color RarityColor => new Color(TextClr.R, TextClr.G, TextClr.B, 255);
+        // Slightly intensified orange-red for the base color
+        public override Color RarityColor => TextClr * 1.5f;
 
-        public static float MaxY = 4.5f;
-        public static Color TextClr = new Color(255, 60, 0, 255); // Reddish orange
-        public static Color BloomClr = new Color(255, 150, 0, 0); // Bright orange/yellow glow
+        public static float MaxY = 5f;                       // Max vertical offset for floating
+        public static Color BloomClr = new(255, 120, 0, 0);  // Bright orange bloom (alpha 0 for additive feel)
+        public static Color TextClr = new(220, 60, 0, 255);  // Deep ember red-orange
 
         public static void Draw(Item Item, SpriteBatch spriteBatch, string text, int X, int Y, Color textColor, Color lightColor, float rotation,
-        Vector2 origin, Vector2 baseScale, float time, bool renderTextSparkles, DynamicSpriteFont font)
+            Vector2 origin, Vector2 baseScale, float time, bool renderTextSparkles, DynamicSpriteFont font)
         {
-            // 1. Define Fire Colors (Red -> Orange -> Yellow)
-            Color fireRed = new Color(220, 30, 0);
-            Color fireOrange = new Color(255, 120, 0);
-            Color fireYellow = new Color(255, 230, 0);
+            // Load textures (reusing the same paths; replace with inferno-specific ones if desired)
+            var crystalTextGlow = ModContent.Request<Texture2D>("OSTARsSWORDS/ExtraTextures/UI/CrystalTextGlow").Value;
+            var sparkle = ModContent.Request<Texture2D>("OSTARsSWORDS/ExtraTextures/UI/CrystalTextSparkle").Value;
 
-            // 2. Create a "flicker" effect
-            // Combining two sine waves at different, prime-ish speeds makes it erratic like fire
-            float flicker = (float)(Math.Sin(time * 11f) * 0.5f + Math.Sin(time * 17f) * 0.5f);
-            float t = (flicker + 1f) / 2f; // Normalize from roughly (-1.0 to 1.0) down to (0.0 to 1.0)
+            var fontSize = font.MeasureString(text);
+            var center = fontSize / 2f;
+            var glowPosition = new Vector2(X + center.X, Y + center.Y / 1.5f);
 
-            // 3. Interpolate colors based on the flicker
-            // If t < 0.5, it blends Red to Orange. If t >= 0.5, it blends Orange to Yellow
-            Color currentColor;
-            if (t < 0.5f)
-                currentColor = Color.Lerp(fireRed, fireOrange, t * 2f);
-            else
-                currentColor = Color.Lerp(fireOrange, fireYellow, (t - 0.5f) * 2f);
+            textColor.A = 0; // Make text color transparent for aura layers
 
-            // 4. Calculate the glow offset (expands more when it burns hotter/yellower)
-            float glowOffset = 1.5f + t * 2.5f;
+            // Flame-like parameters: faster, more chaotic pulsing
+            float flamePulse = 6f + (float)Math.Sin(time * 12f) * 4f;               // Horizontal spread varies quickly
+            float verticalWave = 8f + (float)Math.Sin(time * 8f) * 3f;              // Vertical undulation
+            float baseScalePulse = 1.05f + (float)Math.Sin(time * 10f) * 0.03f;     // Slight scale flicker
+            float distortionAmount = 3.5f;                                          // More distortion for heat shimmer
 
-            // 5. Draw the outer fiery glow
-            // We use a reddish-orange for the glow to act as the "ambient heat"
-            Color glowColor = Color.Lerp(fireRed, fireOrange, t) * 0.7f;
-            glowColor.A = 0; // Additive blending logic for that bright, luminous TModLoader text look
-
-            for (float f = 0f; f < MathHelper.TwoPi; f += 0.79f)
+            if (renderTextSparkles)
             {
-                // Add a slight upward drift to the Y axis of the glow to simulate rising heat
-                float upDrift = (float)Math.Sin(time * 6f + f) * 1.5f;
-                Vector2 drawPos = new Vector2(X, Y) + new Vector2(glowOffset, -Math.Abs(upDrift)).RotatedBy(f);
+                // Draw multiple "spark" copies in a rough circle, but with flame-like weighting
+                for (float f = 0f; f < MathHelper.TwoPi; f += 0.52f) // Smaller step = more sparks
+                {
+                    float angle = f + (time * 2.5f % MathHelper.TwoPi); // Faster rotation
 
-                ChatManager.DrawColorCodedString(
-                    spriteBatch, font, text,
-                    drawPos,
-                    glowColor,
-                    rotation, origin, baseScale);
+                    // Distortion based on position and time (heat shimmer)
+                    float distortion = (float)Math.Cos((X + f * 30f + time * 8f) * 0.15f) * distortionAmount;
+
+                    // Offset combines circular motion with a stronger upward bias
+                    Vector2 offset = new Vector2(
+                        (float)Math.Cos(angle) * flamePulse + distortion,
+                        (float)Math.Sin(angle) * verticalWave - 3f // slight upward bias
+                    );
+
+                    float scaleVariation = 0.8f + 0.2f * (float)Math.Sin(time * 12f + f); // Varying spark size
+                    Vector2 scale = new Vector2(baseScalePulse * scaleVariation);
+
+                    // Interpolate aura color between orange and yellow based on angle/time
+                    float t = (float)((Math.Sin(angle + time * 3f) + 1f) * 0.5f);
+                    Color auraColor = Color.Lerp(new Color(255, 80, 0, 0), new Color(255, 220, 0, 0), t);
+
+                    ChatManager.DrawColorCodedString(
+                        spriteBatch, font, text, new Vector2(X, Y) + offset, auraColor, rotation, origin, scale
+                    );
+                }
             }
 
-            // 6. Draw the Main Text
-            // Uses the flickered color so the actual letters transition between red, orange, and yellow
-            ChatManager.DrawColorCodedString(spriteBatch, font, text, new Vector2(X, Y), currentColor, rotation, origin, baseScale);
+            // Draw the crisp central text with pulsing scale
+            ChatManager.DrawColorCodedString(
+                spriteBatch, font, text, new Vector2(X, Y), textColor, rotation, origin, new Vector2(baseScalePulse)
+            );
+
+            textColor.A = 255; // Restore alpha for shadow
+
+            // Shadow (dark orange instead of black)
+            ChatManager.DrawColorCodedStringShadow(spriteBatch, font, text, new Vector2(X, Y), textColor * 1.2f, rotation, origin, baseScale);
+
+            // Draw the glow texture (now with a warm tint)
+            spriteBatch.Draw(crystalTextGlow, glowPosition, null, lightColor * 0.8f, rotation + MathHelper.PiOver2, new Vector2(6f, 33f),
+                new Vector2(1.6f, fontSize.X / crystalTextGlow.Height * 1.2f), SpriteEffects.None, 0f);
+
+            // Optional: draw a bright core to simulate intense heat
+            ChatManager.DrawColorCodedString(spriteBatch, font, text, new Vector2(X, Y), Color.White * 0.9f, rotation, origin, baseScale * 1.02f);
         }
 
+        // Overloads for easier use (identical to AbyssalBlue structure)
         public static void Draw(Item Item, string text, int X, int Y, float rotation, Vector2 origin, Vector2 baseScale, Color? textColor = null, Color? lightColor = null, bool? renderTextSparkles = null)
         {
-            Draw(Item, Main.spriteBatch, text, X, Y, Colors.AlphaDarken(textColor ?? TextClr), lightColor ?? BloomClr, rotation, origin, baseScale, Main.GlobalTimeWrappedHourly,
-                renderTextSparkles ?? true, FontAssets.MouseText.Value);
+            Draw(Item, Main.spriteBatch, text, X, Y,
+                 Colors.AlphaDarken(textColor ?? TextClr),
+                 lightColor ?? BloomClr,
+                 rotation, origin, baseScale,
+                 Main.GlobalTimeWrappedHourly,
+                 renderTextSparkles ?? true,
+                 FontAssets.MouseText.Value);
         }
 
         public static void Draw(Item Item, DrawableTooltipLine line)
